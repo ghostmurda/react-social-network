@@ -7,7 +7,8 @@ function User(props){
         <div className="User">
             <img 
             className="user__avatar" 
-            src={`https://api.adorable.io/avatars/64/${props.name}@adorable.png`} 
+            src={`https://api.adorable.io/avatars/64/${props.name}@adorable.png`}
+            alt="Loading..."
             />
             <div className="user__description">
                 <div className="user__name mini"><Link to={{

@@ -1,13 +1,12 @@
 import React from 'react';
 import './Post.css';
-import { ReactComponent as LikeIcon } from '../../../img/like-icon.svg';
 
 function Post(props){
     return (
         <div className="Post">
             <div className="post__title">
                 <div className="post__creator-avatar">
-                    <img src={`https://api.adorable.io/avatars/70/${props.name}@adorable.png`}/>
+                    <img src={`https://api.adorable.io/avatars/70/${props.name}@adorable.png`} alt="Loading..."/>
                 </div>
                 <div className="post__creator-name">{props.name}</div>
             </div>

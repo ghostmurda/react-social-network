@@ -14,7 +14,7 @@ function Profile(props){
         <div className="Profile">
             <div className="profile">
                 <div className="profile__avatar">
-                    <img src={`https://api.adorable.io/avatars/190/${data.name}@adorable.png`}/>
+                    <img src={`https://api.adorable.io/avatars/190/${data.name}@adorable.png`} alt="Loading..."/>
                 </div>
                 <div className="profile__description">
                     <div className="description__name">{data.name}</div>

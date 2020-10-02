@@ -15,7 +15,7 @@ function Header(){
                 <input type="text" placeholder="Search" />
             </div>
             <div className="header__user">
-                <img src={`https://api.adorable.io/avatars/64/${'Daniel Simonov'}@adorable.png`}/>
+                <img src={`https://api.adorable.io/avatars/64/${'Daniel Simonov'}@adorable.png`} alt="Loading..."/>
             </div>
             </div>
         </div>
