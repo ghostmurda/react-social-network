@@ -9,9 +9,9 @@ function NavMenu(){
     return (
         <div className="NavMenu">
             <ul>
-                <Link to="/home"><li><HomeIcon /> &nbsp; Home</li></Link>
+                <Link to="/react-social-network"><li><HomeIcon /> &nbsp; Home</li></Link>
                 <Link to="/following"><li><FriendsIcon /> &nbsp; Following</li></Link>
-                <Link to="/home"><li><PostsIcon /> &nbsp; Posts</li></Link>
+                <Link to="/react-social-network"><li><PostsIcon /> &nbsp; Posts</li></Link>
             </ul>
         </div>
     );

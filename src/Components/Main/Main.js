@@ -19,9 +19,9 @@ function Main(props){
             <NavMenu />
             <div className="main__content">
                 <Route path="/">
-                    <Redirect to="/home"/>
+                    <Redirect to="/react-social-network"/>
                 </Route>
-                <Route exact path="/home" component={() => <Profile obj={defaultProfile}/>}/>
+                <Route exact path="/react-social-network" component={() => <Profile obj={defaultProfile}/>}/>
                 <Route path="/user" component={Profile}/>
                 <Route path="/following" component={Following}/>
             </div>
