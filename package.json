@@ -33,5 +33,6 @@
     ]
   },
   "devDependencies": {
-  }
+  },
+  "homepage": "https://ghostmurda.github.io/react-social-network/"
 }
