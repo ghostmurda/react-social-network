@@ -1,0 +1,35 @@
+:root{
+    --color: #2A5885;
+}
+
+.NavMenu{
+    max-width: 20%;
+}
+
+.NavMenu ul{
+    max-width: 100%;
+    padding: 0;
+}
+
+.NavMenu li{
+    color: var(--color);
+    list-style-type: none;
+    padding: 5px;
+    display: flex;
+    line-height: 26px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.NavMenu a{
+    text-decoration: none;
+    color: var(--color);
+}
+
+.NavMenu li a:active{
+    color: var(--color);
+}
+
+.NavMenu li:hover{
+    background: #DAE2EA;
+}

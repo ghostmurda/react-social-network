@@ -1,0 +1,26 @@
+.following{
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 570px 230px;
+    grid-template-rows: 90px 106px 90px 106px 90px 106px;
+    grid-gap: 16px;
+}
+
+.following__list{
+    background-color: white;
+    border: 1px solid var(--color-border);
+    box-shadow: inset 0px -1px 0px var(--color-shadow);
+    border-radius: 5px;
+    grid-row: 1/7;
+    overflow: auto;
+}
+
+.following__possible{
+    background-color: white;
+    border: 1px solid var(--color-border);
+    box-shadow: inset 0px -1px 0px var(--color-shadow);
+    border-radius: 5px;
+    grid-row: 1/5;
+    padding: 16px;
+    overflow: auto;
+}
