@@ -5,7 +5,7 @@ import './Profile.css';
 function Profile(props){
     let data;
     if (props.location === undefined){
-        data = props.obj;
+        data = props.userData;
     } else {
         data = props.location.state;
     }

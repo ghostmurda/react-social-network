@@ -15,9 +15,11 @@ function Main(props){
                 <Route path="/">
                     <Redirect to="/react-social-network"/>
                 </Route>
-                <Route exact path="/react-social-network" component={() => <Profile obj={props.obj.defaultUser}/>}/>
+                <Route exact path="/react-social-network" component={() => <Profile userData={props.userObj}/>}/>
                 <Route path="/user" component={Profile}/>
-                <Route path="/following" component={Following}/>
+                <Route path="/following" component={() =>
+                    <Following popularUsersData={props.popularUsersArr} userListData={props.usersArr} />}
+                />
             </div>
         </div>
         </BrowserRouter>
