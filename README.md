@@ -2,14 +2,14 @@ https://ghostmurda.github.io/react-social-network/
 
 ## Description
 
-This is simple social network frontend template made using React.<br />
+This is simple social network frontend web app made using React.<br />
 Design of the project was based on this <a href="https://www.figma.com/community/file/888741451082133502">Figma template</a>.<br />
-For now website contains two styles for page:
+For now website contains two types for pages:
 <ul>
-    <li>UserCard profile</li>
-    <li>Friends list / following users list</li>
+    <li>Profile</li>
+    <li>User list</li>
 </ul>
-You can choose any user from the UserList list and then open his profile page.
+You can choose any user from the User list and then open his profile page.
 
 ##
 
