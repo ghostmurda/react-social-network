@@ -17,6 +17,8 @@ function User(props){
                         name: props.name,
                         followers: props.followers,
                         posts: props.posts,
+                        following: props.following,
+                        info: props.info,
                     }
                 }
                 }>{props.name}</Link></div>

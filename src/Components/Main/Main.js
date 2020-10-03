@@ -7,12 +7,6 @@ import { Route, BrowserRouter, Redirect } from 'react-router-dom';
 
 
 function Main(props){
-    let defaultProfile = {
-        name: 'Daniel Simonov',
-        followers: '0',
-        posts: '1',
-    };
-
     return (
         <BrowserRouter>
         <div className="Main">
@@ -21,7 +15,7 @@ function Main(props){
                 <Route path="/">
                     <Redirect to="/react-social-network"/>
                 </Route>
-                <Route exact path="/react-social-network" component={() => <Profile obj={defaultProfile}/>}/>
+                <Route exact path="/react-social-network" component={() => <Profile obj={props.obj.defaultUser}/>}/>
                 <Route path="/user" component={Profile}/>
                 <Route path="/following" component={Following}/>
             </div>

@@ -3,7 +3,7 @@ import { ReactComponent as Logo } from '../../img/logo.svg';
 import { ReactComponent as Search } from '../../img/search.svg';
 import './Header.css';
 
-function Header(){
+function Header(props){
     return (
         <div className="Header">
             <div className="header">
@@ -15,7 +15,7 @@ function Header(){
                 <input type="text" placeholder="Search" />
             </div>
             <div className="header__user">
-                <img src={`https://api.adorable.io/avatars/64/${'Daniel Simonov'}@adorable.png`} alt="Loading..."/>
+                <img src={`https://api.adorable.io/avatars/64/${props.obj.name}@adorable.png`} alt="Avatar"/>
             </div>
             </div>
         </div>

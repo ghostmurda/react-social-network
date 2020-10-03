@@ -18,9 +18,7 @@ function Profile(props){
                 </div>
                 <div className="profile__description">
                     <div className="description__name">{data.name}</div>
-                    <div className="description__main">
-                        Beginner frontend developer, student.
-                    </div>
+                    <div className="description__main">{data.info}</div>
                     <div className="description__footer">
                         <div className="description__footer__item">
                             <span className="item__num">{data.followers}</span><br/>
@@ -31,7 +29,7 @@ function Profile(props){
                             <span className="item__name">posts</span>
                         </div>
                         <div className="description__footer__item">
-                            <span className="item__num">{data.posts}</span><br/>
+                            <span className="item__num">{data.following}</span><br/>
                             <span className="item__name">following</span>
                         </div>
                     </div>
@@ -43,7 +41,7 @@ function Profile(props){
                 </div>
                 <div className="profile__following">
                     <span className="followers__title">Following</span>
-                    <span className="followers__num">0</span>
+                    <span className="followers__num">{data.following}</span>
                     <div className="followers__main"></div>
                 </div>
                 <div className="profile__input">
