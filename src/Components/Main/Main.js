@@ -18,8 +18,8 @@ function Main(props){
                 <Route exact path="/react-social-network" component={() => <Profile userData={props.userObj}/>}/>
                 <Route path="/user" component={Profile}/>
                 <Route path="/following" component={() =>
-                    <Following popularUsersData={props.popularUsersArr} userListData={props.usersArr} />}
-                />
+                    <Following popularUsersData={props.popularUsersArr} userListData={props.usersArr} />
+                }/>
             </div>
         </div>
         </BrowserRouter>
