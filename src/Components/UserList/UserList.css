@@ -29,6 +29,10 @@
     height: 393px;
 }
 
+.users-page__secondary-list::-webkit-scrollbar {
+    width: 0px;
+}
+
 .secondary-list__header{
     position: fixed;
     background: white;
