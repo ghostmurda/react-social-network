@@ -19,11 +19,7 @@ function Profile(props){
                 <div className="profile__description">
                     <div className="description__name">{data.name}</div>
                     <div className="description__main">
-                        <ul>
-                            <li><strong>Date of birth: </strong>23.06.1999</li>
-                            <li><strong>City: </strong>Krasnodar</li>
-                            <li><strong>Education: </strong>KubSU</li>
-                        </ul>
+                        Beginner frontend developer, student.
                     </div>
                     <div className="description__footer">
                         <div className="description__footer__item">
@@ -33,6 +29,10 @@ function Profile(props){
                         <div className="description__footer__item">
                             <span className="item__num">{data.posts}</span><br/>
                             <span className="item__name">posts</span>
+                        </div>
+                        <div className="description__footer__item">
+                            <span className="item__num">{data.posts}</span><br/>
+                            <span className="item__name">following</span>
                         </div>
                     </div>
                 </div>
