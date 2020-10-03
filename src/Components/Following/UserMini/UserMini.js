@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 function User(props){
     return (
-        <div className="User">
+        <div className="User small">
             <img 
             className="user__avatar" 
             src={`https://api.adorable.io/avatars/64/${props.name}@adorable.png`}

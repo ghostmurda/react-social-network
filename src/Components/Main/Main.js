@@ -4,6 +4,7 @@ import NavMenu from '../NavMenu/NavMenu'
 import Profile from '../Profile/Profile'
 import './Main.css';
 import { Route, BrowserRouter, Redirect } from 'react-router-dom';
+import Popular from "../Popular/Popular";
 
 
 function Main(props){
@@ -19,6 +20,9 @@ function Main(props){
                 <Route path="/user" component={Profile}/>
                 <Route path="/following" component={() =>
                     <Following popularUsersData={props.popularUsersArr} userListData={props.usersArr} />
+                }/>
+                <Route exact path="/popular" component={() =>
+                    <Popular popularUsersData={props.popularUsersArr} userListData={props.usersArr} />
                 }/>
             </div>
         </div>

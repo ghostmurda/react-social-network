@@ -1,6 +1,6 @@
 .User{
     display: flex;
-    height: 15%;
+    height: 100px;
     border-bottom: 1px solid var(--color-border);
     padding: 16px;
 }
@@ -46,4 +46,8 @@
 
 .mini *{
     font-size: 15px;
+}
+
+.small{
+    height: 64px;
 }

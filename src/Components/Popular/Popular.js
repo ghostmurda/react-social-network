@@ -1,30 +1,28 @@
-import React from 'react';
-import './Following.css';
-import User from './User/User';
-import UserMini from './UserMini/UserMini'
+import React from "react";
+import User from "../Following/User/User";
+import UserMini from '../Following/UserMini/UserMini'
 
-
-function Following(props) {
-    let userListElements = props.userListData.map((item, i) => {
+function Popular(props){
+    let popularUsersElements = props.popularUsersData.map((item, i) => {
         return <User key={i} name={item.name} posts={item.posts} followers={item.followers} following={item.following} info={item.info}/>;
     });
-    let popularUsersElements = props.popularUsersData.map((item, i) => {
+    let followingElements = props.userListData.map((item, i) => {
         return <UserMini key={i} name={item.name} posts={item.posts} followers={item.followers} following={item.following} info={item.info}/>;
     });
-
     return (
-        <div className="Following">
+        <div className="Popular">
             <div className="users-page">
                 <div className="user-list">
-                    {userListElements}
+                    {popularUsersElements}
                 </div>
                 <div className="users-page__secondary">
-                    <span>Popular</span>
-                    {popularUsersElements}
+                    <div className="secondary__header">Following</div>
+                    <span>&nbsp;</span>
+                    {followingElements}
                 </div>
             </div>
         </div>
     );
 }
 
-export default Following;
+export  default Popular;
