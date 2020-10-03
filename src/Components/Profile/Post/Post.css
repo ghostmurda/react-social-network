@@ -1,8 +1,3 @@
-:root{
-    --color-red: #ec3838;
-    --color-icon: #99c1ea;
-}
-
 .post__title{
     display: flex;
     grid-row: 1/2;
