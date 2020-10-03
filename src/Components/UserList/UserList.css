@@ -7,7 +7,7 @@
     grid-gap: 16px;
 }
 
-.user-list{
+.users-page__list{
     background-color: white;
     border: 1px solid var(--color-border);
     box-shadow: inset 0px -1px 0px var(--color-shadow);
@@ -16,21 +16,23 @@
     overflow: auto;
 }
 
-.users-page__secondary{
+.users-page__secondary-list{
     background-color: white;
     border: 1px solid var(--color-border);
     box-shadow: inset 0px -1px 0px var(--color-shadow);
     border-radius: 5px;
-    grid-row: 1/5;
+    position: fixed;
+    margin-left: 586px;
+    max-width: 196px;
     padding: 16px;
     overflow: auto;
-    max-height: 346px;
+    height: 393px;
 }
 
-.secondary__header{
+.secondary-list__header{
     position: fixed;
     background: white;
-    width: 198px;
+    width: 193px;
     line-height: 48px;
     transform: translateY(-16px);
     z-index: 10;

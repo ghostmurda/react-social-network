@@ -1,0 +1,64 @@
+.user-card{
+    height: 100px;
+    border-bottom: 1px solid var(--color-border);
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 100px 304px 100px;
+    grid-gap: 16px;
+}
+
+.user-card__avatar{
+    border-radius: 50%;
+    width: 100px;
+}
+
+.user-card__description{
+    transform: translateY(16px);
+}
+
+.user-card__info{
+    transform: translateY(16px);
+    font-size: 17px;
+    color: var(--color-gray);
+    display: grid;
+    grid-template-columns: 110px 120px;
+    grid-template-rows: 22px;
+}
+
+.user-card__info__elem{
+    color: black;
+}
+
+.user-card__name *{
+    color: var(--color-blue);
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 19px;
+    text-decoration: none;
+}
+
+.user-card__name:hover{
+    text-decoration: underline;
+}
+
+.user-card__btn-wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.UserSmallCard .user-card{
+    height: 64px;
+    display: flex;
+}
+
+.UserSmallCard .user-card__name *{
+    font-size: 15px;
+}
+
+.UserSmallCard .user-card__avatar{
+    width: 64px;
+}
+
+.UserSmallCard .user-card__info, .UserSmallCard .user-card__btn-wrapper{
+    display: none;
+}

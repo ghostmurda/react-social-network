@@ -1,31 +1,37 @@
 import React from 'react'
-import Following from '../Following/Following';
+import UserList from '../UserList/UserList';
 import NavMenu from '../NavMenu/NavMenu'
 import Profile from '../Profile/Profile'
 import './Main.css';
-import { Route, BrowserRouter, Redirect } from 'react-router-dom';
-import Popular from "../Popular/Popular";
+import {Route, BrowserRouter, Redirect} from 'react-router-dom';
 
-
-function Main(props){
+function Main(props) {
     return (
         <BrowserRouter>
-        <div className="Main">
-            <NavMenu />
-            <div className="main__content">
-                <Route path="/">
-                    <Redirect to="/react-social-network"/>
-                </Route>
-                <Route exact path="/react-social-network" component={() => <Profile userData={props.userObj}/>}/>
-                <Route path="/user" component={Profile}/>
-                <Route path="/following" component={() =>
-                    <Following popularUsersData={props.popularUsersArr} userListData={props.usersArr} />
-                }/>
-                <Route exact path="/popular" component={() =>
-                    <Popular popularUsersData={props.popularUsersArr} userListData={props.usersArr} />
-                }/>
+            <div className="Main">
+                <NavMenu/>
+                <div className="main__content">
+                    <Route path="/">
+                        <Redirect to="/react-social-network"/>
+                    </Route>
+                    <Route exact path="/react-social-network" component={() => <Profile userData={props.userObj}/>}/>
+                    <Route path="/user" component={Profile}/>
+                    <Route exact path="/following" component={() =>
+                        <UserList
+                            userListData={props.usersArr}
+                            userSecondaryListData={props.popularUsersArr}
+                            secondaryListType="Popular"
+                        />
+                    }/>
+                    <Route exact path="/popular" component={() =>
+                        <UserList
+                            userListData={props.popularUsersArr}
+                            userSecondaryListData={props.usersArr}
+                            secondaryListType="Following"
+                        />
+                    }/>
+                </div>
             </div>
-        </div>
         </BrowserRouter>
     );
 }
