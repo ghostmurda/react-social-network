@@ -5,14 +5,14 @@ import {Link} from 'react-router-dom';
 function User(props){
     return (
         <div className="User">
-            <img 
-            className="user__avatar" 
+            <img
+            className="user__avatar"
             src={`https://api.adorable.io/avatars/128/${props.name}@adorable.png`}
             alt="Loading..."
             />
             <div className="user__description">
                 <div className="user__name"><Link to={{
-                    pathname: `/user/${props.name}`,
+                    pathname: `/user/${props.name}/${props.key}`,
                     state: {
                         name: props.name,
                         followers: props.followers,
