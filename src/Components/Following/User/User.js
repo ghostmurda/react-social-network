@@ -12,7 +12,7 @@ function User(props){
             />
             <div className="user__description">
                 <div className="user__name"><Link to={{
-                    pathname: `/user/${props.name}/${props.key}`,
+                    pathname: `/user/${props.name}`,
                     state: {
                         name: props.name,
                         followers: props.followers,
