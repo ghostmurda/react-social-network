@@ -1,6 +1,15 @@
+:root{
+    --color-header: #4A76A8;
+    --color-header-search: #224B7A;
+    --color-header-placeholder: #8FADC8;
+}
+
 .Header{
-    background: #4A76A8;
-    height: 42px; 
+    background: var(--color-header);
+    height: 42px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .header{
@@ -18,7 +27,7 @@
 
 .header__search{
     min-width: 230px;
-    background: #224B7A;
+    background: var(--color-header-search);
     border-radius: 20px;
     display: flex;
     padding: 5px;
@@ -37,15 +46,15 @@
 }
 
 .header__search input{
-    background: #224B7A;
+    background: var(--color-header-search);
     outline: 0;
     border: 0px;
     font-size: 17px;
-    color: #8FADC8;
+    color: var(--color-header-placeholder);
 }
 
 .header__search input::placeholder{
-    color: #8FADC8;
+    color: var(--color-header-placeholder);
 }
 
 .header__user img{
