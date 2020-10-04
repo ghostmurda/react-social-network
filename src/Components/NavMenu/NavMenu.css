@@ -33,3 +33,7 @@
 .NavMenu li:hover{
     background: #DAE2EA;
 }
+
+.link-selected li{
+    font-weight: 500;
+}
