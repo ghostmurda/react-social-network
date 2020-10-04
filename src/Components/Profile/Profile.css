@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: 230px 570px;
     grid-template-rows: 90px 106px 90px 106px 90px 106px;
+    grid-template-rows: repeat(20, 90px);
     grid-gap: 16px;
 }
 
@@ -15,11 +16,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: sticky;
+    top: 58px;
 }
 
 .profile__avatar img{
     width: 200px;
-    height: 180px;
+    height: 170px;
     border: 1px solid var(--color-border);
     border-radius: 5px;
 }
@@ -52,6 +55,7 @@
 .description__footer{
     display: flex;
     justify-content: space-around;
+    transform: translateY(-8px);
 }
 
 .description__footer__item{
@@ -76,6 +80,8 @@
     border-radius: 5px;
     grid-row: 3/5;
     padding: 16px;
+    position: sticky;
+    top: 270px;
 }
 
 .followers__title{
@@ -94,6 +100,8 @@
     border-radius: 5px;
     grid-row: 5/7;
     padding: 16px;
+    position: sticky;
+    top: 482px;
 }
 
 .profile__input{
@@ -136,14 +144,23 @@
     background: #5181B8;
 }
 
+.PostsWall{
+    grid-row: 4/20;
+    grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+}
+
 .Post{
     background-color: white;
     border: 1px solid var(--color-border);
     box-shadow: inset 0px -1px 0px var(--color-shadow);
     border-radius: 5px;
-    grid-row: 4/7;
+    grid-row: 4/20;
+    grid-column: 2/3;
     display: grid;
-    grid-template-rows: 70px 148px 66px;
+    grid-template-rows: 70px 116px 66px;
     padding: 16px;
     grid-gap: 16px;
+    margin-bottom: 16px;
 }

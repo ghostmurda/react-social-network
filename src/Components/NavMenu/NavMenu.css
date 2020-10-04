@@ -36,4 +36,5 @@
 
 .link-selected li{
     font-weight: 500;
+    color: var(--color-header);
 }
