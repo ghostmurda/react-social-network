@@ -9,6 +9,11 @@ function Profile(props){
     } else {
         data = props.location.state;
     }
+    let newPostElement = React.createRef();
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        console.log(text);
+    }
 
     return (
         <div className="Profile">
@@ -45,8 +50,8 @@ function Profile(props){
                     <div className="followers__main"></div>
                 </div>
                 <div className="profile__input">
-                    <input type="text" placeholder="What's new?"/>
-                    <button className="btn">Publish</button>
+                    <input type="text" placeholder="What's new?" ref={newPostElement}/>
+                    <button className="btn" onClick={addPost}>Publish</button>
                 </div>
                 <Post 
                     name={data.name}
