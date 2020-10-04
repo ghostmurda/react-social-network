@@ -10,6 +10,7 @@ function App(props) {
             <Main userObj={props.appState.defaultUserData}
                   popularUsersArr={props.appState.popularUsersData}
                   usersArr={props.appState.userListData}
+                  profileData={props.appState.profilePostsData}
             />
         </div>
     );

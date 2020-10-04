@@ -21,6 +21,7 @@ function UserCard(props) {
                                 posts: props.posts,
                                 following: props.following,
                                 info: props.info,
+                                postsData: props.postsData,
                             }
                         }}>
                             {props.name}

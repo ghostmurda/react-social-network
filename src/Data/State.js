@@ -25,6 +25,36 @@ let state = {
         {name: "Dana West", posts: "427", followers: "568", following: "23", info: "I love myself"},
         {name: "Roland Worthington", posts: "15", followers: "99", following: "6", info: "Worthington is like Washington but worth"},
     ],
+    profilePostsData: {
+        "Daniel Simonov": [
+            {id: 0, name: "Daniel Simonov", text: "Test post"},
+            {id: 1, name: "Daniel Simonov", text: "Unt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."},
+            {id: 2, name: "Daniel Simonov", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt "},
+            {id: 3, name: "Daniel Simonov", text: "Test post"},
+            {id: 4, name: "Daniel Simonov", text: "Unt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."},
+            {id: 5, name: "Daniel Simonov", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt "},
+            ],
+        "Pavel Durov": [
+            {id: 0, name: "Daniel Simonov", text: "Test post"},
+            {id: 1, name: "Daniel Simonov", text: "Test post2"},
+        ],
+        "Jon Snow": [
+            {id: 0, name: "Daniel Simonov", text: "Test post"},
+            {id: 1, name: "Daniel Simonov", text: "Test post2"},
+        ],
+        "Test User": [
+            {id: 0, name: "Daniel Simonov", text: "Test post"},
+            {id: 1, name: "Daniel Simonov", text: "Test post2"},
+        ],
+        "Dana West": [
+            {id: 0, name: "Daniel Simonov", text: "Test post"},
+            {id: 1, name: "Daniel Simonov", text: "Test post2"},
+        ],
+        "Roland Worthington": [
+            {id: 0, name: "Daniel Simonov", text: "Test post"},
+            {id: 1, name: "Daniel Simonov", text: "Test post2"},
+        ],
+    },
 };
 
 export default state;

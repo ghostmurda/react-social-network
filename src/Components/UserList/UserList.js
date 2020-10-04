@@ -11,6 +11,7 @@ function UserList(props) {
             followers={item.followers}
             following={item.following}
             info={item.info}
+            postsData={props.profilePosts}
         />;
     });
     let userSecondaryListElements = props.userSecondaryListData.map((item, i) => {
@@ -21,6 +22,7 @@ function UserList(props) {
             followers={item.followers}
             following={item.following}
             info={item.info}
+            postsData={props.profilePosts}
         />;
     });
 

@@ -4,10 +4,13 @@ import PostsWall from "./PostsWall/PostsWall";
 
 function Profile(props){
     let data;
+    let profilePostsData;
     if (props.location === undefined){
         data = props.userData;
+        profilePostsData = props.userPosts;
     } else {
         data = props.location.state;
+        profilePostsData = props.location.state.postsData;
     }
     let newPostElement = React.createRef();
     let addPost = () => {
@@ -53,7 +56,7 @@ function Profile(props){
                     <input type="text" placeholder="What's new?" ref={newPostElement}/>
                     <button className="btn" onClick={addPost}>Publish</button>
                 </div>
-                <PostsWall />
+                <PostsWall postsData={profilePostsData} profileOwner={data.name} />
             </div>
         </div>
     );
