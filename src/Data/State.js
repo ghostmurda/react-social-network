@@ -57,4 +57,13 @@ let state = {
     },
 };
 
+export let addPost = (profile, postText) => {
+    let newPost = {
+        id: 10,
+        name: "Daniel Simonov",
+        text: postText,
+    };
+    state.profilePostsData[profile].push(newPost);
+};
+
 export default state;

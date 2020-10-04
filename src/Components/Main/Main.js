@@ -18,9 +18,14 @@ function Main(props) {
                         <Profile
                             userData={props.userObj}
                             userPosts={props.profileData}
+                            addPost={props.addPost}
                         />}
                     />
-                    <Route path="/user" component={Profile}/>
+                    <Route path="/user" component={() =>
+                            <Profile
+                                addPost={props.addPost}
+                            />}
+                    />
                     <Route exact path="/following" component={() =>
                         <UserList
                             userListData={props.usersArr}

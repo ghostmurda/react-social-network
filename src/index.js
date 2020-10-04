@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import state from "./Data/State";
+import {addPost} from "./Data/State";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App appState={state}/>
+    <App appState={state} addPost={addPost}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

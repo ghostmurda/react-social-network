@@ -14,8 +14,9 @@ function Profile(props){
     }
     let newPostElement = React.createRef();
     let addPost = () => {
+        let profile = data.name;
         let text = newPostElement.current.value;
-        console.log(text);
+        props.addPost(profile, text);
     }
 
     return (

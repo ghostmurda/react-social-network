@@ -11,6 +11,7 @@ function App(props) {
                   popularUsersArr={props.appState.popularUsersData}
                   usersArr={props.appState.userListData}
                   profileData={props.appState.profilePostsData}
+                  addPost={props.addPost}
             />
         </div>
     );
