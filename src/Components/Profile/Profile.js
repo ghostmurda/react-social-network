@@ -17,6 +17,9 @@ function Profile(props){
     let addPost = () => {
         let profile = data.name;
         let text = newPostElement.current.value;
+        if (!text) {
+            return false;
+        }
         props.addPost(profile, text);
         newPostElement.current.value = '';
     }
