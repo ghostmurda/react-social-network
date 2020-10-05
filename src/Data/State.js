@@ -59,7 +59,6 @@ export let addPost = (profile, postText) => {
         name: state.currentUserData.userInfo.name,
         text: postText,
     };
-    console.log(newPost);
     state.profilePostsData[profile].push(newPost);
     reRender(state);
 };
