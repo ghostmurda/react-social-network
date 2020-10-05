@@ -16,8 +16,8 @@ function Main(props) {
                     </Route>
                     <Route exact path="/react-social-network" component={() =>
                         <Profile
-                            userData={props.userObj}
-                            userPosts={props.profileData}
+                            userData={props.user.userInfo}
+                            userPosts={props.profilePosts}
                             addPost={props.addPost}
                         />}
                     />
@@ -28,18 +28,18 @@ function Main(props) {
                     />
                     <Route exact path="/following" component={() =>
                         <UserList
-                            userListData={props.usersArr}
-                            userSecondaryListData={props.popularUsersArr}
+                            userListData={props.user.followingList}
+                            userSecondaryListData={props.popularUsers}
                             secondaryListType="Popular"
-                            profilePosts={props.profileData}
+                            profilePosts={props.profilePosts}
                         />
                     }/>
                     <Route exact path="/popular" component={() =>
                         <UserList
-                            userListData={props.popularUsersArr}
-                            userSecondaryListData={props.usersArr}
+                            userListData={props.popularUsers}
+                            userSecondaryListData={props.user.followingList}
                             secondaryListType="Following"
-                            profilePosts={props.profileData}
+                            profilePosts={props.profilePosts}
                         />
                     }/>
                 </div>
