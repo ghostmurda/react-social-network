@@ -1,5 +1,3 @@
-import {reRender} from "../render";
-
 let state = {
     currentUserData: {
         followingList: [
@@ -53,11 +51,13 @@ let state = {
     },
 };
 
-export let sortPosts = (profile) => {
+let reRender = () => {};
+
+export const sortPosts = (profile) => {
     state.profilePostsData[profile].sort((a, b) => b.id - a.id );
 }
 
-export let addPost = (profile, postText) => {
+export const addPost = (profile, postText) => {
     let newPost = {
         id: state.profilePostsData[profile].length,
         name: state.currentUserData.userInfo.name,
@@ -65,7 +65,11 @@ export let addPost = (profile, postText) => {
     };
     state.profilePostsData[profile].push(newPost);
     sortPosts(profile);
-    reRender(state);
+    reRender();
+};
+
+export const subscribe = (observer) => {
+    reRender = observer;
 };
 
 export default state;
