@@ -1,3 +1,5 @@
+import {reRender} from "../render";
+
 let state = {
     defaultUserData: {
         name: 'Daniel Simonov',
@@ -64,6 +66,7 @@ export let addPost = (profile, postText) => {
         text: postText,
     };
     state.profilePostsData[profile].push(newPost);
+    reRender(state);
 };
 
 export default state;

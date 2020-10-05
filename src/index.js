@@ -1,17 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {reRender} from "./render";
 import state from "./Data/State";
-import {addPost} from "./Data/State";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App appState={state} addPost={addPost}/>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+reRender(state);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
