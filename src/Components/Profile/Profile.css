@@ -2,8 +2,7 @@
     padding: 16px;
     display: grid;
     grid-template-columns: 230px 570px;
-    grid-template-rows: 90px 106px 90px 106px 90px 106px;
-    grid-template-rows: repeat(20, 90px);
+    grid-template-rows: repeat(auto-fit, 90px);
     grid-gap: 16px;
 }
 
@@ -79,9 +78,10 @@
     box-shadow: inset 0px -1px 0px var(--color-shadow);
     border-radius: 5px;
     grid-row: 3/5;
+    height: 164px;
     padding: 16px;
     position: sticky;
-    top: 270px;
+    top: 286px;
 }
 
 .followers__title{
@@ -99,9 +99,10 @@
     box-shadow: inset 0px -1px 0px var(--color-shadow);
     border-radius: 5px;
     grid-row: 5/7;
+    height: 164px;
     padding: 16px;
     position: sticky;
-    top: 482px;
+    top: 500px;
 }
 
 .profile__input{
@@ -110,6 +111,7 @@
     box-shadow: inset 0px -1px 0px var(--color-shadow);
     border-radius: 5px;
     grid-row: 3/4;
+    height: 88px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -156,7 +158,6 @@
     border: 1px solid var(--color-border);
     box-shadow: inset 0px -1px 0px var(--color-shadow);
     border-radius: 5px;
-    grid-row: 4/20;
     grid-column: 2/3;
     display: grid;
     grid-template-rows: 70px auto 50px;
