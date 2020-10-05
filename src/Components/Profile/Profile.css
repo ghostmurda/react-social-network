@@ -158,9 +158,8 @@
     border-radius: 5px;
     grid-row: 4/20;
     grid-column: 2/3;
-    height: 268px;
     display: grid;
-    grid-template-rows: 70px 116px 66px;
+    grid-template-rows: 70px auto 50px;
     padding: 16px;
     grid-gap: 16px;
     margin-bottom: 16px;
