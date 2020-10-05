@@ -1,11 +1,12 @@
 import React from 'react';
 import './Profile.css';
 import PostsWall from "./PostsWall/PostsWall";
+import {withRouter} from 'react-router-dom';
 
 function Profile(props){
     let data;
     let profilePostsData;
-    if (props.location === undefined){
+    if (!props.location.state){
         data = props.userData;
         profilePostsData = props.userPosts;
     } else {
@@ -63,4 +64,4 @@ function Profile(props){
     );
 }
 
-export default Profile;
+export default withRouter(Profile);
