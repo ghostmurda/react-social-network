@@ -53,6 +53,10 @@ let state = {
     },
 };
 
+export let sortPosts = (profile) => {
+    state.profilePostsData[profile].sort((a, b) => b.id - a.id );
+}
+
 export let addPost = (profile, postText) => {
     let newPost = {
         id: state.profilePostsData[profile].length,
@@ -60,6 +64,7 @@ export let addPost = (profile, postText) => {
         text: postText,
     };
     state.profilePostsData[profile].push(newPost);
+    sortPosts(profile);
     reRender(state);
 };
 

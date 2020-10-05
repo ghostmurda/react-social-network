@@ -59,7 +59,7 @@ function Profile(props){
                     <input type="text" placeholder="What's new?" ref={newPostElement}/>
                     <button className="btn" onClick={addPost}>Publish</button>
                 </div>
-                <PostsWall postsData={profilePostsData} profileOwner={data.name} />
+                <PostsWall postsData={profilePostsData} profileOwner={data.name} sortPosts={props.sortPosts} />
             </div>
         </div>
     );

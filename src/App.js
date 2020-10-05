@@ -11,6 +11,7 @@ function App(props) {
                   popularUsers={props.appState.popularUsersData}
                   profilePosts={props.appState.profilePostsData}
                   addPost={props.addPost}
+                  sortPosts={props.sortPosts}
             />
         </div>
     );

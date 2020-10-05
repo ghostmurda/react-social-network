@@ -19,11 +19,13 @@ function Main(props) {
                             userData={props.user.userInfo}
                             userPosts={props.profilePosts}
                             addPost={props.addPost}
+                            sortPosts={props.sortPosts}
                         />}
                     />
                     <Route path="/user" component={() =>
                             <Profile
                                 addPost={props.addPost}
+                                sortPosts={props.sortPosts}
                             />}
                     />
                     <Route exact path="/following" component={() =>
