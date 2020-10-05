@@ -1,5 +1,5 @@
 import React from "react";
-import Post from "../Post/Post";
+import Post from "./Post/Post";
 
 function PostsWall(props){
     let postElements = props.postsData[props.profileOwner].map((item, i) => {
