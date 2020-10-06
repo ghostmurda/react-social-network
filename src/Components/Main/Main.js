@@ -14,19 +14,19 @@ function Main(props) {
                     <Route path="/">
                         <Redirect to="/react-social-network"/>
                     </Route>
-                    <Route exact path="/react-social-network" component={() =>
+                    <Route exact path="/react-social-network" render={() =>
                         <Profile
                             userData={props.user.userInfo}
                             userPosts={props.profilePosts}
                             dispatch={props.dispatch}
                         />}
                     />
-                    <Route path="/user" component={() =>
+                    <Route path="/user" render={() =>
                             <Profile
                                 dispatch={props.dispatch}
                             />}
                     />
-                    <Route exact path="/following" component={() =>
+                    <Route exact path="/following" render={() =>
                         <UserList
                             userListData={props.user.followingList}
                             userSecondaryListData={props.popularUsers}
@@ -34,7 +34,7 @@ function Main(props) {
                             profilePosts={props.profilePosts}
                         />
                     }/>
-                    <Route exact path="/popular" component={() =>
+                    <Route exact path="/popular" render={() =>
                         <UserList
                             userListData={props.popularUsers}
                             userSecondaryListData={props.user.followingList}
