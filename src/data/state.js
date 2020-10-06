@@ -70,7 +70,10 @@ let store = {
                 text: action.postText,
             };
             this._state.profilePostsData[action.profile].push(newPost);
-            this.sortPosts(action.profile);
+            this.dispatch({
+                type: 'SORT-POSTS',
+                profile: action.profile,
+            });
             this._callSubscriber();
         }
     },
