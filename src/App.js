@@ -10,8 +10,7 @@ function App(props) {
             <Main user={props.appState.currentUserData}
                   popularUsers={props.appState.popularUsersData}
                   profilePosts={props.appState.profilePostsData}
-                  addPost={props.addPost}
-                  sortPosts={props.sortPosts}
+                  dispatch={props.dispatch}
             />
         </div>
     );

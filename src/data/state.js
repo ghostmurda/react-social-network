@@ -51,25 +51,28 @@ let store = {
             ],
         },
     },
+    _callSubscriber(){},
+
     getState(){
         return this._state;
     },
-    _callSubscriber(){},
-    sortPosts(profile){
-        this._state.profilePostsData[profile].sort((a, b) => b.id - a.id );
-    },
-    addPost(profile, postText){
-        let newPost = {
-            id: this._state.profilePostsData[profile].length,
-            name: this._state.currentUserData.userInfo.name,
-            text: postText,
-        };
-        this._state.profilePostsData[profile].push(newPost);
-        this.sortPosts(profile);
-        this._callSubscriber();
-    },
     subscribe(observer){
         this._callSubscriber = observer;
+    },
+
+    dispatch(action){
+        if (action.type === 'SORT-POSTS'){
+            this._state.profilePostsData[action.profile].sort((a, b) => b.id - a.id );
+        } else if (action.type === 'ADD-POST'){
+            let newPost = {
+                id: this._state.profilePostsData[action.profile].length,
+                name: this._state.currentUserData.userInfo.name,
+                text: action.postText,
+            };
+            this._state.profilePostsData[action.profile].push(newPost);
+            this.sortPosts(action.profile);
+            this._callSubscriber();
+        }
     },
 };
 

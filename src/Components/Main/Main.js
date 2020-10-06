@@ -18,14 +18,12 @@ function Main(props) {
                         <Profile
                             userData={props.user.userInfo}
                             userPosts={props.profilePosts}
-                            addPost={props.addPost}
-                            sortPosts={props.sortPosts}
+                            dispatch={props.dispatch}
                         />}
                     />
                     <Route path="/user" component={() =>
                             <Profile
-                                addPost={props.addPost}
-                                sortPosts={props.sortPosts}
+                                dispatch={props.dispatch}
                             />}
                     />
                     <Route exact path="/following" component={() =>

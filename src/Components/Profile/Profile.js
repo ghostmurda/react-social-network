@@ -20,7 +20,11 @@ function Profile(props){
         if (!text) {
             return false;
         }
-        props.addPost(profile, text);
+        props.dispatch({
+            type: 'ADD-POST',
+            profile: profile,
+            postText: text,
+        });
         newPostElement.current.value = '';
     }
 
@@ -62,7 +66,7 @@ function Profile(props){
                     <input type="text" placeholder="What's new?" ref={newPostElement}/>
                     <button className="btn" onClick={addPost}>Publish</button>
                 </div>
-                <PostsWall postsData={profilePostsData} profileOwner={data.name} sortPosts={props.sortPosts} />
+                <PostsWall postsData={profilePostsData} profileOwner={data.name} dispatch={props.dispatch} />
             </div>
         </div>
     );
