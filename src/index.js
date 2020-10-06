@@ -3,21 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import state, {subscribe, addPost, sortPosts} from "./Data/State";
+import store from "./data/state";
 
 let reRender = () => {
     ReactDOM.render(
         <React.StrictMode>
-            <App appState={state} addPost={addPost} sortPosts={sortPosts}/>
+            <App appState={store.getState()}
+                 addPost={store.addPost.bind(store)}
+                 sortPosts={store.sortPosts.bind(store)}
+            />
         </React.StrictMode>,
         document.getElementById('root')
     );
 }
 reRender();
-subscribe(reRender);
+store.subscribe(reRender);
 
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
