@@ -1,0 +1,32 @@
+.dialogs-page{
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 570px 230px;
+    grid-template-rows: repeat(6, 90px);
+    grid-gap: 16px;
+}
+
+.dialogs-page__window{
+    grid-row: 1/6;
+    background-color: white;
+    border: 1px solid var(--color-border);
+    box-shadow: inset 0px -1px 0px var(--color-shadow);
+    border-radius: 5px;
+}
+
+.dialogs-page__input{
+    grid-row: 6/7;
+    grid-column: 1/2;
+    background-color: white;
+    border: 1px solid var(--color-border);
+    box-shadow: inset 0px -1px 0px var(--color-shadow);
+    border-radius: 5px;
+}
+
+.dialogs-page__chats{
+    grid-row: 1/7;
+    background-color: white;
+    border: 1px solid var(--color-border);
+    box-shadow: inset 0px -1px 0px var(--color-shadow);
+    border-radius: 5px;
+}

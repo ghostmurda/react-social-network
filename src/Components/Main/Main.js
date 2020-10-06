@@ -4,6 +4,7 @@ import NavMenu from '../NavMenu/NavMenu'
 import Profile from '../Profile/Profile'
 import './Main.css';
 import {Route, BrowserRouter, Redirect} from 'react-router-dom';
+import Dialogs from "../Dialogs/Dialogs";
 
 function Main(props) {
     return (
@@ -42,6 +43,7 @@ function Main(props) {
                             profilePosts={props.profilePosts}
                         />
                     }/>
+                    <Route path="/dialogs" component={Dialogs} />
                 </div>
             </div>
         </BrowserRouter>
