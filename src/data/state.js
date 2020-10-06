@@ -70,13 +70,25 @@ let store = {
                 text: action.postText,
             };
             this._state.profilePostsData[action.profile].push(newPost);
-            this.dispatch({
-                type: 'SORT-POSTS',
-                profile: action.profile,
-            });
+            this.dispatch(sortPostsActionCreator(action.profile));
             this._callSubscriber();
         }
     },
+};
+
+export const sortPostsActionCreator = function (profileOwner){
+    return {
+        type: 'SORT-POSTS',
+        profile: profileOwner,
+    };
+};
+
+export const addPostActionCreator = function (profile, text){
+    return {
+        type: 'ADD-POST',
+        profile: profile,
+        postText: text,
+    };
 };
 
 export default store;

@@ -2,6 +2,7 @@ import React from 'react';
 import './Profile.css';
 import PostsWall from "./PostsWall/PostsWall";
 import {withRouter} from 'react-router-dom';
+import {addPostActionCreator} from "../../data/state";
 
 function Profile(props){
     let data;
@@ -20,11 +21,7 @@ function Profile(props){
         if (!text) {
             return false;
         }
-        props.dispatch({
-            type: 'ADD-POST',
-            profile: profile,
-            postText: text,
-        });
+        props.dispatch(addPostActionCreator(profile, text));
         newPostElement.current.value = '';
     }
 
