@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
-import store from "./data/state";
+import store from "./data/store";
 
 test('renders Home link', () => {
   const { getByText } = render(<App appState={store.getState()}

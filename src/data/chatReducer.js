@@ -10,4 +10,12 @@ const chatReducer = (state, currentUser, action) => {
     return state;
 }
 
+export const addMessageActionCreator = function (profile, text){
+    return {
+        type: 'ADD-MESSAGE',
+        profile: profile,
+        text: text,
+    }
+}
+
 export default chatReducer;

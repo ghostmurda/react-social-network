@@ -2,7 +2,7 @@ import React from 'react';
 import './Profile.css';
 import PostsWall from "./PostsWall/PostsWall";
 import {withRouter} from 'react-router-dom';
-import {addPostActionCreator} from "../../data/state";
+import {addPostActionCreator} from "../../data/postsReducer";
 
 function Profile(props){
     let data;

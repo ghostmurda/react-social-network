@@ -127,27 +127,4 @@ let store = {
     },
 };
 
-export const sortPostsActionCreator = function (profileOwner){
-    return {
-        type: 'SORT-POSTS',
-        profile: profileOwner,
-    };
-};
-
-export const addPostActionCreator = function (profile, text){
-    return {
-        type: 'ADD-POST',
-        profile: profile,
-        postText: text,
-    };
-};
-
-export const addMessageActionCreator = function (profile, text){
-    return {
-        type: 'ADD-MESSAGE',
-        profile: profile,
-        text: text,
-    }
-}
-
 export default store;

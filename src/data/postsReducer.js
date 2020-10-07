@@ -17,4 +17,19 @@ const postsReducer = (state, currentUser, action) => {
     }
 }
 
+export const sortPostsActionCreator = function (profileOwner){
+    return {
+        type: 'SORT-POSTS',
+        profile: profileOwner,
+    };
+};
+
+export const addPostActionCreator = function (profile, text){
+    return {
+        type: 'ADD-POST',
+        profile: profile,
+        postText: text,
+    };
+};
+
 export default postsReducer;

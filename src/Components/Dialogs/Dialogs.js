@@ -3,7 +3,7 @@ import './Dialogs.css';
 import ChatCard from "./ChatCard/ChatCard";
 import ChatWindow from "./ChatWindow/ChatWindow";
 import {withRouter} from 'react-router-dom';
-import {addMessageActionCreator} from "../../data/state";
+import {addMessageActionCreator} from "../../data/chatReducer";
 
 function Dialogs(props){
     let data;
