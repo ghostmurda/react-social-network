@@ -38,66 +38,96 @@ let store = {
                 {id: 2, name: "Daniel Simonov", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt "},
             ],
             "Pavel Durov": [
-                {id: 0, name: "Daniel Simonov", text: "Test post"},
+                {id: 0, name: "ServiceWorker", text: "Hello! This is your first post. " +
+                        "You can post anything here. Also you can post messages on another people profiles. " +
+                        "But remember one thing: be polite!"
+                },
             ],
             "Jon Snow": [
-                {id: 0, name: "Daniel Simonov", text: "Test post"},
+                {id: 0, name: "ServiceWorker", text: "Hello! This is your first post. " +
+                        "You can post anything here. Also you can post messages on another people profiles. " +
+                        "But remember one thing: be polite!"
+                },
             ],
             "Test User": [
-                {id: 0, name: "Daniel Simonov", text: "Test post"},
+                {id: 0, name: "ServiceWorker", text: "Hello! This is your first post. " +
+                        "You can post anything here. Also you can post messages on another people profiles. " +
+                        "But remember one thing: be polite!"
+                },
             ],
             "Dana West": [
-                {id: 0, name: "Daniel Simonov", text: "Test post"},
+                {id: 0, name: "ServiceWorker", text: "Hello! This is your first post. " +
+                        "You can post anything here. Also you can post messages on another people profiles. " +
+                        "But remember one thing: be polite!"
+                },
             ],
             "Roland Worthington": [
-                {id: 0, name: "Daniel Simonov", text: "Test post"},
+                {id: 0, name: "ServiceWorker", text: "Hello! This is your first post. " +
+                        "You can post anything here. Also you can post messages on another people profiles. " +
+                        "But remember one thing: be polite!"
+                },
             ],
             "Kelsi Clarkson": [
-                {id: 0, name: "Daniel Simonov", text: "Test post"},
+                {id: 0, name: "ServiceWorker", text: "Hello! This is your first post. " +
+                        "You can post anything here. Also you can post messages on another people profiles. " +
+                        "But remember one thing: be polite!"
+                },
             ],
             "Taiba Moran": [
-                {id: 0, name: "Daniel Simonov", text: "Test post"},
+                {id: 0, name: "ServiceWorker", text: "Hello! This is your first post. " +
+                        "You can post anything here. Also you can post messages on another people profiles. " +
+                        "But remember one thing: be polite!"
+                },
             ],
             "Kason Parry": [
-                {id: 0, name: "Daniel Simonov", text: "Test post"},
+                {id: 0, name: "ServiceWorker", text: "Hello! This is your first post. " +
+                        "You can post anything here. Also you can post messages on another people profiles. " +
+                        "But remember one thing: be polite!"
+                },
             ],
             "Manha Hayden": [
-                {id: 0, name: "Daniel Simonov", text: "Test post"},
+                {id: 0, name: "ServiceWorker", text: "Hello! This is your first post. " +
+                        "You can post anything here. Also you can post messages on another people profiles. " +
+                        "But remember one thing: be polite!"
+                },
             ],
             "Cydney Power": [
-                {id: 0, name: "Daniel Simonov", text: "Test post"},
+                {id: 0, name: "ServiceWorker", text: "Hello! This is your first post. " +
+                        "You can post anything here. Also you can post messages on another people profiles. " +
+                        "But remember one thing: be polite!"
+                },
             ],
         },
         chatsData: {
             "Pavel Durov": [
-                {id: 0, name: "Daniel Simonov", text: "Test message"},
+                {id: 0, name: "ServiceWorker", text: "This chat is empty, be first!"},
             ],
             "Jon Snow": [
-                {id: 0, name: "Daniel Simonov", text: "Test message"},
+                {id: 0, name: "ServiceWorker", text: "This chat is empty, be first!"},
             ],
             "Test User": [
-                {id: 0, name: "Daniel Simonov", text: "Test message"},
+                {id: 0, name: "ServiceWorker", text: "This chat is empty, be first!"},
             ],
             "Dana West": [
-                {id: 0, name: "Daniel Simonov", text: "Test message"},
+                {id: 0, name: "ServiceWorker", text: "This chat is empty, be first!"},
             ],
             "Roland Worthington": [
-                {id: 0, name: "Daniel Simonov", text: "Test message"},
+                {id: 0, name: "ServiceWorker", text: "This chat is empty, be first!"},
             ],
             "Kelsi Clarkson": [
-                {id: 0, name: "Daniel Simonov", text: "Test message"},
+                {id: 0, name: "ServiceWorker", text: "This chat is empty, be first!"},
             ],
             "Taiba Moran": [
-                {id: 0, name: "Daniel Simonov", text: "Test message"},
+                {id: 0, name: "ServiceWorker", text: "This chat is empty, be first!"},
             ],
             "Kason Parry": [
-                {id: 0, name: "Daniel Simonov", text: "Test message"},
+                {id: 0, name: "ServiceWorker", text: "This chat is empty, be first!"},
             ],
             "Manha Hayden": [
-                {id: 0, name: "Daniel Simonov", text: "Test message"},
+                {id: 0, name: "ServiceWorker", text: "This chat is empty, be first!"},
             ],
             "Cydney Power": [
-                {id: 0, name: "Daniel Simonov", text: "Test message"},
+                {id: 0, name: "ServiceWorker", text: "This chat is empty, be first!"},
             ],
         },
     },
