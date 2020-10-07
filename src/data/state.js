@@ -1,3 +1,6 @@
+import postsReducer from "./postsReducer";
+import chatReducer from "./chatReducer";
+
 let store = {
     _state: {
         currentUserData: {
@@ -108,24 +111,17 @@ let store = {
     },
 
     dispatch(action){
-        if (action.type === 'SORT-POSTS'){
-            this._state.profilePostsData[action.profile].sort((a, b) => b.id - a.id );
-        } else if (action.type === 'ADD-POST'){
-            let newPost = {
-                id: this._state.profilePostsData[action.profile].length,
-                name: this._state.currentUserData.userInfo.name,
-                text: action.postText,
-            };
-            this._state.profilePostsData[action.profile].push(newPost);
-            this.dispatch(sortPostsActionCreator(action.profile));
-            this._callSubscriber();
-        } else if (action.type === 'ADD-MESSAGE'){
-            let newMessage = {
-                id: this._state.chatsData[action.profile].length,
-                name: this._state.currentUserData.userInfo.name,
-                text: action.text,
-            }
-            this._state.chatsData[action.profile].push(newMessage);
+        this._state.profilePostsData = postsReducer(
+            this._state.profilePostsData,
+            this._state.currentUserData,
+            action
+        );
+        this._state.chatsData = chatReducer(
+            this._state.chatsData,
+            this._state.currentUserData,
+            action
+        );
+        if (action.type !== 'SORT-POSTS'){
             this._callSubscriber();
         }
     },
