@@ -1,6 +1,18 @@
+.ChatWindow{
+    min-height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
 .chat-window{
     display: grid;
     grid-template-rows: repeat(auto-fit, 90px);
-    margin-left: 16px;
-    margin-bottom: 16px;
+    padding: 16px;
+}
+
+.chat-window__notification{
+    position: relative;
+    top: -210px;
+    left: 210px;
+    font-size: 20px;
+    color: var(--color-gray);
 }

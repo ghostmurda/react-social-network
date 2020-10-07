@@ -43,7 +43,12 @@ function Main(props) {
                             profilePosts={props.profilePosts}
                         />
                     }/>
-                    <Route path="/dialogs" component={Dialogs} />
+                    <Route path="/dialogs" render={() =>
+                        <Dialogs
+                            userListData={props.user.followingList}
+                            chats={props.chats}
+                        />
+                    } />
                 </div>
             </div>
         </BrowserRouter>

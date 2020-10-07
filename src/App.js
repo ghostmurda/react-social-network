@@ -11,6 +11,7 @@ function App(props) {
                   popularUsers={props.appState.popularUsersData}
                   profilePosts={props.appState.profilePostsData}
                   dispatch={props.dispatch}
+                  chats={props.appState.chatsData}
             />
         </div>
     );

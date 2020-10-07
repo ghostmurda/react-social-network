@@ -13,7 +13,12 @@ function ChatCard(props){
                 />
                 <div className="chat-card__description">
                     <div className="chat-card__name">
-                        <Link to="/dialogs/1">
+                        <Link to={{
+                            pathname: `/dialogs/${props.name}`,
+                            state: {
+                                chatData: props.chatData,
+                            }
+                        }}>
                             {props.name}
                         </Link>
                     </div>

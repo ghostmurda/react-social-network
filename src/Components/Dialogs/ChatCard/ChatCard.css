@@ -2,7 +2,9 @@
     height: 64px;
     border-bottom: 1px solid var(--color-border);
     padding: 16px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 64px auto;
+    grid-gap: 16px;
 }
 
 .chat-card__avatar{
@@ -20,7 +22,6 @@
     cursor: pointer;
     font-size: 15px;
     text-decoration: none;
-    margin-left: 16px;
 }
 
 .chat-card__name:hover{
