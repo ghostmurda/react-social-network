@@ -63,3 +63,14 @@
 .dialogs-page__chats::-webkit-scrollbar {
     width: 0px;
 }
+
+.window__header{
+    position: fixed;
+    background: white;
+    width: 550px;
+    line-height: 48px;
+    transform: translateY(-16px);
+    z-index: 10;
+    margin-left: 16px;
+    margin-top: 16px;
+}

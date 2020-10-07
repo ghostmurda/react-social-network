@@ -38,6 +38,7 @@ function Dialogs(props){
         <div className="Dialogs">
             <div className="dialogs-page">
                 <div className="dialogs-page__window">
+                    <div className="window__header">{data.chatName}</div>
                     <ChatWindow data={data}/>
                 </div>
                 <div className="dialogs-page__input">
