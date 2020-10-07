@@ -11,8 +11,10 @@ function Dialogs(){
                     <ChatWindow />
                 </div>
                 <div className="dialogs-page__input">
-                    <input type="text" placeholder="Write a message" />
-                    <button className="btn">Send</button>
+                    <textarea placeholder="Write a message"/>
+                    <div className="input__btn-wrapper">
+                        <button className="btn">Send</button>
+                    </div>
                 </div>
                 <div className="dialogs-page__chats">
                     <div className="secondary-list__header">Chats</div>

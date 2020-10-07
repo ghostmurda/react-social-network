@@ -5,7 +5,7 @@ import './ChatWindow.css';
 function ChatWindow(){
     const endRef = useRef(null);
     useEffect(() => {
-        endRef.current.scrollIntoView({ behavior: 'smooth' });
+        endRef.current.scrollIntoView({behavior: 'smooth'});
     });
     return (
         <div className="ChatWindow">
