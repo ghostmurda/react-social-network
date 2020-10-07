@@ -12,6 +12,8 @@
     border: 1px solid var(--color-border);
     box-shadow: inset 0px -1px 0px var(--color-shadow);
     border-radius: 5px;
+
+    overflow: auto;
 }
 
 .dialogs-page__input{

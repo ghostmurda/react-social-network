@@ -1,0 +1,17 @@
+.Message{
+    display: grid;
+    grid-template-columns: 40px 480px;
+    grid-gap: 16px;
+    grid-template-rows: auto;
+    margin-top: 16px;
+}
+
+.message__creator img{
+    border-radius: 50%;
+}
+
+.message__body{
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    padding: 16px;
+}

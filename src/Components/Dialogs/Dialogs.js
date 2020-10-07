@@ -1,13 +1,14 @@
 import React from "react";
 import './Dialogs.css';
 import ChatCard from "./ChatCard/ChatCard";
+import ChatWindow from "./ChatWindow/ChatWindow";
 
 function Dialogs(){
     return (
         <div className="Dialogs">
             <div className="dialogs-page">
                 <div className="dialogs-page__window">
-
+                    <ChatWindow />
                 </div>
                 <div className="dialogs-page__input">
                     <input type="text" placeholder="Write a message" />
