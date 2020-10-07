@@ -16,6 +16,7 @@ function ChatCard(props){
                         <Link to={{
                             pathname: `/dialogs/${props.name}`,
                             state: {
+                                chatName: props.name,
                                 chatData: props.chatData,
                             }
                         }}>

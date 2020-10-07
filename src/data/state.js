@@ -119,6 +119,14 @@ let store = {
             this._state.profilePostsData[action.profile].push(newPost);
             this.dispatch(sortPostsActionCreator(action.profile));
             this._callSubscriber();
+        } else if (action.type === 'ADD-MESSAGE'){
+            let newMessage = {
+                id: this._state.chatsData[action.profile].length,
+                name: this._state.currentUserData.userInfo.name,
+                text: action.text,
+            }
+            this._state.chatsData[action.profile].push(newMessage);
+            this._callSubscriber();
         }
     },
 };
@@ -137,5 +145,13 @@ export const addPostActionCreator = function (profile, text){
         postText: text,
     };
 };
+
+export const addMessageActionCreator = function (profile, text){
+    return {
+        type: 'ADD-MESSAGE',
+        profile: profile,
+        text: text,
+    }
+}
 
 export default store;

@@ -47,6 +47,7 @@ function Main(props) {
                         <Dialogs
                             userListData={props.user.followingList}
                             chats={props.chats}
+                            dispatch={props.dispatch}
                         />
                     } />
                 </div>
