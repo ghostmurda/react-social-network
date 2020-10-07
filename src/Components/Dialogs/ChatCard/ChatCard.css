@@ -1,0 +1,28 @@
+.chat-card{
+    height: 64px;
+    border-bottom: 1px solid var(--color-border);
+    padding: 16px;
+    display: flex;
+}
+
+.chat-card__avatar{
+    border-radius: 50%;
+    width: 64px;
+}
+
+.chat-card__description{
+    transform: translateY(16px);
+}
+
+.chat-card__name *{
+    color: var(--color-blue);
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 15px;
+    text-decoration: none;
+    margin-left: 16px;
+}
+
+.chat-card__name:hover{
+    text-decoration: underline;
+}
