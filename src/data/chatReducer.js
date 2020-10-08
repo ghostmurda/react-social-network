@@ -1,3 +1,5 @@
+const ADD_MESSAGE = 'ADD_MESSAGE';
+
 let initialState = {
     "Pavel Durov": [
         {id: 0, name: "ServiceWorker", text: "This chat is empty, be first!"},
@@ -33,7 +35,7 @@ let initialState = {
 
 const chatReducer = (state = initialState, action) => {
     switch (action.type){
-        case 'ADD-MESSAGE':
+        case ADD_MESSAGE:
             let newMessage = {
                 id: state[action.profile].length,
                 name: action.messageCreator,
@@ -48,7 +50,7 @@ const chatReducer = (state = initialState, action) => {
 
 export const addMessageActionCreator = function (profile, text, messageCreator){
     return {
-        type: 'ADD-MESSAGE',
+        type: ADD_MESSAGE,
         profile: profile,
         text: text,
         messageCreator: messageCreator,

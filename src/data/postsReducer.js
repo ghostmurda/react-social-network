@@ -1,3 +1,5 @@
+const ADD_POST = 'ADD_POST';
+
 let initialState = {
     "Daniel Simonov": [
         {id: 0, name: "Daniel Simonov", text: "Test post"},
@@ -71,7 +73,7 @@ for (let item in initialState){
 
 const postsReducer = (state = initialState, action ) => {
     switch (action.type){
-        case 'ADD-POST':
+        case ADD_POST:
             let newPost = {
                 id: state[action.profile].length,
                 name: action.postCreator,
@@ -87,7 +89,7 @@ const postsReducer = (state = initialState, action ) => {
 
 export const addPostActionCreator = function (profile, text, postCreator){
     return {
-        type: 'ADD-POST',
+        type: ADD_POST,
         profile: profile,
         text: text,
         postCreator: postCreator,
