@@ -11,7 +11,6 @@ function UserList(props) {
             followers={item.followers}
             following={item.following}
             info={item.info}
-            postsData={props.profilePosts}
         />;
     });
     let userSecondaryListElements = props.userSecondaryListData.map((item, i) => {
@@ -22,7 +21,6 @@ function UserList(props) {
             followers={item.followers}
             following={item.following}
             info={item.info}
-            postsData={props.profilePosts}
         />;
     });
 
@@ -33,7 +31,7 @@ function UserList(props) {
                     {userListElements}
                 </div>
                 <div className="users-page__secondary-list">
-                    <div className="secondary-list__header">{props.secondaryListType}</div>
+                    <div className="secondary-list__header">Popular</div>
                     <span>&nbsp;</span>
                     <div className="UserSmallCard">
                         {userSecondaryListElements}

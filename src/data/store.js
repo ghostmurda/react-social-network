@@ -1,3 +1,5 @@
+//Now disabled
+
 import postsReducer from "./postsReducer";
 import chatReducer from "./chatReducer";
 
