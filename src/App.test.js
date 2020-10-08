@@ -7,9 +7,7 @@ import {Provider} from "react-redux";
 test('renders Home link', () => {
     const {getByText} = render(
         <Provider store={store}>
-            <App appState={store.getState()}
-                 dispatch={store.dispatch.bind(store)}
-            />
+            <App/>
         </Provider>
     );
     const linkElement = getByText("Home");
