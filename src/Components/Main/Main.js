@@ -5,6 +5,7 @@ import Profile from '../Profile/Profile'
 import './Main.css';
 import {Route, BrowserRouter, Redirect} from 'react-router-dom';
 import Dialogs from "../Dialogs/Dialogs";
+import ProfileContainer from "../Profile/ProfileContainer";
 
 function Main(props) {
     return (
@@ -16,14 +17,14 @@ function Main(props) {
                         <Redirect to="/react-social-network"/>
                     </Route>
                     <Route exact path="/react-social-network" render={() =>
-                        <Profile
+                        <ProfileContainer
                             userData={props.user.userInfo}
                             userPosts={props.profilePosts}
                             dispatch={props.dispatch}
                         />}
                     />
                     <Route path="/user" render={() =>
-                            <Profile
+                            <ProfileContainer
                                 userData={props.user.userInfo}
                                 dispatch={props.dispatch}
                             />}

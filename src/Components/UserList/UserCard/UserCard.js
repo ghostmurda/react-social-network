@@ -16,11 +16,13 @@ function UserCard(props) {
                         <Link to={{
                             pathname: `/user/${props.name}`,
                             state: {
-                                name: props.name,
-                                followers: props.followers,
-                                posts: props.posts,
-                                following: props.following,
-                                info: props.info,
+                                userData: {
+                                    name: props.name,
+                                    followers: props.followers,
+                                    posts: props.posts,
+                                    following: props.following,
+                                    info: props.info,
+                                },
                                 postsData: props.postsData,
                             }
                         }}>

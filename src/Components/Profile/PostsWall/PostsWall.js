@@ -2,7 +2,7 @@ import React from "react";
 import Post from "./Post/Post";
 
 function PostsWall(props){
-    let postElements = props.postsData[props.profileOwner].map((item, i) => {
+    let postElements = props.postsData.map((item, i) => {
         return <Post
             key={i}
             name={item.name}
