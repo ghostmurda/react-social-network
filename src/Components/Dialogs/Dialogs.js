@@ -30,7 +30,7 @@ function Dialogs(props){
             if (!text){
                 return false;
             }
-            props.dispatch(addMessageActionCreator(profile, text));
+            props.dispatch(addMessageActionCreator(profile, text, props.userData.name));
             newMessageElement.current.value = '';
         }
     }

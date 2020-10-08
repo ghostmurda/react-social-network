@@ -36,7 +36,7 @@ const chatReducer = (state = initialState, action) => {
         case 'ADD-MESSAGE':
             let newMessage = {
                 id: state[action.profile].length,
-                name: 'Daniel Simonov',//currentUser.userInfo.name,
+                name: action.messageCreator,
                 text: action.text,
             }
             state[action.profile].push(newMessage);
@@ -46,11 +46,12 @@ const chatReducer = (state = initialState, action) => {
     }
 }
 
-export const addMessageActionCreator = function (profile, text){
+export const addMessageActionCreator = function (profile, text, messageCreator){
     return {
         type: 'ADD-MESSAGE',
         profile: profile,
         text: text,
+        messageCreator: messageCreator,
     }
 }
 

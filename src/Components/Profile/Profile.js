@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import './Profile.css';
 import PostsWall from "./PostsWall/PostsWall";
 import {withRouter} from 'react-router-dom';
@@ -14,14 +14,14 @@ function Profile(props){
         data = props.location.state;
         profilePostsData = props.location.state.postsData;
     }
-    let newPostElement = React.createRef();
+    let newPostElement = useRef();
     let addPost = () => {
         let profile = data.name;
         let text = newPostElement.current.value;
         if (!text) {
             return false;
         }
-        props.dispatch(addPostActionCreator(profile, text));
+        props.dispatch(addPostActionCreator(profile, text, props.userData.name));
         newPostElement.current.value = '';
     }
 

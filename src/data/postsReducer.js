@@ -65,17 +65,17 @@ let initialState = {
         },
     ],
 };
+for (let item in initialState){
+    initialState[item].sort((a, b) => b.id - a.id );
+}
 
 const postsReducer = (state = initialState, action ) => {
     switch (action.type){
-        case 'SORT-POSTS':
-            state[action.profile].sort((a, b) => b.id - a.id );
-            return state;
         case 'ADD-POST':
             let newPost = {
                 id: state[action.profile].length,
-                name: "Daniel Simonov",//currentUser.userInfo.name,
-                text: action.postText,
+                name: action.postCreator,
+                text: action.text,
             };
             state[action.profile].push(newPost);
             state[action.profile].sort((a, b) => b.id - a.id );
@@ -85,18 +85,12 @@ const postsReducer = (state = initialState, action ) => {
     }
 }
 
-export const sortPostsActionCreator = function (profileOwner){
-    return {
-        type: 'SORT-POSTS',
-        profile: profileOwner,
-    };
-};
-
-export const addPostActionCreator = function (profile, text){
+export const addPostActionCreator = function (profile, text, postCreator){
     return {
         type: 'ADD-POST',
         profile: profile,
-        postText: text,
+        text: text,
+        postCreator: postCreator,
     };
 };
 

@@ -24,6 +24,7 @@ function Main(props) {
                     />
                     <Route path="/user" render={() =>
                             <Profile
+                                userData={props.user.userInfo}
                                 dispatch={props.dispatch}
                             />}
                     />
@@ -47,6 +48,7 @@ function Main(props) {
                         <Dialogs
                             userListData={props.user.followingList}
                             chats={props.chats}
+                            userData={props.user.userInfo}
                             dispatch={props.dispatch}
                         />
                     } />
