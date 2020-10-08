@@ -1,27 +1,30 @@
-import React from 'react';
-import {withRouter} from 'react-router-dom';
 import {addPostActionCreator} from "../../data/postsReducer";
 import Profile from "./Profile";
+import {connect} from "react-redux";
+import {withRouter} from 'react-router-dom';
 
-function ProfileContainer(props){
-    let data = {};
-    if (!props.location.state){
-        data.userData = props.userData;
-        data.userPosts = props.userPosts;
-    } else {
-        data.userData = props.location.state.userData;
-        data.userPosts = props.location.state.postsData;
+let mapStateToProps = (state, ownProps) => {
+    let profileData = {
+        userData: state.currentUserData.userInfo,
+        userPosts: state.profilePostsData,
+    };
+    if (ownProps.location.state) {
+        profileData.userData = ownProps.location.state.userData;
     }
-    let addPost = (profile, text, postCreator = props.userData.name) => {
-        props.dispatch(addPostActionCreator(profile, text, postCreator));
-    }
+    return {
+        data: profileData,
+        postCreator: state.currentUserData.userInfo.name,
+    };
+};
 
-    return (
-        <Profile
-            data={data}
-            addPost={addPost}
-        />
-    );
-}
+let mapDispatchToProps = (dispatch) => {
+    return {
+        addPost: (profile, text, postCreator) => {
+            dispatch(addPostActionCreator(profile, text, postCreator));
+        }
+    };
+};
+
+const ProfileContainer = connect(mapStateToProps, mapDispatchToProps)(Profile);
 
 export default withRouter(ProfileContainer);

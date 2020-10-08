@@ -15,19 +15,8 @@ function Main(props) {
                     <Route path="/">
                         <Redirect to="/react-social-network"/>
                     </Route>
-                    <Route exact path="/react-social-network" render={() =>
-                        <ProfileContainer
-                            userData={props.user.userInfo}
-                            userPosts={props.profilePosts}
-                            dispatch={props.dispatch}
-                        />}
-                    />
-                    <Route path="/user" render={() =>
-                            <ProfileContainer
-                                userData={props.user.userInfo}
-                                dispatch={props.dispatch}
-                            />}
-                    />
+                    <Route exact path="/react-social-network" render={() => <ProfileContainer/>}/>
+                    <Route path="/user" render={() => <ProfileContainer/>}/>
                     <Route exact path="/following" render={() =>
                         <UserList
                             userListData={props.user.followingList}

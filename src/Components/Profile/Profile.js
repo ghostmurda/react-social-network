@@ -10,7 +10,7 @@ function Profile(props){
         if (!text) {
             return false;
         }
-        props.addPost(profile, text)
+        props.addPost(profile, text, props.postCreator)
         newPostElement.current.value = '';
     }
 
