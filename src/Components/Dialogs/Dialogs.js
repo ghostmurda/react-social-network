@@ -1,6 +1,7 @@
 import React, {useRef} from "react";
 import './Dialogs.css';
 import ChatWindow from "./ChatWindow/ChatWindow";
+import ChatCard from "./ChatCard/ChatCard";
 
 function Dialogs(props){
     const newMessageElement = useRef();
@@ -11,10 +12,17 @@ function Dialogs(props){
             if (!text){
                 return false;
             }
-            props.addMessage(profile, text);
+            props.addMessage(profile, text, props.messageCreator);
             newMessageElement.current.value = '';
         }
     }
+    let chatsElements = props.userListData.map((item, i) => {
+        return <ChatCard
+            key={i}
+            name={item.name}
+            chatData={props.chatsData[item.name]}
+        />
+    });
     return (
         <div className="Dialogs">
             <div className="dialogs-page">
@@ -35,7 +43,7 @@ function Dialogs(props){
                 <div className="dialogs-page__chats">
                     <div className="secondary-list__header">Chats</div>
                     <span>&nbsp;</span>
-                    {props.chatsElements}
+                    {chatsElements}
                 </div>
             </div>
         </div>

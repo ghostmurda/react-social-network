@@ -18,14 +18,7 @@ function Main(props) {
                     <Route exact path="/react-social-network" render={() => <ProfileContainer/>}/>
                     <Route path="/user" render={() => <ProfileContainer/>}/>
                     <Route exact path="/following" render={() => <UserListContainer/>}/>
-                    <Route path="/dialogs" render={() =>
-                        <DialogsContainer
-                            userListData={props.user.followingList}
-                            chats={props.chats}
-                            userData={props.user.userInfo}
-                            dispatch={props.dispatch}
-                        />
-                    } />
+                    <Route path="/dialogs" render={() => <DialogsContainer/>}/>
                 </div>
             </div>
         </BrowserRouter>
