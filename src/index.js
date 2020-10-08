@@ -6,22 +6,19 @@ import * as serviceWorker from './serviceWorker';
 import store from "./data/reduxStore";
 import {Provider} from "react-redux";
 
-let reRender = (state) => {
+let reRender = () => {
     ReactDOM.render(
         <React.StrictMode>
             <Provider store={store}>
-                <App appState={state}
-                     dispatch={store.dispatch.bind(store)}
-                />
+                <App/>
             </Provider>
         </React.StrictMode>,
         document.getElementById('root')
     );
 }
-reRender(store.getState());
+reRender();
 store.subscribe(() => {
-    let state = store.getState();
-    reRender(state);
+    reRender();
 });
 
 serviceWorker.unregister();

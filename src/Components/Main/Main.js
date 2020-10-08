@@ -12,9 +12,7 @@ function Main(props) {
             <div className="Main">
                 <NavMenu/>
                 <div className="main__content">
-                    <Route path="/">
-                        <Redirect to="/react-social-network"/>
-                    </Route>
+                    <Route path="/"> <Redirect to="/react-social-network"/> </Route>
                     <Route exact path="/react-social-network" render={() => <ProfileContainer/>}/>
                     <Route path="/user" render={() => <ProfileContainer/>}/>
                     <Route exact path="/following" render={() => <UserListContainer/>}/>
