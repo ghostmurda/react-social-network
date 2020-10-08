@@ -10,7 +10,7 @@ function PostsWall(props){
             text={item.text}
         />;
     });
-    props.dispatch(sortPostsActionCreator(props.profileOwner));
+    //props.dispatch(sortPostsActionCreator(props.profileOwner));
     return (
         <div className="PostsWall">
             {postElements}
