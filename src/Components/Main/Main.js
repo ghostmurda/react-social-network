@@ -1,7 +1,6 @@
 import React from 'react'
 import UserList from '../UserList/UserList';
 import NavMenu from '../NavMenu/NavMenu'
-import Profile from '../Profile/Profile'
 import './Main.css';
 import {Route, BrowserRouter, Redirect} from 'react-router-dom';
 import ProfileContainer from "../Profile/ProfileContainer";

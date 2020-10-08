@@ -1,6 +1,5 @@
 import React, {useRef} from "react";
 import './Dialogs.css';
-import ChatCard from "./ChatCard/ChatCard";
 import ChatWindow from "./ChatWindow/ChatWindow";
 
 function Dialogs(props){
