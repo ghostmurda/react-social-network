@@ -2,35 +2,17 @@ import React, {useRef} from "react";
 import './Dialogs.css';
 import ChatCard from "./ChatCard/ChatCard";
 import ChatWindow from "./ChatWindow/ChatWindow";
-import {withRouter} from 'react-router-dom';
-import {addMessageActionCreator} from "../../data/chatReducer";
 
 function Dialogs(props){
-    let data;
-    let textAreaDisabled = false;
-    if (!props.location.state){
-        data = 'No data';
-        textAreaDisabled = true;
-    } else {
-        data = props.location.state;
-    }
-    let chatsElements = props.userListData.map((item, i) => {
-        return <ChatCard
-            key={i}
-            name={item.name}
-            chatData={props.chats[item.name]}
-        />
-    });
-
     const newMessageElement = useRef();
     let addMessage = () => {
-        if (data !== 'No data'){
-            let profile = data.chatName;
+        if (props.data !== 'No data'){
+            let profile = props.data.chatName;
             let text = newMessageElement.current.value;
             if (!text){
                 return false;
             }
-            props.dispatch(addMessageActionCreator(profile, text, props.userData.name));
+            props.addMessage(profile, text);
             newMessageElement.current.value = '';
         }
     }
@@ -38,13 +20,13 @@ function Dialogs(props){
         <div className="Dialogs">
             <div className="dialogs-page">
                 <div className="dialogs-page__window">
-                    <div className="window__header">{data.chatName}</div>
-                    <ChatWindow data={data}/>
+                    <div className="window__header">{props.data.chatName}</div>
+                    <ChatWindow data={props.data}/>
                 </div>
                 <div className="dialogs-page__input">
                     <textarea
                         placeholder="Write a message"
-                        disabled={textAreaDisabled}
+                        disabled={props.textAreaDisabled}
                         ref={newMessageElement}
                     />
                     <div className="input__btn-wrapper">
@@ -54,11 +36,11 @@ function Dialogs(props){
                 <div className="dialogs-page__chats">
                     <div className="secondary-list__header">Chats</div>
                     <span>&nbsp;</span>
-                    {chatsElements}
+                    {props.chatsElements}
                 </div>
             </div>
         </div>
     );
 }
 
-export default withRouter(Dialogs);
+export default Dialogs;

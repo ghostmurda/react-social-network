@@ -4,8 +4,8 @@ import NavMenu from '../NavMenu/NavMenu'
 import Profile from '../Profile/Profile'
 import './Main.css';
 import {Route, BrowserRouter, Redirect} from 'react-router-dom';
-import Dialogs from "../Dialogs/Dialogs";
 import ProfileContainer from "../Profile/ProfileContainer";
+import DialogsContainer from "../Dialogs/DialogsContainer";
 
 function Main(props) {
     return (
@@ -46,7 +46,7 @@ function Main(props) {
                         />
                     }/>
                     <Route path="/dialogs" render={() =>
-                        <Dialogs
+                        <DialogsContainer
                             userListData={props.user.followingList}
                             chats={props.chats}
                             userData={props.user.userInfo}
