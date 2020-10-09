@@ -80,9 +80,7 @@ const postsReducer = (state = initialState, action ) => {
                 text: action.text,
             };
             let stateCopy = {...state};
-            for (let item in stateCopy){
-                stateCopy[item] = [...state[item]];
-            }
+            stateCopy[action.profile] = [...state[action.profile]]
             stateCopy[action.profile].push(newPost);
             stateCopy[action.profile].sort((a, b) => b.id - a.id );
             return stateCopy;
