@@ -6,6 +6,7 @@
 .chat-window{
     display: grid;
     grid-template-rows: repeat(auto-fit, 90px);
+    grid-gap: 16px;
     padding: 16px;
 }
 

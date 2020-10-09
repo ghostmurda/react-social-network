@@ -44,7 +44,6 @@ const chatReducer = (state = initialState, action) => {
             let stateCopy = {...state};
             stateCopy[action.profile] = [...state[action.profile]];
             stateCopy[action.profile].push(newMessage);
-            console.log(stateCopy);
             return stateCopy;
         default:
             return state;

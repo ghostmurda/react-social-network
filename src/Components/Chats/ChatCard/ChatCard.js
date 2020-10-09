@@ -17,7 +17,6 @@ function ChatCard(props){
                             pathname: `/dialogs/${props.name}`,
                             state: {
                                 chatName: props.name,
-                                chatData: props.chatData,
                             }
                         }}>
                             {props.name}
