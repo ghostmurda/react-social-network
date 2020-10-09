@@ -6,19 +6,13 @@ import * as serviceWorker from './serviceWorker';
 import store from "./data/reduxStore";
 import {Provider} from "react-redux";
 
-let reRender = () => {
-    ReactDOM.render(
-        <React.StrictMode>
-            <Provider store={store}>
-                <App/>
-            </Provider>
-        </React.StrictMode>,
-        document.getElementById('root')
-    );
-}
-reRender();
-store.subscribe(() => {
-    reRender();
-});
+ReactDOM.render(
+    <React.StrictMode>
+        <Provider store={store}>
+            <App/>
+        </Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
+);
 
 serviceWorker.unregister();
