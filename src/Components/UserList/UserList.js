@@ -5,7 +5,7 @@ import * as axios from 'axios';
 
 function UserList(props) {
 
-    axios.get('http://localhost:8080/users')
+    axios.get('http://test-social-network-api.herokuapp.com/users')
         .then(responce => {
             props.getUsers(responce.data);
         })
