@@ -1,5 +1,6 @@
 import {connect} from "react-redux";
 import UserList from "./UserList";
+import {getUsersCreator} from "../../data/currentUserReducer";
 
 let mapStateToProps = (state) => {
     return {
@@ -8,6 +9,14 @@ let mapStateToProps = (state) => {
     };
 };
 
-const UserListContainer = connect(mapStateToProps)(UserList);
+let mapDispatchToProps = (dispatch) => {
+    return {
+        getUsers: (followingList) => {
+            dispatch(getUsersCreator(followingList));
+        },
+    };
+}
+
+const UserListContainer = connect(mapStateToProps, mapDispatchToProps)(UserList);
 
 export default UserListContainer;

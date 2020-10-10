@@ -1,8 +1,15 @@
 import React from 'react';
 import './UserList.css';
 import UserCard from './UserCard/UserCard';
+import * as axios from 'axios';
 
 function UserList(props) {
+
+    axios.get('http://localhost:8080/users')
+        .then(responce => {
+            props.getUsers(responce.data);
+        })
+
     let userListElements = props.userListData.map((item, i) => {
         return <UserCard
             key={i}
@@ -23,7 +30,6 @@ function UserList(props) {
             info={item.info}
         />;
     });
-
     return (
         <div className="UserList">
             <div className="users-page">

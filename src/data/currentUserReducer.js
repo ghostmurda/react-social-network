@@ -1,3 +1,5 @@
+const GET_USERS = 'GET_USERS';
+
 let initialState = {
     followingList: [
         {name: "Pavel Durov", posts: "3", followers: "4", following: "20", info: "Creator of VK and Telegram"},
@@ -21,7 +23,23 @@ let initialState = {
 };
 
 const currentUserReducer = (state = initialState, action) => {
-    return state;
+    switch (action.type){
+        case GET_USERS:
+            let userList = action.userList;
+            let stateCopy = {...state};
+            stateCopy.followingList = [...state.followingList];
+            stateCopy.followingList = userList;
+            return stateCopy;
+        default:
+            return state;
+    }
 }
+
+export const getUsersCreator = function(followingList){
+    return{
+        type: GET_USERS,
+        userList: followingList,
+    };
+};
 
 export default currentUserReducer;
