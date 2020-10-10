@@ -6,7 +6,7 @@ import * as axios from 'axios';
 class UserList extends React.Component{
     constructor(props) {
         super(props);
-        axios.get('http://test-social-network-api.herokuapp.com/users')
+        axios.get('https://test-social-network-api.herokuapp.com/users')
             .then(responce => {
                 this.props.getUsers(responce.data);
             })
