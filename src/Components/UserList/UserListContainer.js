@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import UserList from "./UserList";
+import UserListApi from "./UserListApi";
 import {getUsersCreator} from "../../data/currentUserReducer";
 import {getPopularUsersCreator} from "../../data/popularUsersReducer";
 
@@ -21,6 +21,6 @@ let mapDispatchToProps = (dispatch) => {
     };
 }
 
-const UserListContainer = connect(mapStateToProps, mapDispatchToProps)(UserList);
+const UserListContainer = connect(mapStateToProps, mapDispatchToProps)(UserListApi);
 
 export default UserListContainer;
