@@ -41,3 +41,8 @@
     transform: translateY(-16px);
     z-index: 10;
 }
+
+.isFetching{
+    margin-top: 20%;
+    margin-left: 33%;
+}

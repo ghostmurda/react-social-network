@@ -1,12 +1,13 @@
 import {connect} from "react-redux";
 import UserListApi from "./UserListApi";
-import {getUsersCreator} from "../../data/currentUserReducer";
+import {getUsersCreator, toggleLoaderFollowingList} from "../../data/currentUserReducer";
 import {getPopularUsersCreator} from "../../data/popularUsersReducer";
 
 let mapStateToProps = (state) => {
     return {
         userListData: state.currentUserData.followingList,
         userSecondaryListData: state.popularUsersData,
+        isFetchingUserList: state.currentUserData.isFetchingFollowingList,
     };
 };
 
@@ -17,6 +18,9 @@ let mapDispatchToProps = (dispatch) => {
         },
         getPopularUsers: (popularList) => {
             dispatch(getPopularUsersCreator(popularList));
+        },
+        toggleLoaderUserList: (isFetching) => {
+            dispatch(toggleLoaderFollowingList(isFetching));
         },
     };
 }
