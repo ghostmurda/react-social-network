@@ -1,7 +1,6 @@
 import React from 'react';
 import * as axios from 'axios';
 import UserList from "./UserList";
-import loader from '../../img/loader.svg';
 
 class UserListApi extends React.Component {
     componentDidMount() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import './UserList.css';
 import UserCard from './UserCard/UserCard';
-import LoaderImg from '../../img/loader.svg';
+import Loader from "../Loader/Loader";
 
 function UserList(props) {
     let userListElements = props.userListData.map((item, i) => {
@@ -29,7 +29,7 @@ function UserList(props) {
             <div className="users-page">
                 <div className="users-page__list">
                     {props.isFetchingUserList ?
-                        <img className="isFetching" src={LoaderImg} alt="Loading..."/> :
+                        <Loader/> :
                         userListElements
                     }
                 </div>
@@ -37,7 +37,10 @@ function UserList(props) {
                     <div className="secondary-list__header">Popular</div>
                     <span>&nbsp;</span>
                     <div className="UserSmallCard">
-                        {userSecondaryListElements}
+                        {props.isFetchingUserList ?
+                            <Loader additional="small"/> :
+                            userSecondaryListElements
+                        }
                     </div>
                 </div>
             </div>
