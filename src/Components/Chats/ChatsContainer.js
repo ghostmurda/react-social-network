@@ -1,7 +1,8 @@
 import {connect} from 'react-redux';
 import Chats from "./Chats";
-import {addMessageActionCreator} from "../../data/chatReducer";
 import {withRouter} from 'react-router-dom';
+import {addMessageActionCreator} from "../../data/chatReducer";
+import {getUsersCreator} from "../../data/currentUserReducer";
 
 let mapPropsToState = (state, ownProps) => {
     let chatData = {
@@ -21,7 +22,10 @@ let mapDispatchToState = (dispatch) => {
     return {
         addMessage: (profile, text, messageCreator) => {
             dispatch(addMessageActionCreator(profile, text, messageCreator));
-        }
+        },
+        getUsers: (followingList) => {
+            dispatch(getUsersCreator(followingList));
+        },
     };
 };
 
