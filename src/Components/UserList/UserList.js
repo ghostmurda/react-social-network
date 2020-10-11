@@ -8,7 +8,12 @@ class UserList extends React.Component{
         axios.get('https://test-social-network-api.herokuapp.com/api/users/following')
             .then(responce => {
                 this.props.getUsers(responce.data);
-            })
+            });
+
+        axios.get('https://test-social-network-api.herokuapp.com/api/users/popular?skip=0&pageSize=5')
+            .then(response => {
+               this.props.getPopularUsers(response.data);
+            });
     }
 
     render() {

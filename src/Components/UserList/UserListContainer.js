@@ -1,6 +1,7 @@
 import {connect} from "react-redux";
 import UserList from "./UserList";
 import {getUsersCreator} from "../../data/currentUserReducer";
+import {getPopularUsersCreator} from "../../data/popularUsersReducer";
 
 let mapStateToProps = (state) => {
     return {
@@ -13,6 +14,9 @@ let mapDispatchToProps = (dispatch) => {
     return {
         getUsers: (followingList) => {
             dispatch(getUsersCreator(followingList));
+        },
+        getPopularUsers: (popularList) => {
+            dispatch(getPopularUsersCreator(popularList));
         },
     };
 }
