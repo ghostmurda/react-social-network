@@ -7,21 +7,19 @@ function UserList(props) {
     let userListElements = props.userListData.map((item, i) => {
         return <UserCard
             key={i}
+            id={item.id}
             name={item.name}
             posts={item.posts}
             followers={item.followers}
-            following={item.following}
-            info={item.info}
         />;
     });
     let userSecondaryListElements = props.userSecondaryListData.map((item, i) => {
         return <UserCard
             key={i}
+            id={item.id}
             name={item.name}
             posts={item.posts}
             followers={item.followers}
-            following={item.following}
-            info={item.info}
         />;
     });
     return (

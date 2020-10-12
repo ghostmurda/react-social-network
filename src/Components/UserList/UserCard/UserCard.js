@@ -13,18 +13,7 @@ function UserCard(props) {
                 />
                 <div className="user-card__description">
                     <div className="user-card__name">
-                        <Link to={{
-                            pathname: `/user/${props.name}`,
-                            state: {
-                                userData: {
-                                    name: props.name,
-                                    followers: props.followers,
-                                    posts: props.posts,
-                                    following: props.following,
-                                    info: props.info,
-                                },
-                            }
-                        }}>
+                        <Link to={`/user/${props.id}`}>
                             {props.name}
                         </Link>
                     </div>

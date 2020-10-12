@@ -7,6 +7,7 @@ let mapStateToProps = (state, ownProps) => {
     return {
         data: state.profileUserData.profileData,
         isFetchingProfile: state.profileUserData.isFetching,
+        userId: ownProps.match.params.userId,
     };
 }
 

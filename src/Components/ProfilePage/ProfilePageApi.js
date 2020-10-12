@@ -6,7 +6,11 @@ class ProfilePageApi extends React.Component{
     componentDidMount() {
         const url = 'https://test-social-network-api.herokuapp.com/api/users';
         this.props.toggleLoader(true);
-        axios.get(`${url}/profile?userId=1`)
+        let id = 1;
+        if (this.props.userId !== undefined){
+            id = this.props.userId;
+        }
+        axios.get(`${url}/profile?userId=${id}`)
             .then(resp => {
                 this.props.toggleLoader(false);
                 this.props.getProfile(resp.data);
