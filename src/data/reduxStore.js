@@ -10,7 +10,7 @@ let reducers = combineReducers({
     popularUsersData: popularUsersReducer,
     chatsData: chatReducer,
     profilePostsData: postsReducer,
-    profileData: profileReducer,
+    profileUserData: profileReducer,
 });
 
 let store = createStore(reducers);

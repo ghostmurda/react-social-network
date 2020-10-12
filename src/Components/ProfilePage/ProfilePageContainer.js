@@ -1,16 +1,23 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import ProfilePageApi from "./ProfilePageApi";
+import {getProfileActionCreator, toggleLoaderProfile} from "../../data/profileReducer";
 
-let mapStateToProps = (state) => {
+let mapStateToProps = (state, ownProps) => {
     return {
-
+        data: state.profileUserData.profileData,
+        isFetchingProfile: state.profileUserData.isFetching,
     };
 }
 
 let mapDispatchToProps = (dispatch) => {
     return {
-
+        getProfile: (profileData) => {
+            dispatch(getProfileActionCreator(profileData));
+        },
+        toggleLoader: (isFetching) => {
+            dispatch(toggleLoaderProfile(isFetching));
+        }
     };
 }
 
