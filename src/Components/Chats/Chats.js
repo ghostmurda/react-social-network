@@ -1,55 +1,45 @@
-import React from "react";
+import React, {useRef} from "react";
 import ChatCard from "./ChatCard/ChatCard";
 import ChatWindow from "./ChatWindow/ChatWindow";
 import './Chats.css';
-import * as axios from "axios";
+import Loader from "../Loader/Loader";
 
-class Chats extends React.Component{
-    constructor(props) {
-        super(props);
-        this.newMessageElement = React.createRef();
-        this.addMessage = this.addMessage.bind(this);
-    }
-    addMessage = function (){
-        let profile = this.props.data.chatName;
-        let text = this.newMessageElement.current.value;
-        if (!text){
+function Chats(props) {
+    let newMessageElement = useRef();
+    let addMessage = () => {
+        let profile = props.data.chatName;
+        let text = newMessageElement.current.value;
+        if (!text) {
             return false;
         }
-        this.props.addMessage(profile, text, this.props.messageCreator);
-        this.newMessageElement.current.value = '';
+        props.addMessage(profile, text, props.messageCreator);
+        newMessageElement.current.value = '';
     }
-    componentDidMount() {
-        axios.get('https://test-social-network-api.herokuapp.com/api/users/following')
-            .then(responce => {
-                this.props.getUsers(responce.data);
-            })
-    }
-    render() {
-        return (
-            <div className="Chats">
-                <div className="chats-page">
-                    <div className="chats-page__window">
-                        <div className="window__header">{this.props.data.chatName}</div>
-                        <ChatWindow data={this.props.data.messages[this.props.data.chatName]}/>
-                    </div>
-                    <div className="chats-page__input">
-                        <textarea placeholder="Write a message" ref={this.newMessageElement}/>
-                        <div className="input__btn-wrapper">
-                            <button className="btn" onClick={this.addMessage}>Send</button>
-                        </div>
-                    </div>
-                    <div className="chats-page__chats">
-                        <div className="secondary-list__header">Chats</div>
-                        <span>&nbsp;</span>
-                        {this.props.userListData.map((item, i) => {
-                            return <ChatCard key={i} name={item.name}/>
-                        })}
+    let chatsElements = props.userListData.map((item, i) => {
+        return <ChatCard key={i} name={item.name}/>
+    });
+    return (
+        <div className="Chats">
+            <div className="chats-page">
+                <div className="chats-page__window">
+                    <div className="window__header">{props.data.chatName}</div>
+                    <ChatWindow data={props.data.messages[props.data.chatName]}/>
+                </div>
+                <div className="chats-page__input">
+                    <textarea placeholder="Write a message" ref={newMessageElement}/>
+                    <div className="input__btn-wrapper">
+                        <button className="btn" onClick={addMessage}>Send</button>
                     </div>
                 </div>
+                <div className="chats-page__chats">
+                    <div className="secondary-list__header">Chats</div>
+                    <span>&nbsp;</span>
+                    {props.isFetchingUserList ? <Loader additional="small"/> : chatsElements}
+                </div>
             </div>
-        );
-    }
+        </div>
+    );
+
 }
 
 export default Chats;
