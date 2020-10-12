@@ -28,19 +28,13 @@ function UserList(props) {
         <div className="UserList">
             <div className="users-page">
                 <div className="users-page__list">
-                    {props.isFetchingUserList ?
-                        <Loader/> :
-                        userListElements
-                    }
+                    {props.isFetchingUserList ? <Loader/> : userListElements}
                 </div>
                 <div className="users-page__secondary-list">
                     <div className="secondary-list__header">Popular</div>
                     <span>&nbsp;</span>
                     <div className="UserSmallCard">
-                        {props.isFetchingUserList ?
-                            <Loader additional="small"/> :
-                            userSecondaryListElements
-                        }
+                        {props.isFetchingPopularList ? <Loader additional="small"/> : userSecondaryListElements}
                     </div>
                 </div>
             </div>
