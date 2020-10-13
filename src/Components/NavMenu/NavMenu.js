@@ -11,7 +11,7 @@ function NavMenu(props) {
             {props.authData.auth ?
                 <div className="NavMenu">
                     <ul>
-                        <NavLink to="/react-social-network" activeClassName="link-selected">
+                        <NavLink to={`/user/${props.authData.userId}`} activeClassName="link-selected">
                             <li><HomeIcon/> &nbsp; Home</li>
                         </NavLink>
                         <NavLink to="/dialogs" activeClassName="link-selected">

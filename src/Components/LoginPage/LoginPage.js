@@ -1,16 +1,16 @@
 import React, {useEffect, useRef, useState} from "react";
-import { useHistory } from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import * as axios from 'axios';
 import './LoginPage.css';
 
-function LoginPage(props){
+function LoginPage(props) {
     const [loginProcess, setLoginProcess] = useState(false);
     let history = useHistory();
     const loginRef = useRef();
     const passwordRef = useRef();
 
     let authFunc = () => {
-        if (loginRef.current.value !== '' && passwordRef.current.value !== ''){
+        if (loginRef.current.value !== '' && passwordRef.current.value !== '') {
             setLoginProcess(true);
         }
     };
@@ -20,9 +20,15 @@ function LoginPage(props){
             const url = 'https://test-social-network-api.herokuapp.com';
             axios.get(`${url}/login?login=${loginRef.current.value}&password=${passwordRef.current.value}`)
                 .then(resp => {
-                    props.setAuth();
-                    props.getId(resp.data);
-                    history.push(`/user/${resp.data}`);
+                    if (resp.data !== 'failed'){
+                        props.setAuth();
+                        props.getId(resp.data);
+                        history.push(`/user/${resp.data}`);
+                    } else {
+                        loginRef.current.value = '';
+                        passwordRef.current.value = '';
+                        setLoginProcess(false);
+                    }
                 });
         }
     });
