@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import { useHistory } from 'react-router-dom';
 import * as axios from 'axios';
+import './LoginPage.css';
 
 function LoginPage(props){
     const [loginProcess, setLoginProcess] = useState(false);
@@ -27,9 +28,14 @@ function LoginPage(props){
     });
     return (
         <div className="LoginPage">
-            <input type="login" placeholder="Login" ref={loginRef}/>
-            <input type="password" placeholder="Password" ref={passwordRef}/>
-            <button onClick={authFunc}>Login</button>
+            <div className="login-page__form">
+                <input type="login" placeholder="Login" ref={loginRef}/>
+                <input type="password" placeholder="Password" ref={passwordRef}/>
+                <div className="from__btn-wrapper">
+                    <button className="btn" onClick={authFunc}>Sign in</button>
+                    <span>Forgot password?</span>
+                </div>
+            </div>
         </div>
     );
 }
