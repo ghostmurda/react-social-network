@@ -5,21 +5,26 @@ import {ReactComponent as FriendsIcon} from '../../img/friends-icon.svg';
 import {ReactComponent as DialogsIcon} from '../../img/dialogs-icon.svg';
 import {NavLink} from 'react-router-dom';
 
-function NavMenu(){
+function NavMenu(props) {
     return (
-        <div className="NavMenu">
-            <ul>
-                <NavLink to="/react-social-network" activeClassName="link-selected">
-                    <li><HomeIcon /> &nbsp; Home</li>
-                </NavLink>
-                <NavLink to="/dialogs" activeClassName="link-selected">
-                    <li><DialogsIcon /> &nbsp; Dialogs</li>
-                </NavLink>
-                <NavLink to="/following" activeClassName="link-selected">
-                    <li><FriendsIcon /> &nbsp; Following</li>
-                </NavLink>
-            </ul>
-        </div>
+        <>
+            {props.authData.auth ?
+                <div className="NavMenu">
+                    <ul>
+                        <NavLink to="/react-social-network" activeClassName="link-selected">
+                            <li><HomeIcon/> &nbsp; Home</li>
+                        </NavLink>
+                        <NavLink to="/dialogs" activeClassName="link-selected">
+                            <li><DialogsIcon/> &nbsp; Dialogs</li>
+                        </NavLink>
+                        <NavLink to="/following" activeClassName="link-selected">
+                            <li><FriendsIcon/> &nbsp; Following</li>
+                        </NavLink>
+                    </ul>
+                </div> :
+                null
+            }
+        </>
     );
 }
 

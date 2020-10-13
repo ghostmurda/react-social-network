@@ -2,11 +2,12 @@ import React from "react";
 import "./App.css";
 import HeaderContainer from "./Components/Header/HeaderContainer";
 import {BrowserRouter, Redirect, Route} from "react-router-dom";
-import NavMenu from "./Components/NavMenu/NavMenu";
+//import NavMenu from "./Components/NavMenu/NavMenu";
 import ProfilePageContainer from "./Components/ProfilePage/ProfilePageContainer";
 import UserListContainer from "./Components/UserList/UserListContainer";
 import ChatsContainer from "./Components/Chats/ChatsContainer";
 import LoginPageContainer from "./Components/LoginPage/LoginPageContainer";
+import NavMenuContainer from "./Components/NavMenu/NavMenuContainer";
 
 function App() {
     return (
@@ -14,7 +15,7 @@ function App() {
             <div className="App">
                 <HeaderContainer/>
                 <div className="app-main">
-                    <NavMenu/>
+                    <NavMenuContainer/>
                     <div className="app-main__content">
                         <Route path="/"> <Redirect to="/react-social-network"/> </Route>
                         <Route exact path="/react-social-network" render={() => <LoginPageContainer/>}/>
