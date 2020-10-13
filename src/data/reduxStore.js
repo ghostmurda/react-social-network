@@ -4,6 +4,7 @@ import postsReducer from "./postsReducer";
 import currentUserReducer from "./currentUserReducer";
 import popularUsersReducer from "./popularUsersReducer";
 import profileReducer from "./profileReducer";
+import authReducer from "./authReducer";
 
 let reducers = combineReducers({
     currentUserData: currentUserReducer,
@@ -11,6 +12,7 @@ let reducers = combineReducers({
     chatsData: chatReducer,
     profilePostsData: postsReducer,
     profileUserData: profileReducer,
+    authData: authReducer,
 });
 
 let store = createStore(reducers);
