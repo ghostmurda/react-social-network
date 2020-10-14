@@ -1,11 +1,6 @@
 import {connect} from "react-redux";
 import UserListApi from "./UserListApi";
-import {
-    getAllUsersCreator,
-    getFollowingUsersCreator,
-    toggleLoaderAllUsersCreator,
-    toggleLoaderFollowingListCreator,
-} from "../../redux/usersReducer";
+import {onGetAllUsersThunk, onGetFollowingListThunk} from "../../redux/usersReducer";
 
 let mapStateToProps = (state) => {
     return {
@@ -19,17 +14,11 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        getFollowingList: (followingList) => {
-            dispatch(getFollowingUsersCreator(followingList));
+        onGetFollowingList: (userId) => {
+            dispatch(onGetFollowingListThunk(userId));
         },
-        getAllUsers: (usersList) => {
-            dispatch(getAllUsersCreator(usersList));
-        },
-        toggleLoaderFollowingList: (isFetching) => {
-            dispatch(toggleLoaderFollowingListCreator(isFetching));
-        },
-        toggleLoaderAllUsers: (isFetching) => {
-            dispatch(toggleLoaderAllUsersCreator(isFetching));
+        onGetAllUsersList: () => {
+            dispatch(onGetAllUsersThunk());
         },
     };
 }
