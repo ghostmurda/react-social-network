@@ -18,7 +18,10 @@ function LoginPage(props) {
     useEffect(() => {
         if (loginProcess) {
             const url = 'https://test-social-network-api.herokuapp.com';
-            axios.get(`${url}/login?login=${loginRef.current.value}&password=${passwordRef.current.value}`)
+            //const url = 'http://localhost:5000'
+            axios.get(`${url}/login?login=${loginRef.current.value}&password=${passwordRef.current.value}`,
+                {withCredentials: true,
+                    crossDomain: true})
                 .then(resp => {
                     if (resp.data !== 'failed'){
                         props.setAuth();

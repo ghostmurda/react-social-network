@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import HeaderContainer from "./Components/Header/HeaderContainer";
 import {BrowserRouter, Redirect, Route} from "react-router-dom";
-//import NavMenu from "./Components/NavMenu/NavMenu";
 import ProfilePageContainer from "./Components/ProfilePage/ProfilePageContainer";
 import UserListContainer from "./Components/UserList/UserListContainer";
 import ChatsContainer from "./Components/Chats/ChatsContainer";

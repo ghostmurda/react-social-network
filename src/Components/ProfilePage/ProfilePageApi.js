@@ -11,7 +11,9 @@ class ProfilePageApi extends React.Component{
         if (this.props.userId !== undefined){
             id = this.props.userId;
         }
-        axios.get(`${url}/profile?userId=${id}`)
+        axios.get(`${url}/profile?userId=${id}`,
+            {withCredentials: true,
+            crossDomain: true})
             .then(resp => {
                 this.props.toggleLoader(false);
                 this.props.getProfile(resp.data);
