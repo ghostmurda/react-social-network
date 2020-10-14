@@ -2,6 +2,7 @@ import React from "react";
 //import PostsWall from "../Profile/PostsWall/PostsWall";
 import './ProfilePage.css';
 import Loader from "../Loader/Loader";
+import PostsWall from "./PostsWall/PostsWall";
 
 function ProfilePage(props) {
     return (
@@ -45,7 +46,7 @@ function ProfilePage(props) {
                             <input type="text" placeholder="What's new?"/>
                             <button className="btn">Publish</button>
                         </div>
-                        {/*{<PostsWall postsData={props.data.userPosts[props.data.userData.name]}/>}*/}
+                        <PostsWall postsData={props.data.postsData}/>
                     </div>
                 </div>
             }

@@ -31,7 +31,7 @@ export const getProfileActionCreator = (profileData) => {
     };
 }
 
-export const toggleLoaderProfile = (isFetching) => {
+export const toggleLoaderProfileCreator = (isFetching) => {
     return {
         type: TOGGLE_LOADER,
         isFetching,

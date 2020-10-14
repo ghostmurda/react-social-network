@@ -5,7 +5,7 @@ import {getFollowingListReq} from "../../api/api";
 class ChatsApi extends React.Component{
     componentDidMount() {
         this.props.toggleLoaderFollowingList(true);
-        getFollowingListReq()
+        getFollowingListReq(this.props.userId)
             .then(res => {
                 this.props.toggleLoaderFollowingList(false);
                 this.props.getFollowingList(res);

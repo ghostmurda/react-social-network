@@ -1,0 +1,44 @@
+.post__title{
+    display: flex;
+    grid-row: 1/2;
+}
+
+.post__creator-avatar{
+    border-radius: 50%;
+    max-height: 70px;
+    max-width: 70px;
+}
+
+.post__creator-name{
+    color: var(--color-blue);
+    font-weight: 500;
+    margin-left: 20px;
+    transform: translateY(16px);
+    font-size: 19px;
+}
+
+.post__footer{
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    transform: translateY(8px);
+}
+
+.like-icon{
+    cursor: pointer;
+    font-size: 30px;
+    color: var(--color-icon);
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+.like-icon:hover{
+    color: var(--color-red);
+}
+
+.like-icon:active{
+    transform: scale(0.7);
+}

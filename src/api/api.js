@@ -15,8 +15,8 @@ export const profilePageReq = (id) => {
         .then(res => res.data);
 }
 
-export const getFollowingListReq = () => {
-    return axios.get(`${basedUrl}/api/users/following`)
+export const getFollowingListReq = (id) => {
+    return axios.get(`${basedUrl}/api/users/following?userId=${id}`)
         .then(res => res.data);
 }
 

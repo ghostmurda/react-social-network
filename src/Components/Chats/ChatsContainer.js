@@ -15,6 +15,7 @@ let mapPropsToState = (state, ownProps) => {
     return {
         data: chatData,
         messageCreator: state.authData.userName,
+        userId: state.authData.userId,
         followingListData: state.usersData.followingList,
         isFetchingFollowingList: state.usersData.isFetchingFollowingList,
     };

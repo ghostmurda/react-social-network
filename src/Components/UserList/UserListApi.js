@@ -6,7 +6,7 @@ class UserListApi extends React.Component {
     componentDidMount() {
         this.props.toggleLoaderFollowingList(true);
         this.props.toggleLoaderAllUsers(true);
-        getFollowingListReq()
+        getFollowingListReq(this.props.userId)
             .then(res => {
                 this.props.toggleLoaderFollowingList(false);
                 this.props.getFollowingList(res);

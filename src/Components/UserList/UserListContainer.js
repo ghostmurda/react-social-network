@@ -13,6 +13,7 @@ let mapStateToProps = (state) => {
         usersListData: state.usersData.usersList,
         isFetchingFollowingList: state.usersData.isFetchingFollowingList,
         isFetchingUsersList: state.usersData.isFetchingUsersList,
+        userId: state.authData.userId,
     };
 };
 
