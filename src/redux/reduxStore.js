@@ -1,6 +1,5 @@
 import {combineReducers, createStore} from "redux";
 import chatReducer from "./chatReducer";
-import postsReducer from "./postsReducer";
 import usersReducer from "./usersReducer";
 import profileReducer from "./profileReducer";
 import authReducer from "./authReducer";
@@ -8,7 +7,6 @@ import authReducer from "./authReducer";
 let reducers = combineReducers({
     usersData: usersReducer,
     chatsData: chatReducer,
-    profilePostsData: postsReducer,
     profileUserData: profileReducer,
     authData: authReducer,
 });
