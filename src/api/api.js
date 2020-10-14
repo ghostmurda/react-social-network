@@ -21,6 +21,6 @@ export const getFollowingListReq = () => {
 }
 
 export const getAllUsersListReq = () => {
-    return axios.get(`${basedUrl}/api/users/popular?skip=0&pageSize=5`)
+    return axios.get(`${basedUrl}/api/users/all?skip=0&pageSize=5`)
         .then(res => res.data);
 }
