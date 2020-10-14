@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import {useHistory} from 'react-router-dom';
-import * as axios from 'axios';
 import './LoginPage.css';
+import {loginReq} from "../../api/api";
 
 function LoginPage(props) {
     const [loginProcess, setLoginProcess] = useState(false);
@@ -17,16 +17,12 @@ function LoginPage(props) {
 
     useEffect(() => {
         if (loginProcess) {
-            const url = 'https://test-social-network-api.herokuapp.com';
-            //const url = 'http://localhost:5000'
-            axios.get(`${url}/login?login=${loginRef.current.value}&password=${passwordRef.current.value}`,
-                {withCredentials: true,
-                    crossDomain: true})
-                .then(resp => {
-                    if (resp.data !== 'failed'){
+           loginReq(loginRef.current.value, passwordRef.current.value)
+                .then(res => {
+                    if (res !== 'failed'){
                         props.setAuth();
-                        props.getId(resp.data);
-                        history.push(`/user/${resp.data}`);
+                        props.getId(res);
+                        history.push(`/user/${res}`);
                     } else {
                         loginRef.current.value = '';
                         passwordRef.current.value = '';

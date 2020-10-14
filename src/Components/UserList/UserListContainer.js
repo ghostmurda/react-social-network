@@ -1,7 +1,7 @@
 import {connect} from "react-redux";
 import UserListApi from "./UserListApi";
-import {getUsersCreator, toggleLoaderFollowingList} from "../../data/currentUserReducer";
-import {getPopularUsersCreator, toggleLoaderPopularList} from "../../data/popularUsersReducer";
+import {getUsersCreator, toggleLoaderFollowingList} from "../../redux/currentUserReducer";
+import {getPopularUsersCreator, toggleLoaderPopularList} from "../../redux/popularUsersReducer";
 
 let mapStateToProps = (state) => {
     return {

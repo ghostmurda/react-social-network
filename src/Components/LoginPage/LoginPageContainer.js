@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import LoginPage from "./LoginPage";
-import {getUserId, setAuth} from "../../data/authReducer";
+import {getUserId, setAuth} from "../../redux/authReducer";
 
 let mapStateToProps = (state) => {
     return {

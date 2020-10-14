@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import ProfilePageApi from "./ProfilePageApi";
-import {getProfileActionCreator, toggleLoaderProfile} from "../../data/profileReducer";
+import {getProfileActionCreator, toggleLoaderProfile} from "../../redux/profileReducer";
 
 let mapStateToProps = (state, ownProps) => {
     return {

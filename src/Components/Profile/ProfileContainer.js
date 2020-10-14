@@ -1,4 +1,4 @@
-import {addPostActionCreator} from "../../data/postsReducer";
+import {addPostActionCreator} from "../../redux/postsReducer";
 import Profile from "./Profile";
 import {connect} from "react-redux";
 import {withRouter} from 'react-router-dom';
