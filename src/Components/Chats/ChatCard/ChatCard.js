@@ -8,7 +8,7 @@ function ChatCard(props){
             <div className="chat-card">
                 <img
                     className="chat-card__avatar"
-                    src={`https://api.adorable.io/avatars/128/${props.name}@adorable.png`}
+                    src={`https://avatars.dicebear.com/api/avataaars/${props.name}.svg`}
                     alt="Avatar"
                 />
                 <div className="chat-card__description">

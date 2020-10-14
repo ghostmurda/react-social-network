@@ -10,7 +10,7 @@ function ProfilePage(props) {
                 <div className="Profile">
                     <div className="profile">
                         <div className="profile__avatar">
-                            <img src={`https://api.adorable.io/avatars/190/${props.data.name}@adorable.png`}
+                            <img src={`https://avatars.dicebear.com/api/avataaars/${props.data.name}.svg`}
                                  alt="Avatar"/>
                         </div>
                         <div className="profile__description">

@@ -14,10 +14,11 @@ function Header(props) {
                     <Search/>
                     <input type="text" placeholder="Search"/>
                 </div>
-                <div className="header__user">
-                    {props.name ? <img src={`https://api.adorable.io/avatars/128/${props.name}@adorable.png`} alt="Avatar"/>
-                        : null}
-                </div>
+                {props.name ?
+                    <img className="header__user"
+                         src={`https://avatars.dicebear.com/api/avataaars/${props.name}.svg`}
+                         alt="Avatar"/>
+                    : <div className="header__user"> </div>}
             </div>
         </div>
     );

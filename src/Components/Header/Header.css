@@ -51,12 +51,7 @@
     color: var(--color-header-placeholder);
 }
 
-.header__user img{
-    max-width: 32px;
-    border-radius: 50%;
-}
-
 .header__user{
     max-height: 90%;
-    cursor: pointer;
+    border-radius: 50%;
 }

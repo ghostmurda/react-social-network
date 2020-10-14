@@ -8,6 +8,7 @@
 
 .message__creator img{
     border-radius: 50%;
+    max-width: 40px;
 }
 
 .message__body{

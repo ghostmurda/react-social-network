@@ -8,7 +8,7 @@ function UserCard(props) {
             <div className="user-card">
                 <img
                     className="user-card__avatar"
-                    src={`https://api.adorable.io/avatars/128/${props.name}@adorable.png`}
+                    src={`https://avatars.dicebear.com/api/avataaars/${props.name}.svg`}
                     alt="Avatar"
                 />
                 <div className="user-card__description">
