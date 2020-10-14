@@ -1,30 +1,34 @@
 import {connect} from "react-redux";
 import UserListApi from "./UserListApi";
-import {getUsersCreator, toggleLoaderFollowingList} from "../../redux/currentUserReducer";
-import {getPopularUsersCreator, toggleLoaderPopularList} from "../../redux/popularUsersReducer";
+import {
+    getAllUsersCreator,
+    getFollowingUsersCreator,
+    toggleLoaderAllUsersCreator,
+    toggleLoaderFollowingListCreator,
+} from "../../redux/usersReducer";
 
 let mapStateToProps = (state) => {
     return {
-        userListData: state.currentUserData.followingList,
-        userSecondaryListData: state.popularUsersData.popularList,
-        isFetchingUserList: state.currentUserData.isFetchingFollowingList,
-        isFetchingPopularList: state.popularUsersData.isFetchingPopularList,
+        followingListData: state.usersData.followingList,
+        usersListData: state.usersData.usersList,
+        isFetchingFollowingList: state.usersData.isFetchingFollowingList,
+        isFetchingUsersList: state.usersData.isFetchingUsersList,
     };
 };
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        getUsers: (followingList) => {
-            dispatch(getUsersCreator(followingList));
+        getFollowingList: (followingList) => {
+            dispatch(getFollowingUsersCreator(followingList));
         },
-        getPopularUsers: (popularList) => {
-            dispatch(getPopularUsersCreator(popularList));
+        getAllUsers: (usersList) => {
+            dispatch(getAllUsersCreator(usersList));
         },
-        toggleLoaderUserList: (isFetching) => {
-            dispatch(toggleLoaderFollowingList(isFetching));
+        toggleLoaderFollowingList: (isFetching) => {
+            dispatch(toggleLoaderFollowingListCreator(isFetching));
         },
-        toggleLoaderPopularList: (isFetching) => {
-            dispatch(toggleLoaderPopularList(isFetching));
+        toggleLoaderAllUsers: (isFetching) => {
+            dispatch(toggleLoaderAllUsersCreator(isFetching));
         },
     };
 }

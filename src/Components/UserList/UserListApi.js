@@ -1,30 +1,30 @@
 import React from 'react';
 import UserList from "./UserList";
-import {getFollowingListReq, getPopularListReq} from "../../api/api";
+import {getAllUsersListReq, getFollowingListReq} from "../../api/api";
 
 class UserListApi extends React.Component {
     componentDidMount() {
-        this.props.toggleLoaderUserList(true);
-        this.props.toggleLoaderPopularList(true);
+        this.props.toggleLoaderFollowingList(true);
+        this.props.toggleLoaderAllUsers(true);
         getFollowingListReq()
             .then(res => {
-                this.props.toggleLoaderUserList(false);
-                this.props.getUsers(res);
+                this.props.toggleLoaderFollowingList(false);
+                this.props.getFollowingList(res);
             });
-        getPopularListReq()
+        getAllUsersListReq()
             .then(res => {
-                this.props.toggleLoaderPopularList(false);
-                this.props.getPopularUsers(res);
+                this.props.toggleLoaderAllUsers(false);
+                this.props.getAllUsers(res);
             });
     }
 
     render() {
         return (
             <UserList
-                userListData={this.props.userListData}
-                userSecondaryListData={this.props.userSecondaryListData}
-                isFetchingUserList={this.props.isFetchingUserList}
-                isFetchingPopularList={this.props.isFetchingPopularList}
+                followingListData={this.props.followingListData}
+                usersListData={this.props.usersListData}
+                isFetchingFollowingList={this.props.isFetchingFollowingList}
+                isFetchingUsersList={this.props.isFetchingUsersList}
             />
         );
     }

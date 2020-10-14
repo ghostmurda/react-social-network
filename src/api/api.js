@@ -20,7 +20,7 @@ export const getFollowingListReq = () => {
         .then(res => res.data);
 }
 
-export const getPopularListReq = () => {
+export const getAllUsersListReq = () => {
     return axios.get(`${basedUrl}/api/users/popular?skip=0&pageSize=5`)
         .then(res => res.data);
 }
