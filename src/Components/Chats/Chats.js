@@ -15,7 +15,7 @@ function Chats(props) {
         props.addMessage(profile, text, props.messageCreator);
         newMessageElement.current.value = '';
     }
-    let chatsElements = props.userListData.map((item, i) => {
+    let chatsElements = props.followingListData.map((item, i) => {
         return <ChatCard key={i} name={item.name}/>
     });
     return (
@@ -34,7 +34,7 @@ function Chats(props) {
                 <div className="chats-page__chats">
                     <div className="secondary-list__header">Chats</div>
                     <span>&nbsp;</span>
-                    {props.isFetchingUserList ? <Loader additional="small"/> : chatsElements}
+                    {props.isFetchingFollowingList ? <Loader additional="small"/> : chatsElements}
                 </div>
             </div>
         </div>

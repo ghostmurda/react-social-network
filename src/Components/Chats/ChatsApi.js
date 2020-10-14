@@ -4,11 +4,11 @@ import {getFollowingListReq} from "../../api/api";
 
 class ChatsApi extends React.Component{
     componentDidMount() {
-        this.props.toggleLoaderUserList(true);
+        this.props.toggleLoaderFollowingList(true);
         getFollowingListReq()
             .then(res => {
-                this.props.toggleLoaderUserList(false);
-                this.props.getUsers(res);
+                this.props.toggleLoaderFollowingList(false);
+                this.props.getFollowingList(res);
             })
     }
     render() {
@@ -16,8 +16,8 @@ class ChatsApi extends React.Component{
             <Chats
                 data={this.props.data}
                 messageCreator={this.props.messageCreator}
-                userListData={this.props.userListData}
-                isFetchingUserList={this.props.isFetchingUserList}
+                followingListData={this.props.followingListData}
+                isFetchingFollowingList={this.props.isFetchingUserList}
                 addMessage={this.props.addMessage}
             />
         );

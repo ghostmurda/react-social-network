@@ -16,9 +16,11 @@ const usersReducer = (state = initialState, action) => {
             let newUsersList = action.newUsersList;
             let stateCopy = {...state};
             stateCopy.usersList = [...state.usersList];
+            let newUsersListCopy = [];
             for (let item of newUsersList) {
-                stateCopy.usersList.push(item);
+                newUsersListCopy.push(item);
             }
+            stateCopy.usersList = newUsersListCopy;
             return stateCopy;
         }
         case TOGGLE_ALL_USERS_LOADER: {
@@ -30,9 +32,11 @@ const usersReducer = (state = initialState, action) => {
             let newFollowingList = action.newFollowingList;
             let stateCopy = {...state};
             stateCopy.followingList = [...state.followingList];
+            let newFollowingListCopy = [];
             for (let item of newFollowingList) {
-                stateCopy.followingList.push(item);
+                newFollowingListCopy.push(item);
             }
+            stateCopy.followingList = newFollowingListCopy;
             return stateCopy;
         }
         case TOGGLE_FOLLOWING_USERS_LOADER:{

@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import {addMessageActionCreator} from "../../redux/chatReducer";
-import {getUsersCreator, toggleLoaderFollowingList} from "../../redux/currentUserReducer";
+import {getFollowingUsersCreator, toggleLoaderFollowingListCreator} from "../../redux/usersReducer";
 import ChatsApi from "./ChatsApi";
 
 let mapPropsToState = (state, ownProps) => {
@@ -15,8 +15,8 @@ let mapPropsToState = (state, ownProps) => {
     return {
         data: chatData,
         messageCreator: state.currentUserData.userInfo.name,
-        userListData: state.currentUserData.followingList,
-        isFetchingUserList: state.currentUserData.isFetchingFollowingList,
+        followingListData: state.usersData.followingList,
+        isFetchingFollowingList: state.usersData.isFetchingFollowingList,
     };
 };
 let mapDispatchToState = (dispatch) => {
@@ -24,11 +24,11 @@ let mapDispatchToState = (dispatch) => {
         addMessage: (profile, text, messageCreator) => {
             dispatch(addMessageActionCreator(profile, text, messageCreator));
         },
-        getUsers: (followingList) => {
-            dispatch(getUsersCreator(followingList));
+        getFollowingList: (followingList) => {
+            dispatch(getFollowingUsersCreator(followingList));
         },
-        toggleLoaderUserList: (isFetching) => {
-            dispatch(toggleLoaderFollowingList(isFetching));
+        toggleLoaderFollowingList: (isFetching) => {
+            dispatch(toggleLoaderFollowingListCreator(isFetching));
         },
     };
 };
