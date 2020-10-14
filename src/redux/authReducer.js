@@ -4,7 +4,7 @@ const GET_NAME = 'GET_NAME';
 
 let initialState = {
     userId: null,
-    userName: '',
+    userName: null,
     auth: false,
 };
 

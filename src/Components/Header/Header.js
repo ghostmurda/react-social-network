@@ -15,7 +15,8 @@ function Header(props) {
                     <input type="text" placeholder="Search"/>
                 </div>
                 <div className="header__user">
-                    <img src={`https://api.adorable.io/avatars/64/${props.name}@adorable.png`} alt="Avatar"/>
+                    {props.name ? <img src={`https://api.adorable.io/avatars/128/${props.name}@adorable.png`} alt="Avatar"/>
+                        : null}
                 </div>
             </div>
         </div>

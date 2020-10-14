@@ -3,7 +3,7 @@ import Header from "./Header";
 
 let mapStateToProps = (state) => {
     return {
-        name: state.currentUserData.userInfo.name,
+        name: state.authData.userName,
     };
 };
 
