@@ -8,6 +8,7 @@ function LoginPage(props) {
     let history = useHistory();
     const loginRef = useRef();
     const passwordRef = useRef();
+    let setLoginProcessFalse = () => setLoginProcess(false);
 
     let authFunc = () => {
         if (loginRef.current.value !== '' && passwordRef.current.value !== '') {
@@ -17,13 +18,14 @@ function LoginPage(props) {
 
     useEffect(() => {
         if (loginProcess) {
-            setLoginProcess(false);
+            setLoginProcessFalse();
            loginReq(loginRef.current.value, passwordRef.current.value)
                 .then(res => {
                     if (res !== 'failed'){
                         props.setAuth();
-                        props.getId(res);
-                        history.push(`/home/${res}`);
+                        props.getId(res.userId);
+                        props.getName(res.userName);
+                        history.push(`/home/${res.userId}`);
                     }
                 });
             loginRef.current.value = '';

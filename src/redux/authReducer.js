@@ -1,8 +1,10 @@
 const GET_ID = 'GET_ID';
 const SET_AUTH = 'SET_AUTH';
+const GET_NAME = 'GET_NAME';
 
 let initialState = {
     userId: null,
+    userName: '',
     auth: false,
 };
 
@@ -18,19 +20,31 @@ const authReducer = (state = initialState, action) => {
             stateCopy.auth = true;
             return stateCopy;
         }
+        case GET_NAME:{
+            let stateCopy = {...state};
+            stateCopy.userName = action.userName;
+            return stateCopy;
+        }
         default:
             return state;
     }
 };
 
-export const getUserId = (userId) => {
+export const getUserIdCreator = (userId) => {
     return {
         type: GET_ID,
         userId,
     };
 }
 
-export const setAuth = () => {
+export const getUserNameCreator = (userName) => {
+    return {
+        type: GET_NAME,
+        userName,
+    };
+}
+
+export const setAuthCreator = () => {
     return {
         type: SET_AUTH,
     };

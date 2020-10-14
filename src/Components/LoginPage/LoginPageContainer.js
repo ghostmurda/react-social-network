@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import LoginPage from "./LoginPage";
-import {getUserId, setAuth} from "../../redux/authReducer";
+import {getUserIdCreator, getUserNameCreator, setAuthCreator} from "../../redux/authReducer";
 
 let mapStateToProps = (state) => {
     return {
@@ -11,10 +11,13 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
     return {
         getId: (userId) => {
-            dispatch(getUserId(userId));
+            dispatch(getUserIdCreator(userId));
+        },
+        getName: (userName) => {
+            dispatch(getUserNameCreator(userName));
         },
         setAuth: () => {
-            dispatch(setAuth());
+            dispatch(setAuthCreator());
         }
     };
 };
