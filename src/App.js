@@ -19,6 +19,7 @@ function App() {
                         <Route path="/"> <Redirect to="/react-social-network"/> </Route>
                         <Route exact path="/react-social-network" render={() => <LoginPageContainer/>}/>
                         <Route path="/user/:userId" render={() => <ProfilePageContainer/>}/>
+                        <Route path="/home/:userId" render={() => <ProfilePageContainer/>}/>
                         <Route exact path="/following" render={() => <UserListContainer/>}/>
                         <Route path="/dialogs" render={() => <ChatsContainer/>}/>
                     </div>

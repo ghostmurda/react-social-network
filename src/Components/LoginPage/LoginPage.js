@@ -22,7 +22,7 @@ function LoginPage(props) {
                     if (res !== 'failed'){
                         props.setAuth();
                         props.getId(res);
-                        history.push(`/user/${res}`);
+                        history.push(`/home/${res}`);
                     } else {
                         loginRef.current.value = '';
                         passwordRef.current.value = '';
