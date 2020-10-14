@@ -1,22 +1,14 @@
 import React from "react";
 import ProfilePage from "./ProfilePage";
-import * as axios from 'axios';
+import {profilePageReq} from "../../api/api";
 
 class ProfilePageApi extends React.Component{
     componentDidMount() {
-        const url = 'https://test-social-network-api.herokuapp.com/api/users';
-        //const url = 'http://localhost:5000/api/users';
         this.props.toggleLoader(true);
-        let id = 1;
-        if (this.props.userId !== undefined){
-            id = this.props.userId;
-        }
-        axios.get(`${url}/profile?userId=${id}`,
-            {withCredentials: true,
-            crossDomain: true})
-            .then(resp => {
+        profilePageReq(this.props.userId)
+            .then(res => {
                 this.props.toggleLoader(false);
-                this.props.getProfile(resp.data);
+                this.props.getProfile(res);
             });
     }
 

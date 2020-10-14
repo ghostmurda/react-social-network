@@ -9,3 +9,8 @@ export const loginReq = (login, password) => {
     return axios.get(`${basedUrl}/login?login=${login}&password=${password}`)
         .then(res => res.data);
 }
+
+export const profilePageReq = (id) => {
+    return axios.get(`${basedUrl}/api/users/profile?userId=${id}`)
+        .then(res => res.data);
+}
