@@ -17,18 +17,17 @@ function LoginPage(props) {
 
     useEffect(() => {
         if (loginProcess) {
+            setLoginProcess(false);
            loginReq(loginRef.current.value, passwordRef.current.value)
                 .then(res => {
                     if (res !== 'failed'){
                         props.setAuth();
                         props.getId(res);
                         history.push(`/home/${res}`);
-                    } else {
-                        loginRef.current.value = '';
-                        passwordRef.current.value = '';
-                        setLoginProcess(false);
                     }
                 });
+            loginRef.current.value = '';
+            passwordRef.current.value = '';
         }
     });
     return (
