@@ -1,15 +1,14 @@
 import React from "react";
-import * as axios from "axios";
 import Chats from "./Chats";
+import {getFollowingListReq} from "../../api/api";
 
 class ChatsApi extends React.Component{
     componentDidMount() {
-        const url = 'https://test-social-network-api.herokuapp.com/api/users';
         this.props.toggleLoaderUserList(true);
-        axios.get(`${url}/following`)
-            .then(responce => {
+        getFollowingListReq()
+            .then(res => {
                 this.props.toggleLoaderUserList(false);
-                this.props.getUsers(responce.data);
+                this.props.getUsers(res);
             })
     }
     render() {

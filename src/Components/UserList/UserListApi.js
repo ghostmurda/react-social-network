@@ -1,21 +1,20 @@
 import React from 'react';
-import * as axios from 'axios';
 import UserList from "./UserList";
+import {getFollowingListReq, getPopularListReq} from "../../api/api";
 
 class UserListApi extends React.Component {
     componentDidMount() {
-        const url = 'https://test-social-network-api.herokuapp.com/api/users';
         this.props.toggleLoaderUserList(true);
         this.props.toggleLoaderPopularList(true);
-        axios.get(`${url}/following`)
-            .then(responce => {
+        getFollowingListReq()
+            .then(res => {
                 this.props.toggleLoaderUserList(false);
-                this.props.getUsers(responce.data);
+                this.props.getUsers(res);
             });
-        axios.get(`${url}/popular?skip=0&pageSize=5`)
-            .then(response => {
+        getPopularListReq()
+            .then(res => {
                 this.props.toggleLoaderPopularList(false);
-                this.props.getPopularUsers(response.data);
+                this.props.getPopularUsers(res);
             });
     }
 

@@ -14,3 +14,13 @@ export const profilePageReq = (id) => {
     return axios.get(`${basedUrl}/api/users/profile?userId=${id}`)
         .then(res => res.data);
 }
+
+export const getFollowingListReq = () => {
+    return axios.get(`${basedUrl}/api/users/following`)
+        .then(res => res.data);
+}
+
+export const getPopularListReq = () => {
+    return axios.get(`${basedUrl}/api/users/popular?skip=0&pageSize=5`)
+        .then(res => res.data);
+}
