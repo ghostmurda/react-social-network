@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import {useHistory} from 'react-router-dom';
 import './LoginPage.css';
+import Loader from "../Loader/Loader";
 
 function LoginPage(props) {
     const [loginProcess, setLoginProcess] = useState(false);
@@ -28,16 +29,20 @@ function LoginPage(props) {
     });
 
     return (
-        <div className="LoginPage">
-            <div className="login-page__form">
-                <input type="login" placeholder="Login" ref={loginRef}/>
-                <input type="password" placeholder="Password" ref={passwordRef}/>
-                <div className="from__btn-wrapper">
-                    <button className="btn" onClick={authFunc}>Sign in</button>
-                    <span>Forgot password?</span>
+        <>
+            {props.authData.isFetching ? <Loader/> :
+                <div className="LoginPage">
+                    <div className="login-page__form">
+                        <input type="login" placeholder="Login" ref={loginRef}/>
+                        <input type="password" placeholder="Password" ref={passwordRef}/>
+                        <div className="from__btn-wrapper">
+                            <button className="btn" onClick={authFunc}>Sign in</button>
+                            <span>Forgot password?</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            }
+        </>
     );
 }
 

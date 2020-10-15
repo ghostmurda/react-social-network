@@ -3,11 +3,13 @@ import {loginReq} from "../api/api";
 const GET_ID = 'GET_ID';
 const SET_AUTH = 'SET_AUTH';
 const GET_NAME = 'GET_NAME';
+const TOGGLE_LOADER = 'TOGGLE_LOADER';
 
 let initialState = {
     userId: null,
     userName: null,
     auth: false,
+    isFetching: false,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -27,12 +29,16 @@ const authReducer = (state = initialState, action) => {
             stateCopy.userName = action.userName;
             return stateCopy;
         }
+        case TOGGLE_LOADER:{
+            return {...state, isFetching: action.isFetching}
+        }
         default:
             return state;
     }
 };
 
 export const onLoginProcessThunk = (userName, userPassword) => (dispatch) => {
+    dispatch(toggleLoaderCreator(true));
     loginReq(userName, userPassword)
         .then(res => {
             if (res !== 'failed') {
@@ -40,6 +46,7 @@ export const onLoginProcessThunk = (userName, userPassword) => (dispatch) => {
                 dispatch(getUserIdCreator(res.userId));
                 dispatch(getUserNameCreator(res.userName));
             }
+            dispatch(toggleLoaderCreator(false));
         });
 };
 
@@ -61,6 +68,13 @@ export const setAuthCreator = () => {
     return {
         type: SET_AUTH,
     };
+}
+
+export const toggleLoaderCreator = (isFetching) => {
+    return {
+        type: TOGGLE_LOADER,
+        isFetching
+    }
 }
 
 export default authReducer;
