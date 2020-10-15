@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5bbb468c-4fe0-43e2-80f9-c34733a3bedd" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1iK1dY6xSokzeLalF782K5oPp5h" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/server-test" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ralph\Desktop\create-react-app\my-app\src\redux\reducers" />
+      <recent name="C:\Users\ralph\Desktop\create-react-app\my-app\src\Components\Profile\PostsWall" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ralph\Desktop\create-react-app\my-app\src\Components\ProfilePage" />
+      <recent name="C:\Users\ralph\Desktop\create-react-app\my-app\server" />
+      <recent name="C:\Users\ralph\Desktop\create-react-app\my-app\src\data" />
+      <recent name="C:\Users\ralph\Desktop\create-react-app\my-app\src\Components\Profile" />
+      <recent name="C:\Users\ralph\Desktop\create-react-app\my-app\src\Components\Chats" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.index.html (1)">
+    <configuration name="index.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/my-app/build/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/my-app/public/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html (1)" />
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5bbb468c-4fe0-43e2-80f9-c34733a3bedd" name="Default Changelist" comment="" />
+      <created>1601641558682</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601641558682</updated>
+      <workItem from="1601641560451" duration="285000" />
+      <workItem from="1601641870209" duration="20439000" />
+      <workItem from="1601711314285" duration="320000" />
+      <workItem from="1601718753558" duration="16994000" />
+      <workItem from="1601750364738" duration="11791000" />
+      <workItem from="1601799223858" duration="15936000" />
+      <workItem from="1601913166552" duration="18068000" />
+      <workItem from="1601985701913" duration="16586000" />
+      <workItem from="1602060757272" duration="16104000" />
+      <workItem from="1602094926057" duration="8805000" />
+      <workItem from="1602143823103" duration="46000" />
+      <workItem from="1602143924603" duration="14386000" />
+      <workItem from="1602169860028" duration="14670000" />
+      <workItem from="1602232429463" duration="20247000" />
+      <workItem from="1602275200923" duration="8000" />
+      <workItem from="1602331361673" duration="16867000" />
+      <workItem from="1602406245079" duration="8829000" />
+      <workItem from="1602443510572" duration="7245000" />
+      <workItem from="1602495560141" duration="15625000" />
+      <workItem from="1602583096551" duration="23983000" />
+      <workItem from="1602666625224" duration="30743000" />
+      <workItem from="1602749389219" duration="3736000" />
+      <workItem from="1602779982373" duration="593000" />
+      <workItem from="1602780706548" duration="7249000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602784124815">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602784124815" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1601927173115">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601927173115" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1602786910518">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602786910518" />
+    <state x="687" y="300" key="IDE.errors.dialog" timestamp="1602783334672">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="687" y="300" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602783334672" />
+    <state x="624" y="267" key="SettingsEditor" timestamp="1602794370675">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="624" y="267" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602794370675" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1601664298997">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601664298997" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1602262547905">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602262547905" />
+  </component>
+</project>
