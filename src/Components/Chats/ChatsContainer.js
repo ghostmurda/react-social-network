@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import {addMessageActionCreator} from "../../redux/chatReducer";
-import {getFollowingUsersCreator, toggleLoaderFollowingListCreator} from "../../redux/usersReducer";
+import {onGetFollowingListThunk} from "../../redux/usersReducer";
 import ChatsApi from "./ChatsApi";
 
 let mapPropsToState = (state, ownProps) => {
@@ -25,11 +25,8 @@ let mapDispatchToState = (dispatch) => {
         addMessage: (profile, text, messageCreator) => {
             dispatch(addMessageActionCreator(profile, text, messageCreator));
         },
-        getFollowingList: (followingList) => {
-            dispatch(getFollowingUsersCreator(followingList));
-        },
-        toggleLoaderFollowingList: (isFetching) => {
-            dispatch(toggleLoaderFollowingListCreator(isFetching));
+        onGetFollowingList: (userId) => {
+            dispatch(onGetFollowingListThunk(userId));
         },
     };
 };
