@@ -1,3 +1,5 @@
+import {profilePageReq} from "../../api/api";
+
 const GET_PROFILE = 'GET_PROFILE';
 const TOGGLE_LOADER = 'TOGGLE_LOADER';
 
@@ -22,6 +24,15 @@ const profileReducer = (state = initialState, action) => {
         default:
             return state;
     }
+}
+
+export const onGetProfileThunk = (userId) => (dispatch) => {
+    dispatch(toggleLoaderProfileCreator(true));
+    profilePageReq(userId)
+        .then(res => {
+            dispatch(toggleLoaderProfileCreator(false));
+            dispatch(getProfileActionCreator(res));
+        })
 }
 
 export const getProfileActionCreator = (profileData) => {

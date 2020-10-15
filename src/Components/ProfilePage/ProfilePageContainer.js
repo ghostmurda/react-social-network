@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import ProfilePageApi from "./ProfilePageApi";
-import {getProfileActionCreator, toggleLoaderProfileCreator} from "../../redux/reducers/profileReducer";
+import {onGetProfileThunk} from "../../redux/reducers/profileReducer";
 
 let mapStateToProps = (state, ownProps) => {
     return {
@@ -13,11 +13,8 @@ let mapStateToProps = (state, ownProps) => {
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        getProfile: (profileData) => {
-            dispatch(getProfileActionCreator(profileData));
-        },
-        toggleLoader: (isFetching) => {
-            dispatch(toggleLoaderProfileCreator(isFetching));
+        onGetProfile: (userId) => {
+            dispatch(onGetProfileThunk(userId));
         }
     };
 }
