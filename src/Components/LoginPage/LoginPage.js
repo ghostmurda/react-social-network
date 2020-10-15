@@ -1,7 +1,6 @@
 import React, {useEffect, useRef, useState} from "react";
 import {useHistory} from 'react-router-dom';
 import './LoginPage.css';
-import {loginReq} from "../../api/api";
 
 function LoginPage(props) {
     const [loginProcess, setLoginProcess] = useState(false);
@@ -19,19 +18,15 @@ function LoginPage(props) {
     useEffect(() => {
         if (loginProcess) {
             setLoginProcessFalse();
-           loginReq(loginRef.current.value, passwordRef.current.value)
-                .then(res => {
-                    if (res !== 'failed'){
-                        props.setAuth();
-                        props.getId(res.userId);
-                        props.getName(res.userName);
-                        history.push(`/home/${res.userId}`);
-                    }
-                });
+            props.onLoginProcess(loginRef.current.value, passwordRef.current.value);
             loginRef.current.value = '';
             passwordRef.current.value = '';
         }
+        if (props.authData.userId !== null){
+            history.push(`/home/${props.authData.userId}`);
+        }
     });
+
     return (
         <div className="LoginPage">
             <div className="login-page__form">

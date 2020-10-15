@@ -1,3 +1,5 @@
+import {loginReq} from "../api/api";
+
 const GET_ID = 'GET_ID';
 const SET_AUTH = 'SET_AUTH';
 const GET_NAME = 'GET_NAME';
@@ -28,6 +30,17 @@ const authReducer = (state = initialState, action) => {
         default:
             return state;
     }
+};
+
+export const onLoginProcessThunk = (userName, userPassword) => (dispatch) => {
+    loginReq(userName, userPassword)
+        .then(res => {
+            if (res !== 'failed') {
+                dispatch(setAuthCreator());
+                dispatch(getUserIdCreator(res.userId));
+                dispatch(getUserNameCreator(res.userName));
+            }
+        });
 };
 
 export const getUserIdCreator = (userId) => {
