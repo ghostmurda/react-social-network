@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import LoginPage from "./LoginPage";
-import {onLoginProcessThunk} from "../../redux/authReducer";
+import {onLoginProcessThunk} from "../../redux/reducers/authReducer";
 
 let mapStateToProps = (state) => {
     return {

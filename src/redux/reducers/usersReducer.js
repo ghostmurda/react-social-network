@@ -1,4 +1,4 @@
-import {getAllUsersListReq, getFollowingListReq} from "../api/api";
+import {getAllUsersListReq, getFollowingListReq} from "../../api/api";
 
 const GET_ALL_USERS = 'GET_ALL_USERS';
 const GET_FOLLOWING_USERS = 'GET_FOLLOWING_USERS';

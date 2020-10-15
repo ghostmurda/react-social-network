@@ -1,4 +1,4 @@
-import {loginReq} from "../api/api";
+import {loginReq} from "../../api/api";
 
 const GET_ID = 'GET_ID';
 const SET_AUTH = 'SET_AUTH';
