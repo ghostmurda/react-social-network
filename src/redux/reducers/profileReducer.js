@@ -1,7 +1,5 @@
-import {profilePageReq} from "../../api/api";
-
-const GET_PROFILE = 'GET_PROFILE';
-const TOGGLE_LOADER = 'TOGGLE_LOADER';
+export const GET_PROFILE = 'GET_PROFILE';
+export const TOGGLE_LOADER = 'TOGGLE_LOADER';
 
 let initialState = {
     profileData: {},
@@ -16,36 +14,10 @@ const profileReducer = (state = initialState, action) => {
             stateCopy.profileData = action.profile;
             return stateCopy;
         }
-        case TOGGLE_LOADER:{
-            let stateCopy = {...state};
-            stateCopy.isFetching = action.isFetching;
-            return stateCopy;
-        }
+        case TOGGLE_LOADER:
+            return {...state, isFetching: action.isFetching}
         default:
             return state;
-    }
-}
-
-export const onGetProfileThunk = (userId) => (dispatch) => {
-    dispatch(toggleLoaderProfileCreator(true));
-    profilePageReq(userId)
-        .then(res => {
-            dispatch(toggleLoaderProfileCreator(false));
-            dispatch(getProfileActionCreator(res));
-        })
-}
-
-export const getProfileActionCreator = (profileData) => {
-    return {
-        type: GET_PROFILE,
-        profile: profileData,
-    };
-}
-
-export const toggleLoaderProfileCreator = (isFetching) => {
-    return {
-        type: TOGGLE_LOADER,
-        isFetching,
     }
 }
 

@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import ProfilePageApi from "./ProfilePageApi";
-import {onGetProfileThunk} from "../../redux/reducers/profileReducer";
+import {onGetProfileThunk} from "../../redux/actions/profileActions";
 
 let mapStateToProps = (state, ownProps) => {
     return {
