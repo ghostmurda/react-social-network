@@ -1,9 +1,7 @@
-import {getAllUsersListReq, getFollowingListReq} from "../../api/api";
-
-const GET_ALL_USERS = 'GET_ALL_USERS';
-const GET_FOLLOWING_USERS = 'GET_FOLLOWING_USERS';
-const TOGGLE_ALL_USERS_LOADER = 'TOGGLE_ALL_USERS_LOADER';
-const TOGGLE_FOLLOWING_USERS_LOADER = 'TOGGLE_FOLLOWING_USERS_LOADER';
+export const GET_ALL_USERS = 'GET_ALL_USERS';
+export const GET_FOLLOWING_USERS = 'GET_FOLLOWING_USERS';
+export const TOGGLE_ALL_USERS_LOADER = 'TOGGLE_ALL_USERS_LOADER';
+export const TOGGLE_FOLLOWING_USERS_LOADER = 'TOGGLE_FOLLOWING_USERS_LOADER';
 
 let initialState = {
     usersList: [],
@@ -25,11 +23,8 @@ const usersReducer = (state = initialState, action) => {
             stateCopy.usersList = newUsersListCopy;
             return stateCopy;
         }
-        case TOGGLE_ALL_USERS_LOADER: {
-            let stateCopy = {...state};
-            stateCopy.isFetchingUsersList = action.isFetching;
-            return stateCopy;
-        }
+        case TOGGLE_ALL_USERS_LOADER:
+            return {...state, isFetchingUsersList: action.isFetching};
         case GET_FOLLOWING_USERS:{
             let newFollowingList = action.newFollowingList;
             let stateCopy = {...state};
@@ -41,59 +36,10 @@ const usersReducer = (state = initialState, action) => {
             stateCopy.followingList = newFollowingListCopy;
             return stateCopy;
         }
-        case TOGGLE_FOLLOWING_USERS_LOADER:{
-            let stateCopy = {...state};
-            stateCopy.isFetchingFollowingList = action.isFetching;
-            return stateCopy;
-        }
+        case TOGGLE_FOLLOWING_USERS_LOADER:
+            return {...state, isFetchingFollowingList: action.isFetching};
         default:
-            return state;
-    }
-}
-
-export const onGetFollowingListThunk = (userId) => (dispatch) => {
-    dispatch(toggleLoaderFollowingListCreator(true));
-    getFollowingListReq(userId)
-        .then(res => {
-            dispatch(toggleLoaderFollowingListCreator(false));
-            dispatch(getFollowingUsersCreator(res));
-        });
-}
-
-export const onGetAllUsersThunk = () => (dispatch) => {
-    dispatch(toggleLoaderAllUsersCreator(true));
-    getAllUsersListReq()
-        .then(res => {
-            dispatch(toggleLoaderAllUsersCreator(false));
-            dispatch(getAllUsersCreator(res));
-        });
-}
-
-export const getAllUsersCreator = function(newUsersList){
-    return{
-        type: GET_ALL_USERS,
-        newUsersList
-    };
-};
-
-export const getFollowingUsersCreator = (newFollowingList) => {
-    return{
-        type: GET_FOLLOWING_USERS,
-        newFollowingList
-    }
-};
-
-export const toggleLoaderAllUsersCreator = function(isFetching){
-    return {
-        type: TOGGLE_ALL_USERS_LOADER,
-        isFetching
-    }
-}
-
-export const toggleLoaderFollowingListCreator = function(isFetching){
-    return {
-        type: TOGGLE_FOLLOWING_USERS_LOADER,
-        isFetching
+            return {...state};
     }
 }
 

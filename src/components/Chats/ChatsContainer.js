@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import {addMessageActionCreator} from "../../redux/reducers/chatReducer";
-import {onGetFollowingListThunk} from "../../redux/reducers/usersReducer";
+import {onGetFollowingListThunk} from "../../redux/actions/usersActions";
 import ChatsApi from "./ChatsApi";
 
 let mapPropsToState = (state, ownProps) => {

@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import UserListApi from "./UserListApi";
-import {onGetAllUsersThunk, onGetFollowingListThunk} from "../../redux/reducers/usersReducer";
+import {onGetAllUsersThunk, onGetFollowingListThunk} from "../../redux/actions/usersActions";
 
 let mapStateToProps = (state) => {
     return {
