@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
-import HeaderContainer from "./Components/Header/HeaderContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 import {BrowserRouter, Redirect, Route} from "react-router-dom";
-import ProfilePageContainer from "./Components/ProfilePage/ProfilePageContainer";
-import UserListContainer from "./Components/UserList/UserListContainer";
-import ChatsContainer from "./Components/Chats/ChatsContainer";
-import LoginPageContainer from "./Components/LoginPage/LoginPageContainer";
-import NavMenuContainer from "./Components/NavMenu/NavMenuContainer";
+import ProfilePageContainer from "./components/ProfilePage/ProfilePageContainer";
+import UserListContainer from "./components/UserList/UserListContainer";
+import ChatsContainer from "./components/Chats/ChatsContainer";
+import LoginPageContainer from "./components/LoginPage/LoginPageContainer";
+import NavMenuContainer from "./components/NavMenu/NavMenuContainer";
 
 function App() {
     return (
