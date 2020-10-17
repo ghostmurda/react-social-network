@@ -10,6 +10,7 @@ function ProfilePage(props) {
     const [localInfo, setLocalInfo] = useState(props.data.info);
     const editedInfoRef = useRef();
     const setInfoProcessFalse = () => setInfoProcess(false);
+    const setLocalInfoFromProps = () => setLocalInfo(props.data.info);
 
     useEffect(() => {
         if (infoProcess) {
@@ -19,6 +20,8 @@ function ProfilePage(props) {
                     setLocalInfo(res);
                 });
             setInfoProcessFalse();
+        } else {
+            setLocalInfoFromProps();
         }
     });
 
