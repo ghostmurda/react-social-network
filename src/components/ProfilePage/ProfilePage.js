@@ -45,17 +45,23 @@ function ProfilePage(props) {
                                 <input className="description__main-input"
                                        placeholder={props.data.info}
                                        onClick={() => {
-                                           changeInfo();
-                                           if (editedInfoRef.current.value !== ''){
-                                               setLocalInfo(editedInfoRef.current.value);
-                                               setInfoProcess(true);
+                                           if (props.userId === props.authUserId){
+                                               changeInfo();
+                                               if (editedInfoRef.current.value !== ''){
+                                                   setLocalInfo(editedInfoRef.current.value);
+                                                   setInfoProcess(true);
+                                               }
                                            }
                                        }}
                                        autoFocus={true}
                                        maxLength="59"
                                        ref={editedInfoRef}
                                 /> :
-                                <div className="description__main" onClick={changeInfo}>{localInfo}</div>
+                                <div className="description__main" onClick={() => {
+                                    if (props.userId === props.authUserId) {
+                                        changeInfo();
+                                    }
+                                }}>{localInfo}</div>
                             }
 
                             <div className="description__footer">
