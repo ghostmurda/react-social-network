@@ -1,10 +1,13 @@
-import React from "react";
-//import PostsWall from "../Profile/PostsWall/PostsWall";
+import React, {useState} from "react";
 import './ProfilePage.css';
 import Loader from "../Loader/Loader";
 import PostsWall from "./PostsWall/PostsWall";
 
 function ProfilePage(props) {
+    const [editMode, setEditMode] = useState(false);
+    let changeInfo = () => {
+        setEditMode(!editMode);
+    }
     return (
         <>
             {props.isFetchingProfile ? <Loader/> :
@@ -16,7 +19,16 @@ function ProfilePage(props) {
                         </div>
                         <div className="profile__description">
                             <div className="description__name">{props.data.name}</div>
-                            <div className="description__main">{props.data.info}</div>
+
+                            {editMode ?
+                                <input className="description__main-input"
+                                       placeholder={props.data.info}
+                                       onClick={changeInfo}
+                                       autoFocus={true}
+                                       maxLength="59"
+                                /> :
+                                <div className="description__main" onClick={changeInfo}>{props.data.info}</div>}
+
                             <div className="description__footer">
                                 <div className="description__footer__item">
                                     <span className="item__num">{props.data.followers}</span><br/>

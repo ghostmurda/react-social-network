@@ -49,6 +49,20 @@
     display: flex;
     align-items: center;
     transform: translateY(-16px);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.description__main-input{
+    outline: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    font-size: 16px;
+    transform: translateY(-17px);
+}
+
+.description__main:hover{
+    background: #DAE2EA;
 }
 
 .description__footer{
