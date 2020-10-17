@@ -1,13 +1,31 @@
-import React, {useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import './ProfilePage.css';
 import Loader from "../Loader/Loader";
 import PostsWall from "./PostsWall/PostsWall";
+import {putUserInfoReq} from "../../api/api";
 
 function ProfilePage(props) {
-    const [editMode, setEditMode] = useState(false);
+    const [infoEditMode, setInfoEditMode] = useState(false);
+    const [infoProcess, setInfoProcess] = useState(false);
+    const [localInfo, setLocalInfo] = useState(props.data.info);
+    const editedInfoRef = useRef();
+    const setInfoProcessFalse = () => setInfoProcess(false);
+
+    useEffect(() => {
+        if (infoProcess) {
+            putUserInfoReq(props.userId, localInfo)
+                .then(res => {
+                    props.data.info = res;
+                    setLocalInfo(res);
+                });
+            setInfoProcessFalse();
+        }
+    });
+
     let changeInfo = () => {
-        setEditMode(!editMode);
+        setInfoEditMode(!infoEditMode);
     }
+
     return (
         <>
             {props.isFetchingProfile ? <Loader/> :
@@ -20,14 +38,22 @@ function ProfilePage(props) {
                         <div className="profile__description">
                             <div className="description__name">{props.data.name}</div>
 
-                            {editMode ?
+                            {infoEditMode ?
                                 <input className="description__main-input"
                                        placeholder={props.data.info}
-                                       onClick={changeInfo}
+                                       onClick={() => {
+                                           changeInfo();
+                                           if (editedInfoRef.current.value !== ''){
+                                               setLocalInfo(editedInfoRef.current.value);
+                                               setInfoProcess(true);
+                                           }
+                                       }}
                                        autoFocus={true}
                                        maxLength="59"
+                                       ref={editedInfoRef}
                                 /> :
-                                <div className="description__main" onClick={changeInfo}>{props.data.info}</div>}
+                                <div className="description__main" onClick={changeInfo}>{localInfo}</div>
+                            }
 
                             <div className="description__footer">
                                 <div className="description__footer__item">
@@ -47,12 +73,12 @@ function ProfilePage(props) {
                         <div className="profile__followers">
                             <span className="followers__title">Followers</span>
                             <span className="followers__num">{props.data.followers}</span>
-                            <div className="followers__main"></div>
+                            <div className="followers__main"> </div>
                         </div>
                         <div className="profile__following">
                             <span className="followers__title">Following</span>
                             <span className="followers__num">{props.data.following}</span>
-                            <div className="followers__main"></div>
+                            <div className="followers__main"> </div>
                         </div>
                         <div className="profile__input">
                             <input type="text" placeholder="What's new?"/>

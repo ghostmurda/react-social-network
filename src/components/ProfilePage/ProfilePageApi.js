@@ -11,6 +11,7 @@ class ProfilePageApi extends React.Component{
             <ProfilePage
                 data={this.props.data}
                 isFetchingProfile={this.props.isFetchingProfile}
+                userId={this.props.userId}
             />
         );
     }

@@ -24,3 +24,8 @@ export const getAllUsersListReq = () => {
     return axios.get(`${basedUrl}/api/users/all?skip=0&pageSize=5`)
         .then(res => res.data);
 }
+
+export const putUserInfoReq = (id, info) => {
+    return axios.put(`${basedUrl}/api/users/info`, {userId: id, info: info})
+        .then(res => res.data);
+}
