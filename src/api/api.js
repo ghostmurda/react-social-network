@@ -6,7 +6,7 @@ axios.defaults.withCredentials = true;
 axios.defaults.crossDomain = true;
 
 export const loginReq = (login, password) => {
-    return axios.get(`${basedUrl}/login?login=${login}&password=${password}`)
+    return axios.post(`${basedUrl}/login`, {login: login, password: password})
         .then(res => res.data);
 }
 
