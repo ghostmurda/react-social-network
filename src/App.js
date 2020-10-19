@@ -4,7 +4,7 @@ import HeaderContainer from "./containers/HeaderContainer";
 import {BrowserRouter, Redirect, Route} from "react-router-dom";
 import ProfilePageContainer from "./containers/ProfilePageContainer";
 import UserListContainer from "./containers/UserListContainer";
-import ChatsContainer from "./components/Chats/ChatsContainer";
+import ChatsContainer from "./containers/ChatsContainer";
 import LoginPageContainer from "./containers/LoginPageContainer";
 import NavMenuContainer from "./containers/NavMenuContainer";
 
