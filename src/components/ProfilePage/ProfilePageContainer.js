@@ -3,11 +3,12 @@ import {withRouter} from 'react-router-dom';
 import ProfilePageApi from "./ProfilePageApi";
 import {onGetProfileThunk} from "../../redux/actions/profileActions";
 import {getUserId} from "../../redux/selectors/authSelectors";
+import {getFetchingProfile, getProfileData} from "../../redux/selectors/profileSelectors";
 
 let mapStateToProps = (state, ownProps) => {
     return {
-        data: state.profileUserData.profileData,
-        isFetchingProfile: state.profileUserData.isFetching,
+        data: getProfileData(state),
+        isFetchingProfile: getFetchingProfile(state),
         userId: ownProps.match.params.userId,
         authUserId: getUserId(state),
     };
