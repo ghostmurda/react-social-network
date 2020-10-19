@@ -8,6 +8,7 @@ import {
     getUsersList
 } from "../../redux/selectors/usersSelectors";
 import React from "react";
+import {getUserId} from "../../redux/selectors/authSelectors";
 
 function UserListContainer(props){
     return (
@@ -28,7 +29,7 @@ let mapStateToProps = (state) => {
         usersListData: getUsersList(state),
         isFetchingFollowingList: getFetchingFollowingList(state),
         isFetchingUsersList: getFetchingUsersList(state),
-        userId: state.authData.userId,
+        userId: getUserId(state),
     };
 };
 

@@ -1,10 +1,12 @@
 import {connect} from 'react-redux';
 import LoginPage from "./LoginPage";
 import {onLoginProcessThunk} from "../../redux/actions/authActions";
+import {getIsFetching, getUserId} from "../../redux/selectors/authSelectors";
 
 let mapStateToProps = (state) => {
     return {
-        authData: state.authData,
+        userId: getUserId(state),
+        isFetching: getIsFetching(state),
     };
 }
 

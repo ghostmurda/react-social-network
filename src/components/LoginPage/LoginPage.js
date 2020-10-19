@@ -8,8 +8,8 @@ function LoginPage(props) {
     let history = useHistory();
 
     useEffect(() => {
-        if (props.authData.userId !== null) {
-            history.push(`/home/${props.authData.userId}`);
+        if (props.userId !== null) {
+            history.push(`/home/${props.userId}`);
         }
     });
 
@@ -21,7 +21,7 @@ function LoginPage(props) {
 
     return (
         <>
-            {props.authData.isFetching ? <Loader/> :
+            {props.isFetching ? <Loader/> :
                 <div className="LoginPage">
                     <Form onSubmit={onSubmit}
                           validate={values => {
