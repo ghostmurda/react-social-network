@@ -6,7 +6,7 @@ import ProfilePageContainer from "./containers/ProfilePageContainer";
 import UserListContainer from "./components/UserList/UserListContainer";
 import ChatsContainer from "./components/Chats/ChatsContainer";
 import LoginPageContainer from "./components/LoginPage/LoginPageContainer";
-import NavMenuContainer from "./components/NavMenu/NavMenuContainer";
+import NavMenuContainer from "./containers/NavMenuContainer";
 
 function App() {
     return (
