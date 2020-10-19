@@ -1,14 +1,14 @@
 import {connect} from "react-redux";
-import UserListApi from "./UserListApi";
-import {onGetAllUsersThunk, onGetFollowingListThunk} from "../../redux/actions/usersActions";
+import UserListApi from "../components/UserList/UserListApi";
+import {onGetAllUsersThunk, onGetFollowingListThunk} from "../redux/actions/usersActions";
 import {
     getFetchingFollowingList,
     getFetchingUsersList,
     getFollowingList,
     getUsersList
-} from "../../redux/selectors/usersSelectors";
+} from "../redux/selectors/usersSelectors";
 import React from "react";
-import {getUserId} from "../../redux/selectors/authSelectors";
+import {getUserId} from "../redux/selectors/authSelectors";
 
 function UserListContainer(props){
     return (
