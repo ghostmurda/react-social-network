@@ -1,9 +1,11 @@
 import {connect} from 'react-redux';
 import NavMenu from "./NavMenu";
+import {getAuth, getUserId} from "../../redux/selectors/authSelectors";
 
 let mapStateToProps = (state) => {
     return {
-        authData: state.authData,
+        auth: getAuth(state),
+        userId: getUserId(state)
     }
 }
 
