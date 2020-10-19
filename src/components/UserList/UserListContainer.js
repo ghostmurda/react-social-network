@@ -7,6 +7,20 @@ import {
     getFollowingList,
     getUsersList
 } from "../../redux/selectors/usersSelectors";
+import React from "react";
+
+function UserListContainer(props){
+    return (
+        <UserListApi followingListData={props.followingListData}
+                     usersListData={props.usersListData}
+                     isFetchingFollowingList={props.isFetchingFollowingList}
+                     isFetchingUsersList={props.isFetchingUsersList}
+                     userId={props.userId}
+                     onGetFollowingList={props.onGetFollowingList}
+                     onGetAllUsersList={props.onGetAllUsersList}
+        />
+    );
+}
 
 let mapStateToProps = (state) => {
     return {
@@ -29,6 +43,4 @@ let mapDispatchToProps = (dispatch) => {
     };
 }
 
-const UserListContainer = connect(mapStateToProps, mapDispatchToProps)(UserListApi);
-
-export default UserListContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(UserListContainer);
