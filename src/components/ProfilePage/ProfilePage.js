@@ -40,7 +40,6 @@ function ProfilePage(props) {
                         </div>
                         <div className="profile__description">
                             <div className="description__name">{props.data.name}</div>
-
                             {infoEditMode ?
                                 <input className="description__main-input"
                                        placeholder={props.data.info}

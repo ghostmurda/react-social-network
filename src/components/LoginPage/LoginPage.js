@@ -24,6 +24,16 @@ function LoginPage(props) {
             {props.authData.isFetching ? <Loader/> :
                 <div className="LoginPage">
                     <Form onSubmit={onSubmit}
+                          validate={values => {
+                              const errors = {}
+                              if (!values.username) {
+                                  errors.username = 'Required'
+                              }
+                              if (!values.password) {
+                                  errors.password = 'Required'
+                              }
+                              return errors
+                          }}
                           render={({handleSubmit, form, submitting, pristine, values}) => (
                               <form className="login-page__form" onSubmit={handleSubmit}>
                                   <Field name="username">
