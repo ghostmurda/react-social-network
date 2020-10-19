@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import HeaderContainer from "./components/Header/HeaderContainer";
+import HeaderContainer from "./containers/HeaderContainer";
 import {BrowserRouter, Redirect, Route} from "react-router-dom";
 import ProfilePageContainer from "./containers/ProfilePageContainer";
 import UserListContainer from "./components/UserList/UserListContainer";
