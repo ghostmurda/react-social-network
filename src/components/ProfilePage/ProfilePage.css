@@ -127,11 +127,11 @@
     height: 88px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
-.profile__input input{
-    width: 76%;
+.postText__input{
+    width: 70%;
     outline: 0;
     border: 0px;
     font-size: 17px;

@@ -3,6 +3,7 @@ import './ProfilePage.css';
 import Loader from "../Loader/Loader";
 import PostsWall from "./PostsWall/PostsWall";
 import {putUserInfoReq} from "../../api/api";
+import {Form, Field} from 'react-final-form';
 
 function ProfilePage(props) {
     const [infoEditMode, setInfoEditMode] = useState(false);
@@ -27,6 +28,10 @@ function ProfilePage(props) {
 
     let changeInfo = () => {
         setInfoEditMode(!infoEditMode);
+    }
+
+    let addPost = (values) => {
+        alert(values.postText);
     }
 
     return (
@@ -97,10 +102,25 @@ function ProfilePage(props) {
                             <span className="followers__num">{props.data.following}</span>
                             <div className="followers__main"> </div>
                         </div>
-                        <div className="profile__input">
-                            <input type="text" placeholder="What's new?"/>
-                            <button className="btn">Publish</button>
-                        </div>
+                        <Form onSubmit={addPost}
+                              validate={values => {
+                                  const errors = {}
+                                  if (!values.postText) {
+                                      errors.postText = 'Required'
+                                  }
+                                  return errors
+                              }}
+                              render={({handleSubmit, form, submitting, pristine, values}) => (
+                                  <form className="profile__input" onSubmit={handleSubmit}>
+                                      <Field name="postText">
+                                          {({input}) => (
+                                              <input className="postText__input" {...input} placeholder="What's new?"/>
+                                          )}
+                                      </Field>
+                                      <button className="btn" type="submit" disabled={submitting}>Publish</button>
+                                  </form>
+                              )}
+                        />
                         <PostsWall postsData={props.data.postsData}/>
                     </div>
                 </div>
