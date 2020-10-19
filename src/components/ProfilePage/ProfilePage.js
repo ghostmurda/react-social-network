@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import './ProfilePage.css';
 import Loader from "../Loader/Loader";
 import PostsWall from "./PostsWall/PostsWall";
-import {putUserInfoReq} from "../../api/api";
+import {addPostReq, putUserInfoReq} from "../../api/api";
 import {Form, Field} from 'react-final-form';
 
 function ProfilePage(props) {
@@ -31,7 +31,8 @@ function ProfilePage(props) {
     }
 
     let addPost = (values) => {
-        alert(values.postText);
+        addPostReq(props.userId, props.userName, values.postText);
+        values.postText = '';
     }
 
     return (

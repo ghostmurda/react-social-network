@@ -29,3 +29,8 @@ export const putUserInfoReq = (id, info) => {
     return axios.put(`${basedUrl}/api/users/info`, {userId: id, info: info})
         .then(res => res.data);
 }
+
+export const addPostReq = (userId, creator, text) => {
+    return axios.post(`${basedUrl}/api/users/profile/addpost`, {userId, creator, text})
+        .then(res => res.data);
+}

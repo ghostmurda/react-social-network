@@ -13,6 +13,7 @@ class ProfilePageApi extends React.Component{
                 isFetchingProfile={this.props.isFetchingProfile}
                 userId={this.props.userId}
                 authUserId={this.props.authUserId}
+                userName={this.props.userName}
             />
         );
     }

@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import ProfilePageApi from "../components/ProfilePage/ProfilePageApi";
 import {onGetProfileThunk} from "../redux/actions/profileActions";
-import {getUserId} from "../redux/selectors/authSelectors";
+import {getUserId, getUserName} from "../redux/selectors/authSelectors";
 import {getFetchingProfile, getProfileData} from "../redux/selectors/profileSelectors";
 
 function ProfilePageContainer(props){
@@ -13,6 +13,7 @@ function ProfilePageContainer(props){
                         userId={props.userId}
                         authUserId={props.authUserId}
                         onGetProfile={props.onGetProfile}
+                        userName={props.userName}
         />
     );
 }
@@ -23,6 +24,7 @@ let mapStateToProps = (state, ownProps) => {
         isFetchingProfile: getFetchingProfile(state),
         userId: ownProps.match.params.userId,
         authUserId: getUserId(state),
+        userName: getUserName(state)
     };
 }
 
