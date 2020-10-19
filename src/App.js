@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import {BrowserRouter, Redirect, Route} from "react-router-dom";
-import ProfilePageContainer from "./components/ProfilePage/ProfilePageContainer";
+import ProfilePageContainer from "./containers/ProfilePageContainer";
 import UserListContainer from "./components/UserList/UserListContainer";
 import ChatsContainer from "./components/Chats/ChatsContainer";
 import LoginPageContainer from "./components/LoginPage/LoginPageContainer";
