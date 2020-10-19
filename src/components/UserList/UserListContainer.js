@@ -1,13 +1,19 @@
 import {connect} from "react-redux";
 import UserListApi from "./UserListApi";
 import {onGetAllUsersThunk, onGetFollowingListThunk} from "../../redux/actions/usersActions";
+import {
+    getFetchingFollowingList,
+    getFetchingUsersList,
+    getFollowingList,
+    getUsersList
+} from "../../redux/selectors/usersSelectors";
 
 let mapStateToProps = (state) => {
     return {
-        followingListData: state.usersData.followingList,
-        usersListData: state.usersData.usersList,
-        isFetchingFollowingList: state.usersData.isFetchingFollowingList,
-        isFetchingUsersList: state.usersData.isFetchingUsersList,
+        followingListData: getFollowingList(state),
+        usersListData: getUsersList(state),
+        isFetchingFollowingList: getFetchingFollowingList(state),
+        isFetchingUsersList: getFetchingUsersList(state),
         userId: state.authData.userId,
     };
 };
