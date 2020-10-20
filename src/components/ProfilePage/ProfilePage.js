@@ -67,6 +67,15 @@ function ProfilePage(props) {
                                                }
                                            }
                                        }}
+                                       onKeyDown={() => {
+                                           if (props.userId === props.authUserId){
+                                               changeInfo();
+                                               if (editedInfoRef.current.value !== ''){
+                                                   setLocalInfo(editedInfoRef.current.value);
+                                                   setInfoProcess(true);
+                                               }
+                                           }
+                                       }}
                                        autoFocus={true}
                                        maxLength="59"
                                        ref={editedInfoRef}
