@@ -1,37 +1,23 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useRef, useState} from "react";
 import './ProfilePage.css';
 import Loader from "../Loader/Loader";
 import PostsWall from "./PostsWall/PostsWall";
-import {putUserInfoReq} from "../../api/api";
 import {Form, Field} from 'react-final-form';
 
 function ProfilePage(props) {
     const [infoEditMode, setInfoEditMode] = useState(false);
-    const [infoProcess, setInfoProcess] = useState(false);
-    const [localInfo, setLocalInfo] = useState(props.data.info);
     const editedInfoRef = useRef();
-    const setInfoProcessFalse = () => setInfoProcess(false);
-    const setLocalInfoFromProps = () => setLocalInfo(props.data.info);
 
-    useEffect(() => {
-        if (infoProcess) {
-            putUserInfoReq(props.userId, localInfo)
-                .then(res => {
-                    props.data.info = res;
-                    setLocalInfo(res);
-                });
-            setInfoProcessFalse();
-        } else {
-            setLocalInfoFromProps();
-        }
-    });
-
-    let changeInfo = () => {
+    let changeInfoEditMode = () => {
         setInfoEditMode(!infoEditMode);
     }
 
+    let setNewInfo = (userId, text) => {
+        props.onChangeProfileInfo(userId, text);
+    }
+
     let addPost = (values) => {
-        props.onUpdateProfile(props.userId, props.userName, values.postText);
+        props.onProfileAddPost(props.userId, props.userName, values.postText);
         values.postText = '';
     }
 
@@ -51,29 +37,18 @@ function ProfilePage(props) {
                                        placeholder={props.data.info}
                                        onClick={() => {
                                            if (props.userId === props.authUserId){
-                                               changeInfo();
                                                if (editedInfoRef.current.value !== ''){
-                                                   setLocalInfo(editedInfoRef.current.value);
-                                                   setInfoProcess(true);
+                                                   setNewInfo(props.userId, editedInfoRef.current.value);
                                                }
+                                               changeInfoEditMode();
                                            }
                                        }}
                                        onBlur={() => {
                                            if (props.userId === props.authUserId){
-                                               changeInfo();
                                                if (editedInfoRef.current.value !== ''){
-                                                   setLocalInfo(editedInfoRef.current.value);
-                                                   setInfoProcess(true);
+                                                   setNewInfo(props.userId, editedInfoRef.current.value);
                                                }
-                                           }
-                                       }}
-                                       onKeyDown={() => {
-                                           if (props.userId === props.authUserId){
-                                               changeInfo();
-                                               if (editedInfoRef.current.value !== ''){
-                                                   setLocalInfo(editedInfoRef.current.value);
-                                                   setInfoProcess(true);
-                                               }
+                                               changeInfoEditMode();
                                            }
                                        }}
                                        autoFocus={true}
@@ -82,9 +57,9 @@ function ProfilePage(props) {
                                 /> :
                                 <div className="description__main" onClick={() => {
                                     if (props.userId === props.authUserId) {
-                                        changeInfo();
+                                        changeInfoEditMode();
                                     }
-                                }}>{localInfo}</div>
+                                }}>{props.data.info}</div>
                             }
 
                             <div className="description__footer">

@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import ProfilePageApi from "../components/ProfilePage/ProfilePageApi";
-import {onGetProfileThunk, onUpdateProfileThunk} from "../redux/actions/profileActions";
+import {onChangeProfileInfoThunk, onGetProfileThunk, onProfileAddPostThunk} from "../redux/actions/profileActions";
 import {getUserId, getUserName} from "../redux/selectors/authSelectors";
 import {getFetchingProfile, getProfileData} from "../redux/selectors/profileSelectors";
 
@@ -14,7 +14,8 @@ function ProfilePageContainer(props){
                         authUserId={props.authUserId}
                         onGetProfile={props.onGetProfile}
                         userName={props.userName}
-                        onUpdateProfile={props.onUpdateProfile}
+                        onProfileAddPost={props.onProfileAddPost}
+                        onChangeProfileInfo={props.onChangeProfileInfo}
         />
     );
 }
@@ -34,8 +35,11 @@ let mapDispatchToProps = (dispatch) => {
         onGetProfile: (userId) => {
             dispatch(onGetProfileThunk(userId));
         },
-        onUpdateProfile: (userId, userName, postText) => {
-            dispatch(onUpdateProfileThunk(userId, userName, postText))
+        onProfileAddPost: (userId, userName, postText) => {
+            dispatch(onProfileAddPostThunk(userId, userName, postText))
+        },
+        onChangeProfileInfo: (userId, info) => {
+            dispatch(onChangeProfileInfoThunk(userId, info));
         }
     };
 }
