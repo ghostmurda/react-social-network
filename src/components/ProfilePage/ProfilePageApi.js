@@ -14,6 +14,7 @@ class ProfilePageApi extends React.Component{
                 userId={this.props.userId}
                 authUserId={this.props.authUserId}
                 userName={this.props.userName}
+                onUpdateProfile={this.props.onUpdateProfile}
             />
         );
     }

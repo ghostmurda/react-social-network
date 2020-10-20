@@ -1,4 +1,4 @@
-import {profilePageReq} from "../../api/api";
+import {addPostReq, profilePageReq} from "../../api/api";
 import {GET_PROFILE} from "../reducers/profileReducer";
 import {TOGGLE_LOADER} from "../reducers/profileReducer";
 
@@ -9,6 +9,13 @@ export const onGetProfileThunk = (userId) => (dispatch) => {
             dispatch(toggleLoaderProfileCreator(false));
             dispatch(getProfileActionCreator(res));
         })
+}
+
+export const onUpdateProfileThunk = (userId, userName, postText) => (dispatch) => {
+    addPostReq(userId, userName, postText)
+        .then(res => {
+            dispatch(getProfileActionCreator(res));
+        });
 }
 
 export const getProfileActionCreator = (profileData) => {
