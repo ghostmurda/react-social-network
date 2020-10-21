@@ -2,8 +2,6 @@
     height: 620px;
     padding: 16px;
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .login-page__description{
@@ -13,7 +11,34 @@
     box-shadow: inset 0px -1px 0px var(--color-shadow);
     border-radius: 5px;
     margin-right: 16px;
-    height: 620px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-page__description__title{
+    margin-top: 32px;
+    font-size: 25px;
+    color: var(--color-blue);
+}
+
+.login-page__description__body{
+    padding: 16px;
+    margin-top: 16px;
+    font-size: 17px;
+}
+
+.login-page__description__body strong, .login-page__description__body i{
+    color: var(--color-blue);
+}
+
+.login-page__description__body a{
+    color: var(--color-blue);
+}
+
+.login-page__description__body li{
+    margin-bottom: 16px;
 }
 
 .login-page__form{
