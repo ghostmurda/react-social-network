@@ -23,6 +23,9 @@ function LoginPage(props) {
         <>
             {props.isFetching ? <Loader additional={"login-page"}/> :
                 <div className="LoginPage">
+                    <div className="login-page__description">
+                        test
+                    </div>
                     <Form onSubmit={onSubmit}
                           validate={values => {
                               const errors = {}
