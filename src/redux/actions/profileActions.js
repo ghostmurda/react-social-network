@@ -7,25 +7,25 @@ export const onGetProfileThunk = (userId) => (dispatch) => {
     profilePageReq(userId)
         .then(res => {
             dispatch(toggleLoaderProfileCreator(false));
-            dispatch(getProfileActionCreator(res));
+            dispatch(getProfileCreator(res));
         })
 }
 
 export const onProfileAddPostThunk = (userId, userName, postText) => (dispatch) => {
     addPostReq(userId, userName, postText)
         .then(res => {
-            dispatch(getProfileActionCreator(res));
+            dispatch(getProfileCreator(res));
         });
 }
 
 export const onChangeProfileInfoThunk = (id, info) => (dispatch) => {
     putUserInfoReq(id, info)
         .then(res => {
-            dispatch(getProfileActionCreator(res));
+            dispatch(getProfileCreator(res));
         });
 }
 
-export const getProfileActionCreator = (profileData) => {
+export const getProfileCreator = (profileData) => {
     return {
         type: GET_PROFILE,
         profile: profileData,
