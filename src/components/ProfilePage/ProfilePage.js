@@ -3,6 +3,7 @@ import './ProfilePage.css';
 import Loader from "../Loader/Loader";
 import PostsWall from "./PostsWall/PostsWall";
 import InputForm from "../InputForm/InputForm";
+import Avatar from "../Avatar/Avatar";
 
 function ProfilePage(props) {
     const [infoEditMode, setInfoEditMode] = useState(false);
@@ -27,8 +28,7 @@ function ProfilePage(props) {
                 <div className="Profile">
                     <div className="profile">
                         <div className="profile__avatar">
-                            <img src={`https://avatars.dicebear.com/api/avataaars/${props.data.name}.svg`}
-                                 alt="Avatar"/>
+                            <Avatar userName={props.data.name}/>
                         </div>
                         <div className="profile__description">
                             <div className="description__name">{props.data.name}</div>
