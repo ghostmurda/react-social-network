@@ -24,6 +24,11 @@
     text-decoration: none;
 }
 
+.chat-card__name-active{
+    font-weight: 500;
+    text-decoration: underline;
+}
+
 .chat-card__name:hover{
     text-decoration: underline;
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import './ChatCard.css';
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
-function ChatCard(props){
+function ChatCard(props) {
     return (
         <div className="ChatCard">
             <div className="chat-card">
@@ -13,14 +13,16 @@ function ChatCard(props){
                 />
                 <div className="chat-card__description">
                     <div className="chat-card__name">
-                        <Link to={{
-                            pathname: `/dialogs/${props.name}`,
-                            state: {
-                                chatName: props.name,
-                            }
-                        }}>
+                        <NavLink
+                            activeClassName="chat-card__name-active"
+                            to={{
+                                pathname: `/dialogs/${props.name}`,
+                                state: {
+                                    chatName: props.name,
+                                }
+                            }}>
                             {props.name}
-                        </Link>
+                        </NavLink>
                     </div>
                 </div>
             </div>
