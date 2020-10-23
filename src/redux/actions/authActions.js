@@ -1,17 +1,19 @@
 import {loginReq} from "../../api/api";
 import {GET_ID, GET_NAME, SET_AUTH, TOGGLE_LOADER} from "../reducers/authReducer";
 
-export const onLoginProcessThunk = (userName, userPassword) => (dispatch) => {
+export const onLoginProcessThunk = (userName, userPassword) => async (dispatch) => {
     dispatch(toggleLoaderCreator(true));
-    loginReq(userName, userPassword)
-        .then(res => {
-            if (res !== 'failed') {
-                dispatch(setAuthCreator());
-                dispatch(getUserIdCreator(res.userId));
-                dispatch(getUserNameCreator(res.userName));
-            }
-            dispatch(toggleLoaderCreator(false));
-        });
+    try{
+        let res = await loginReq(userName, userPassword);
+        if (res !== 'failed') {
+            dispatch(setAuthCreator());
+            dispatch(getUserIdCreator(res.userId));
+            dispatch(getUserNameCreator(res.userName));
+        }
+    }catch (err){
+        console.log(err);
+    }
+    dispatch(toggleLoaderCreator(false));
 };
 
 export const getUserIdCreator = (userId) => {
