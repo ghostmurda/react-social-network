@@ -6,22 +6,26 @@ import {
     TOGGLE_FOLLOWING_USERS_LOADER
 } from "../reducers/usersReducer";
 
-export const onGetFollowingListThunk = (userId) => (dispatch) => {
+export const onGetFollowingListThunk = (userId) => async (dispatch) => {
     dispatch(toggleLoaderFollowingListCreator(true));
-    getFollowingListReq(userId)
-        .then(res => {
-            dispatch(toggleLoaderFollowingListCreator(false));
-            dispatch(getFollowingUsersCreator(res));
-        });
+    try{
+        let res = await getFollowingListReq(userId);
+        dispatch(getFollowingUsersCreator(res));
+    }catch (err){
+        console.log(err);
+    }
+    dispatch(toggleLoaderFollowingListCreator(false));
 }
 
-export const onGetAllUsersThunk = () => (dispatch) => {
+export const onGetAllUsersThunk = () => async (dispatch) => {
     dispatch(toggleLoaderAllUsersCreator(true));
-    getAllUsersListReq()
-        .then(res => {
-            dispatch(toggleLoaderAllUsersCreator(false));
-            dispatch(getAllUsersCreator(res));
-        });
+    try{
+        let res = await getAllUsersListReq();
+        dispatch(getAllUsersCreator(res));
+    }catch (err){
+        console.log(err);
+    }
+    dispatch(toggleLoaderAllUsersCreator(false));
 }
 
 export const getAllUsersCreator = function(newUsersList){
