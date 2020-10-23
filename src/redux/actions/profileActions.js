@@ -6,12 +6,11 @@ export const onGetProfileThunk = (userId) => async (dispatch) => {
     dispatch(toggleLoaderProfileCreator(true));
     try{
         let res = await profilePageReq(userId);
-        dispatch(toggleLoaderProfileCreator(false));
         dispatch(getProfileCreator(res));
     }catch (err){
-        dispatch(toggleLoaderProfileCreator(false));
         console.log(err);
     }
+    dispatch(toggleLoaderProfileCreator(false));
 }
 
 export const onProfileAddPostThunk = (userId, userName, postText) => async (dispatch) => {
