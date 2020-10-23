@@ -1,16 +1,13 @@
 import React from "react";
 import './ChatCard.css';
 import {NavLink} from "react-router-dom";
+import Avatar from "../../Avatar/Avatar";
 
 function ChatCard(props) {
     return (
         <div className="ChatCard">
             <div className="chat-card">
-                <img
-                    className="chat-card__avatar"
-                    src={`https://avatars.dicebear.com/api/avataaars/${props.name}.svg`}
-                    alt="Avatar"
-                />
+                <Avatar userName={props.name}/>
                 <div className="chat-card__description">
                     <div className="chat-card__name">
                         <NavLink
