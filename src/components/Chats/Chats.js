@@ -1,23 +1,18 @@
-import React, {useRef} from "react";
+import React from "react";
+import {Form, Field} from 'react-final-form';
 import ChatCard from "./ChatCard/ChatCard";
 import ChatWindow from "./ChatWindow/ChatWindow";
 import './Chats.css';
 import Loader from "../Loader/Loader";
 
 function Chats(props) {
-    let newMessageElement = useRef();
-    let addMessage = () => {
-        let profile = props.data.chatName;
-        let text = newMessageElement.current.value;
-        if (!text) {
-            return false;
-        }
-        props.addMessage(profile, text, props.messageCreator);
-        newMessageElement.current.value = '';
+    let addMessage = (values) => {
+        props.addMessage(props.data.chatName, values.messageInput, props.messageCreator);
+        values.messageInput = '';
     }
-    let chatsElements = props.followingListData.map((item, i) => {
-        return <ChatCard key={i} name={item.name}/>
-    });
+
+    let chatsElements = props.followingListData.map((item, i) => <ChatCard key={i} name={item.name}/>);
+
     return (
         <div className="Chats">
             <div className="chats-page">
@@ -25,12 +20,29 @@ function Chats(props) {
                     <div className="window__header">{props.data.chatName}</div>
                     <ChatWindow data={props.data.messages[props.data.chatName]}/>
                 </div>
-                <div className="chats-page__input">
-                    <textarea placeholder="Write a message" ref={newMessageElement}/>
-                    <div className="input__btn-wrapper">
-                        <button className="btn" onClick={addMessage}>Send</button>
-                    </div>
-                </div>
+                <Form onSubmit={addMessage}
+                      validate={values => {
+                          const errors = {};
+                          if (!values.messageInput){
+                              errors.messageInput = 'Required';
+                          }
+                          return errors;
+                      }}
+                      render={({handleSubmit, form, submitting, pristine, values}) => (
+                          <form className="chats-page__input" onSubmit={handleSubmit}>
+                              <Field name="messageInput">
+                                  {({input}) => (
+                                      <textarea {...input} placeholder="Write a message"/>
+                                  )}
+                              </Field>
+                              <div className="input__btn-wrapper">
+                                  <button className="btn" type="submit" disabled={submitting}>
+                                      Send
+                                  </button>
+                              </div>
+                          </form>
+                      )}
+                />
                 <div className="chats-page__chats">
                     <div className="secondary-list__header">Chats</div>
                     <span>&nbsp;</span>
