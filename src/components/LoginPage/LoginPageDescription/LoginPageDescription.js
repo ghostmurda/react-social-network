@@ -1,6 +1,6 @@
 import React from "react";
 
-function LoginPageDescription(){
+function LoginPageDescription() {
     return (
         <div className="login-page__description">
                         <span className="login-page__description__title">
