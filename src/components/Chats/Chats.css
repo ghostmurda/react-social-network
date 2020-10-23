@@ -32,7 +32,7 @@
     padding: 16px;
 }
 
-.chats-page__input textarea{
+.chats-page__input__textarea{
     resize: none;
     width: 75%;
     height: 90%;
@@ -42,7 +42,7 @@
     font-size: 17px;
 }
 
-.chats-page__input textarea:hover{
+.chats-page__input__textarea:hover{
     outline: 0;
 }
 
