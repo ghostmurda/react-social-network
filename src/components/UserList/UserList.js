@@ -4,24 +4,8 @@ import UserCard from './UserCard/UserCard';
 import Loader from "../Loader/Loader";
 
 function UserList(props) {
-    let usersListElements = props.followingListData.map((item, i) => {
-        return <UserCard
-            key={i}
-            id={item.id}
-            name={item.name}
-            posts={item.posts}
-            followers={item.followers}
-        />;
-    });
-    let usersSecondaryListElements = props.usersListData.map((item, i) => {
-        return <UserCard
-            key={i}
-            id={item.id}
-            name={item.name}
-            posts={item.posts}
-            followers={item.followers}
-        />;
-    });
+    let usersListElements = props.followingListData.map((item, i) => <UserCard key={i} {...item}/>);
+    let usersSecondaryListElements = props.usersListData.map((item, i) => <UserCard key={i} {...item}/>);
     return (
         <div className="UserList">
             <div className="users-page">

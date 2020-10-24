@@ -1,11 +1,12 @@
 import React from "react";
 import './Message.css';
+import Avatar from "../../../Avatar/Avatar";
 
 function Message(props){
     return (
         <div className="Message">
             <div className="message__creator">
-                <img src={`https://avatars.dicebear.com/api/avataaars/${props.name}.svg`} alt="Avatar"/>
+                <Avatar userName={props.name}/>
             </div>
             <div className="message__body">
                 {props.text}

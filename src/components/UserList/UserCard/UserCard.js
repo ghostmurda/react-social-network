@@ -1,16 +1,13 @@
 import React from 'react';
 import './UserCard.css';
 import {Link} from 'react-router-dom';
+import Avatar from "../../Avatar/Avatar";
 
 function UserCard(props) {
     return (
         <div className="UserCard">
             <div className="user-card">
-                <img
-                    className="user-card__avatar"
-                    src={`https://avatars.dicebear.com/api/avataaars/${props.name}.svg`}
-                    alt="Avatar"
-                />
+                <Avatar avatarClassName={"user-card__avatar"} userName={props.name}/>
                 <div className="user-card__description">
                     <div className="user-card__name">
                         <Link to={`/user/${props.id}`}>
