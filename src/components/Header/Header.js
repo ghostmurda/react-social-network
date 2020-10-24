@@ -2,6 +2,7 @@ import React from 'react';
 import {ReactComponent as Logo} from '../../img/logo.svg';
 import {ReactComponent as Search} from '../../img/search.svg';
 import './Header.css';
+import Avatar from "../Avatar/Avatar";
 
 function Header(props) {
     return (
@@ -15,10 +16,9 @@ function Header(props) {
                     <input type="text" placeholder="Search"/>
                 </div>
                 {props.name ?
-                    <img className="header__user"
-                         src={`https://avatars.dicebear.com/api/avataaars/${props.name}.svg`}
-                         alt="Avatar"/>
-                    : <div className="header__user"> </div>}
+                    <Avatar avatarClassName={"header__user"} userName={props.name}/>
+                    : <div className="header__user"> </div>
+                }
             </div>
         </div>
     );
