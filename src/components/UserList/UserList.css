@@ -41,3 +41,13 @@
     transform: translateY(-16px);
     z-index: 10;
 }
+
+.users-page__secondary-list__btn-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.users-page__secondary-list__btn-wrapper .btn{
+    max-height: 40px;
+}

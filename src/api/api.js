@@ -20,8 +20,8 @@ export const getFollowingListReq = (id) => {
         .then(res => res.data);
 }
 
-export const getAllUsersListReq = () => {
-    return axios.get(`${basedUrl}/api/users/all?skip=0&pageSize=5`)
+export const getAllUsersListReq = (skip = 0, pageSize = 5) => {
+    return axios.get(`${basedUrl}/api/users/all?skip=${skip}&pageSize=${pageSize}`)
         .then(res => res.data);
 }
 
