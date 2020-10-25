@@ -26,7 +26,7 @@
     grid-row: 1/5;
     padding: 16px;
     overflow: auto;
-    height: 393px;
+    height: 564px;
 }
 
 .users-page__secondary-list::-webkit-scrollbar {
