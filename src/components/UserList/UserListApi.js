@@ -2,9 +2,18 @@ import React from 'react';
 import UserList from "./UserList";
 
 class UserListApi extends React.Component {
+    constructor(props) {
+        super(props);
+        this.usersSecondaryListShowMore = this.usersSecondaryListShowMore.bind(this);
+    }
+
     componentDidMount() {
         this.props.onGetFollowingList(this.props.userId);
-        this.props.onGetAllUsersList();
+        this.usersSecondaryListShowMore();
+    }
+
+    usersSecondaryListShowMore(skip, pageSize){
+        this.props.onGetAllUsersList(skip, pageSize);
     }
 
     render() {
@@ -14,6 +23,7 @@ class UserListApi extends React.Component {
                 usersListData={this.props.usersListData}
                 isFetchingFollowingList={this.props.isFetchingFollowingList}
                 isFetchingUsersList={this.props.isFetchingUsersList}
+                showMore={this.usersSecondaryListShowMore}
             />
         );
     }

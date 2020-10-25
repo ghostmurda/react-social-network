@@ -38,8 +38,8 @@ let mapDispatchToProps = (dispatch) => {
         onGetFollowingList: (userId) => {
             dispatch(onGetFollowingListThunk(userId));
         },
-        onGetAllUsersList: () => {
-            dispatch(onGetAllUsersThunk());
+        onGetAllUsersList: (skip, pageSize) => {
+            dispatch(onGetAllUsersThunk(skip, pageSize));
         },
     };
 }

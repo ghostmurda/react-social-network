@@ -17,10 +17,10 @@ export const onGetFollowingListThunk = (userId) => async (dispatch) => {
     dispatch(toggleLoaderFollowingListCreator(false));
 }
 
-export const onGetAllUsersThunk = () => async (dispatch) => {
+export const onGetAllUsersThunk = (skip, pageSize) => async (dispatch) => {
     dispatch(toggleLoaderAllUsersCreator(true));
     try{
-        let res = await getAllUsersListReq();
+        let res = await getAllUsersListReq(skip, pageSize);
         dispatch(getAllUsersCreator(res));
     }catch (err){
         console.log(err);
