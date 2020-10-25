@@ -29,7 +29,11 @@ function UserList(props) {
                             <>
                                 {usersSecondaryListElements}
                                 <div className="users-page__secondary-list__btn-wrapper">
-                                    <button className="btn" onClick={() => showMore(page)}>
+                                    <button className="btn" onClick={() => {
+                                        if (page <= 2){
+                                            showMore(page);
+                                        }
+                                    }}>
                                         More
                                     </button>
                                 </div>
