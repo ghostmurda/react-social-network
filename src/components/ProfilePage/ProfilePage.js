@@ -12,6 +12,15 @@ function ProfilePage(props) {
         values.postText = '';
     }
 
+    let descriptionFooterItem = (data, name) => {
+        return (
+            <div className="description__footer__item">
+                <span className="item__num">{data}</span><br/>
+                <span className="item__name">{name}</span>
+            </div>
+        )
+    }
+
     return (
         <>
             {props.isFetchingProfile ? <Loader/> :
@@ -29,18 +38,9 @@ function ProfilePage(props) {
                                 authUserId={props.authUserId}
                             />
                             <div className="description__footer">
-                                <div className="description__footer__item">
-                                    <span className="item__num">{props.data.followers}</span><br/>
-                                    <span className="item__name">followers</span>
-                                </div>
-                                <div className="description__footer__item">
-                                    <span className="item__num">{props.data.posts}</span><br/>
-                                    <span className="item__name">posts</span>
-                                </div>
-                                <div className="description__footer__item">
-                                    <span className="item__num">{props.data.following}</span><br/>
-                                    <span className="item__name">following</span>
-                                </div>
+                                {descriptionFooterItem(props.data.followers, 'followers')}
+                                {descriptionFooterItem(props.data.posts, 'posts')}
+                                {descriptionFooterItem(props.data.following, 'following')}
                             </div>
                         </div>
                         <div className="profile__followers">
