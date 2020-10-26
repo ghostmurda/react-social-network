@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './UserList.css';
 import UserCard from './UserCard/UserCard';
 import Loader from "../Loader/Loader";
+import Button from "../Button/Button";
 
 function UserList(props) {
     const [page, setPage] = useState(1);
@@ -29,13 +30,11 @@ function UserList(props) {
                             <>
                                 {usersSecondaryListElements}
                                 <div className="users-page__secondary-list__btn-wrapper">
-                                    <button className="btn" onClick={() => {
+                                    <Button btnName={"More"} onClick={() => {
                                         if (page <= 2){
                                             showMore(page);
                                         }
-                                    }}>
-                                        More
-                                    </button>
+                                    }}/>
                                 </div>
                             </>
                         }

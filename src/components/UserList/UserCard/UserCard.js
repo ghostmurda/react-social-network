@@ -2,6 +2,7 @@ import React from 'react';
 import './UserCard.css';
 import {Link} from 'react-router-dom';
 import Avatar from "../../Avatar/Avatar";
+import Button from "../../Button/Button";
 
 function UserCard(props) {
     return (
@@ -30,7 +31,7 @@ function UserCard(props) {
                     </div>
                 </div>
                 <div className="user-card__btn-wrapper">
-                    <button className="btn">Unfollow</button>
+                    <Button btnName={"Unfollow"}/>
                 </div>
             </div>
         </div>
