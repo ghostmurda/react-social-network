@@ -13,6 +13,7 @@ const profileReducer = (state = initialState, action) => {
             stateCopy.profileData = {...state.profileData};
             stateCopy.profileData = action.profile;
             stateCopy.profileData.postsData.sort((a, b) => b.id - a.id );
+            stateCopy.profileData.posts = stateCopy.profileData.postsData.length;
             return stateCopy;
         }
         case TOGGLE_LOADER:
