@@ -1,5 +1,6 @@
 import React from "react";
 import {Form, Field} from "react-final-form";
+import Button from "../../Button/Button";
 
 function LoginPageForm(props){
     return (
@@ -33,9 +34,7 @@ function LoginPageForm(props){
                           )}
                       </Field>
                       <div className="form__btn-wrapper">
-                          <button className="btn" type="submit" disabled={submitting}>
-                              Sign in
-                          </button>
+                          <Button type={"submit"} disabled={submitting} btnName={"Sign in"}/>
                           <span>Forgot password?</span>
                       </div>
                   </form>

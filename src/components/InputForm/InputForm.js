@@ -1,5 +1,6 @@
 import React from "react";
 import {Form, Field} from 'react-final-form';
+import Button from "../Button/Button";
 
 function InputForm(props){
     return (
@@ -21,9 +22,7 @@ function InputForm(props){
                               />
                           )}
                       </Field>
-                      <button className="btn" type="submit" disabled={submitting}>
-                          {props.btnName}
-                      </button>
+                      <Button type={"submit"} disabled={submitting} btnName={props.btnName}/>
                   </form>
               )}
         />
