@@ -1,22 +1,12 @@
-import React, {useRef, useState} from "react";
+import React from "react";
 import './ProfilePage.css';
 import Loader from "../Loader/Loader";
 import PostsWall from "./PostsWall/PostsWall";
 import InputForm from "../InputForm/InputForm";
 import Avatar from "../Avatar/Avatar";
+import ProfileDescriptionInfo from "./ProfileDescriptionInfo/ProfileDescriptionInfo";
 
 function ProfilePage(props) {
-    const [infoEditMode, setInfoEditMode] = useState(false);
-    const editedInfoRef = useRef();
-
-    let changeInfoEditMode = () => {
-        setInfoEditMode(!infoEditMode);
-    }
-
-    let setNewInfo = (userId, text) => {
-        props.onChangeProfileInfo(userId, text);
-    }
-
     let addPost = (values) => {
         props.onProfileAddPost(props.userId, props.userName, values.postText);
         values.postText = '';
@@ -32,36 +22,12 @@ function ProfilePage(props) {
                         </div>
                         <div className="profile__description">
                             <div className="description__name">{props.data.name}</div>
-                            {infoEditMode ?
-                                <input className="description__main-input"
-                                       placeholder={props.data.info}
-                                       onClick={() => {
-                                           if (props.userId === props.authUserId){
-                                               if (editedInfoRef.current.value !== ''){
-                                                   setNewInfo(props.userId, editedInfoRef.current.value);
-                                               }
-                                               changeInfoEditMode();
-                                           }
-                                       }}
-                                       onBlur={() => {
-                                           if (props.userId === props.authUserId){
-                                               if (editedInfoRef.current.value !== ''){
-                                                   setNewInfo(props.userId, editedInfoRef.current.value);
-                                               }
-                                               changeInfoEditMode();
-                                           }
-                                       }}
-                                       autoFocus={true}
-                                       maxLength="59"
-                                       ref={editedInfoRef}
-                                /> :
-                                <div className="description__main" onClick={() => {
-                                    if (props.userId === props.authUserId) {
-                                        changeInfoEditMode();
-                                    }
-                                }}>{props.data.info}</div>
-                            }
-
+                            <ProfileDescriptionInfo
+                                onChangeProfileInfo={props.onChangeProfileInfo}
+                                info={props.data.info}
+                                userId={props.userId}
+                                authUserId={props.authUserId}
+                            />
                             <div className="description__footer">
                                 <div className="description__footer__item">
                                     <span className="item__num">{props.data.followers}</span><br/>
