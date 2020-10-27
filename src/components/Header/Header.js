@@ -1,5 +1,5 @@
 import React from 'react';
-import {ReactComponent as Logo} from '../../img/logo.svg';
+import {ReactComponent as Logo} from '../../img/react.svg';
 import {ReactComponent as Search} from '../../img/search.svg';
 import './Header.css';
 import Avatar from "../Avatar/Avatar";

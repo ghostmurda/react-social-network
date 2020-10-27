@@ -19,6 +19,12 @@
     cursor: pointer;
 }
 
+.header__logo svg{
+    transform: translateY(4px);
+    max-width: 46px;
+    max-height: 46px;
+}
+
 .header__search{
     min-width: 230px;
     background: var(--color-header-search);
