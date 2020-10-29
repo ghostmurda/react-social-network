@@ -2,7 +2,7 @@ https://ghostmurda.github.io/react-social-network/
 
 ## Description
 
-This is social network single-page application made using:
+This is <a href="https://github.com/ghostmurda/react-social-network">social network</a> single-page application made using:
 <ul>
     <li>React</li>
     <li>Redux</li>
