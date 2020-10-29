@@ -2,16 +2,18 @@ https://ghostmurda.github.io/react-social-network/
 
 ## Description
 
-This is simple social network frontend web app made using React.<br />
-Design of the project was based on this <a href="https://www.figma.com/community/file/888741451082133502">Figma template</a>.<br />
-For now web app contains the following types of pages:
+This is social network single-page application made using:
 <ul>
-    <li>Profile</li>
-    <li>Dialogs</li>
-    <li>User list</li>
+    <li>React</li>
+    <li>Redux</li>
+    <li>react-redux</li>
+    <li>redux-thunk</li>
+    <li>react-router</li>
+    <li>react-final-form</li>
+    <li>Axios</li>
 </ul>
-You can choose any user from the User list and then open his profile page.
-<br/>Also you can send messages to users from your Following list.
+Use login <strong>admin</strong> and password <strong>admin</strong> to sign in<br/>
+The project is using REST API provided by <a href="https://github.com/ghostmurda/server-rest-api">this server</a>
 
 ##
 
