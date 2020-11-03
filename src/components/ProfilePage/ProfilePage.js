@@ -6,19 +6,31 @@ import InputForm from "../InputForm/InputForm";
 import Avatar from "../Avatar/Avatar";
 import ProfileDescriptionInfo from "./ProfileDescriptionInfo/ProfileDescriptionInfo";
 
+const followersItems = (num) => {
+    let arr = [];
+    while(num){
+        num--;
+        arr.push(
+            <div key={num} className="followers__item">
+                <Avatar userName={String(Math.random())}/>
+            </div>)
+    }
+    return arr;
+}
+
+const descriptionFooterItem = (data, name) => {
+    return (
+        <div className="description__footer__item">
+            <span className="item__num">{data}</span><br/>
+            <span className="item__name">{name}</span>
+        </div>
+    )
+}
+
 function ProfilePage(props) {
     let addPost = (values) => {
         props.onProfileAddPost(props.userId, props.userName, values.postText);
         values.postText = '';
-    }
-
-    let descriptionFooterItem = (data, name) => {
-        return (
-            <div className="description__footer__item">
-                <span className="item__num">{data}</span><br/>
-                <span className="item__name">{name}</span>
-            </div>
-        )
     }
 
     return (
@@ -46,12 +58,16 @@ function ProfilePage(props) {
                         <div className="profile__followers">
                             <span className="followers__title">Followers</span>
                             <span className="followers__num">{props.data.followers}</span>
-                            <div className="followers__main"> </div>
+                            <div className="followers__main">
+                                {followersItems((+props.data.followers <= 6) ? +props.data.followers : 6 )}
+                            </div>
                         </div>
                         <div className="profile__following">
                             <span className="followers__title">Following</span>
                             <span className="followers__num">{props.data.following}</span>
-                            <div className="followers__main"> </div>
+                            <div className="followers__main">
+                                {followersItems((+props.data.following <= 6) ? +props.data.following : 6 )}
+                            </div>
                         </div>
                         <InputForm onSubmit={addPost}
                                    fieldName={"postText"}

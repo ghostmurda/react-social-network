@@ -156,3 +156,17 @@
     grid-gap: 16px;
     margin-bottom: 16px;
 }
+
+.followers__main{
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.followers__item{
+    width: 65px;
+    height: 65px;
+    overflow: hidden;
+    border-radius: 50%;
+}
